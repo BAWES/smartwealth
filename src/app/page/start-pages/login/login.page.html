@@ -1,0 +1,44 @@
+<ion-content fullscreen="true">
+    <div class="buttons">
+        <ion-button class="lang-btn" size="small">عربي</ion-button>
+    </div>
+    <ion-grid>
+        <ion-row class="ion-align-items-center ion-align-items-start" *ngIf="platform.width() > 990">
+            <ion-col size="4">
+                <img src="./assets/img/main-image.png"/>
+            </ion-col>
+            <ion-col size="8">
+                <div class="main-content">
+                    <section>
+                        <form>
+                            <ion-label>Email</ion-label>
+                            <ion-input></ion-input>
+
+                            <ion-label>Password</ion-label>
+                            <ion-input></ion-input>
+
+                            <ion-button size="large" expand="full">Login</ion-button>
+                        </form>
+                    </section>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row class="ion-align-items-center ion-align-items-start" *ngIf="platform.width() <= 990">
+            <ion-col size="12">
+                <div class="main-content">
+                    <section>
+                        <form>
+                            <ion-label>Email</ion-label>
+                            <ion-input></ion-input>
+
+                            <ion-label>Password</ion-label>
+                            <ion-input></ion-input>
+
+                            <ion-button size="large" expand="full">Login</ion-button>
+                        </form>
+                    </section>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
