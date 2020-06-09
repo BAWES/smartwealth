@@ -7,11 +7,13 @@ import { IonicModule } from '@ionic/angular';
 import { PlanPageRoutingModule } from './plan-routing.module';
 
 import { PlanPage } from './plan.page';
+import { HeaderModule } from 'src/app/components/header/header.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    HeaderModule,
     IonicModule,
     PlanPageRoutingModule
   ],

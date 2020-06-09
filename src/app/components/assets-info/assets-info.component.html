@@ -1,0 +1,31 @@
+<ion-content>
+  <div class="modal-close" role="presentation" (click)="dismiss()">
+    <ion-icon name="close-outline"></ion-icon>
+  </div>
+
+  <div *ngIf="type == 'fixed'">
+    <div class="modal-title">Fixed Income</div>
+    <div class="modal-description">Bonds are investments in debt issued by governments, agencies, or corporations
+      globally. Typically, we categorize our bond investments into two categories: U.S. Bonds and Non-U.S. bonds. While
+      they share similar characteristics to U.S. bonds, international bonds offer exposure to different geographies and
+      currencies. While they generally offer lower returns than stocks, bonds are less volatile. Bonds also tend to move
+      inversely to stocks, providing stabilization during periods of volatility.</div>
+    <div class="target-allocation"><span>Target allocation</span> <span>%0.0</span>
+    </div>
+  </div>
+
+  <div *ngIf="type == 'developed-market'">
+    <div class="modal-title">Developed Market Stocks</div><div class="modal-description">Developed Market Stocks are an ownership share in foreign companies in developed economies like U.S., Europe, UK and Japan. U.S. Stocks act as the core asset class because history demonstrates that they offer significant returns over the long run. Foreign stocks provide indirect exposure to currency fluctuations. The historical returns of foreign stocks are lower than U.S. stocks and have higher risk, so the main impetus for investing in foreign stocks are their diversifying qualities.</div><div class="target-allocation"><span>Target allocation</span> <span>%60.0</span></div><div class="table-header"><div class="cell security"><span>Security</span></div><div class="cell provider"><span>Provider</span></div><div class="cell allocation"><span>Allocation</span></div></div><div class="entry"><div class="cell security">MSCI World Minimum Volatility ETF</div><div class="cell provider">BlackRock</div><div class="cell allocation">20.0%</div></div><div class="entry"><div class="cell security">MSCI World Quality Factor ETF</div><div class="cell provider">BlackRock</div><div class="cell allocation">20.0%</div></div><div class="entry"><div class="cell security">MSCI World Momentum Factor ETF</div><div class="cell provider">BlackRock</div><div class="cell allocation">20.0%</div></div>
+  </div>
+
+  <div *ngIf="type == 'emerging-market'">
+    <div class="modal-title">Emerging Markets Stocks</div><div class="modal-description">Emerging Markets Stocks are an ownership share in foreign companies in newly developing economies like Brazil, Russia, India and China. Emerging Markets Stocks offer additional diversification because these investments respond differently than foreign developed economies. The historical returns of Emerging Markets Stocks are higher than U.S. Stocks, with higher risk. Emerging Markets add the possibility of higher returns to a portfolio and additional diversification.</div><div class="target-allocation"><span>Target allocation</span> <span>%9.0</span></div><div class="table-header"><div class="cell security"><span>Security</span></div><div class="cell provider"><span>Provider</span></div><div class="cell allocation"><span>Allocation</span></div></div><div class="entry"><div class="cell security">MSCI Emerging Markets Index ETF</div><div class="cell provider">BlackRock</div><div class="cell allocation">9.0%</div></div>
+  </div>
+
+  <div *ngIf="type == 'real-estate'">
+    <div class="modal-title">Real Estate</div><div class="modal-description">Real Estate are an ownership in Real Estate Investment Trust (REITs) ETFs in developed markets. A REIT is a type of security that invests in real estate through property or mortgages and often trades on major exchanges like a stock. REITs provide investors with an liquid stake in real estate. They receive special tax considerations and typically offer high dividend yields.</div><div class="target-allocation"><span>Target allocation</span> <span>%0.0</span></div></div>
+
+  <div *ngIf="type == 'cash'">
+    <div class="modal-title">Cash</div><div class="modal-description">A marginal cash balance is kept in your account to deduct any advisory and third party fees.</div><div class="target-allocation"><span>Target allocation</span> <span>%2.0</span></div></div>
+
+</ion-content>

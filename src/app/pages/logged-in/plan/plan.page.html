@@ -1,65 +1,86 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>plan</ion-title>
-  </ion-toolbar>
+  <app-header></app-header>
 </ion-header>
 
 <ion-content>
 
-  <h2>
+  <h2 class="title">
     We recommend a Balanced portfolio
   </h2>
 
-  <p>
-    This means your assets mix will focus on income and growth instruments to achieve greater returns. You can expect to see some downturns to achieve such returns.
+  <p class="description">
+    This means your assets mix will focus on income and growth instruments to achieve greater returns. You can expect to
+    see some downturns to achieve such returns.
   </p>
 
   <ion-card>
     <ion-card-content>
 
-      <h3>Your Risk Tolerance </h3>
+      <h3 class="risk-title">Your Risk Tolerance </h3>
 
-      <ion-icon name="minus-outline"></ion-icon> 6 <ion-icon name="plus-outline"></ion-icon>
-
-      <h4>We recommend 6</h4>
-
-      <p>For your risk profile and goals, we recommend the below asset allocation.</p>
-
-      <ion-list>
-        <ion-item>
-          <ion-label>Fixed income <ion-icon name="question"></ion-icon> </ion-label>
-          <ion-note>29%</ion-note>
-          <ion-progress-bar color="primary" value="0.29"></ion-progress-bar>
-        </ion-item>
-        
-        <ion-item>
-          <ion-label>Developed Market Stocks <ion-icon name="question"></ion-icon> </ion-label>
-          <ion-note>60%</ion-note>
-          <ion-progress-bar color="primary" value="0.60"></ion-progress-bar>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>Emerging Market Stocks <ion-icon name="question"></ion-icon> </ion-label>
-          <ion-note>9%</ion-note>
-          <ion-progress-bar color="secondary" value="0.9"></ion-progress-bar>
-        </ion-item>
-        
-        <ion-item>
-          <ion-label>Real Estate <ion-icon name="question"></ion-icon> </ion-label>
-          <ion-note>0%</ion-note>
-          <ion-progress-bar color="secondary" value="0"></ion-progress-bar>
-        </ion-item>
-        
-        <ion-item>
-          <ion-label>Cash <ion-icon name="question"></ion-icon> </ion-label>
-          <ion-note>2%</ion-note>
-          <ion-progress-bar color="warning" value="2"></ion-progress-bar>
-        </ion-item>
-
-      </ion-list>
+      <div class="step-input">
+        <ion-icon name="remove-circle-outline"></ion-icon>
+        <span class="value"> 6 </span>
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </div>
       
-      <ion-button fill='clear'>
-        View Historical Performance <ion-icon name="arrow-down"></ion-icon>
+      <h4 class="recommend-value">We recommend 6</h4>
+
+      <p class="recommend-description">For your risk profile and goals, we recommend the below asset allocation.</p>
+
+      <div class="assets-allocation">
+        <div class="charts-header">
+          <div class="entry left">
+          <span>Assets</span></div><div class="entry right"><span>Allocation</span></div>
+        </div>
+
+        <div class="charts-value">
+          <div class="entry" role="presentation">
+            <div class="type">
+              <div class="label" (click)="openAssetsInfo('fixed')">Fixed Income <ion-icon name="help-circle-outline"></ion-icon></div>
+              <div class="value">29%</div>
+            </div> 
+            <ion-progress-bar color="primary" value="0.29"></ion-progress-bar>
+          </div>
+          
+          <div class="entry" role="presentation">
+            <div class="type">
+              <div class="label"  (click)="openAssetsInfo('developed-market')">Developed Market Stocks <ion-icon name="help-circle-outline"></ion-icon></div>
+              <div class="value">60%</div>
+            </div> 
+            <ion-progress-bar color="primary" value="0.60"></ion-progress-bar>
+          </div>
+        
+          <div class="entry" role="presentation">
+            <div class="type">
+              <div class="label"  (click)="openAssetsInfo('emerging-market')">Emerging Market Stocks  <ion-icon name="help-circle-outline"></ion-icon></div>
+              <div class="value">9%</div>
+            </div> 
+            <ion-progress-bar color="secondary" value="0.09"></ion-progress-bar>
+          </div> 
+
+          <div class="entry" role="presentation">
+            <div class="type">
+              <div class="label" (click)="openAssetsInfo('real-estate')">Real Estate  <ion-icon name="help-circle-outline"></ion-icon></div>
+              <div class="value">0%</div>
+            </div> 
+            <ion-progress-bar color="secondary" value="0.0"></ion-progress-bar>
+          </div> 
+
+          <div class="entry" role="presentation">
+            <div class="type">
+              <div class="label" (click)="openAssetsInfo('cash')">Cash  <ion-icon name="help-circle-outline"></ion-icon></div>
+              <div class="value">2%</div>
+            </div> 
+            <ion-progress-bar color="warning" value="0.02"></ion-progress-bar>
+          </div> 
+
+        </div>
+      </div>
+   
+      <ion-button fill='clear' class="btn-view-history">
+        View Historical Performance 
+        <ion-icon name="chevron-down-outline"></ion-icon>
       </ion-button>
     </ion-card-content>
   </ion-card>
@@ -69,21 +90,25 @@
 <ion-footer>
   <ion-progress-bar color="primary" value="0.9"></ion-progress-bar>
 
-  <ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-button fill="clear">
+
+  <div class="footer-wrapper">
+
+    <ion-button fill="clear" class="btn-change" (click)="changeAnswers()">
       <ion-icon name="refresh-outline"></ion-icon>
-    Change my answers
+      Change my answers
     </ion-button>
-  </ion-buttons>
 
-  Your Investment Proposal is ready 
+    <div class="step ion-text-center">
+      <h5>Your Investment Proposal is ready </h5>
+      <!--
+      <ion-button fill="clear" >Save for later? </ion-button>
+      -->
+    </div>
 
-  Save for later? 
-
-  <ion-buttons slot="end">
-    <ion-button>Continue
+    <ion-button (click)="continue()" class="btn-continue" [disabled]="!form || form.invalid">
+      Continue
     </ion-button>
-  </ion-buttons>
-</ion-toolbar>
+
+  </div>
+
 </ion-footer>
