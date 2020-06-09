@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>question-view</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="risk-funnel-content">
+
+    <div id="risk-funnel-questions" *ngIf="question">
+
+      <h3 class="title">{{ question.question }}</h3>
+
+      <form [formGroup]="form" *ngIf="form" class="body">
+
+        <div class="age-input" *ngIf="question.type == 'number'">
+          <ion-input type="text" formControlName="answer" inputmode="number">
+            <label slot="end" *ngIf="form.value.answer > 0">years</label>
+          </ion-input>
+        </div>
+        
+        <div class="rating-banner" *ngIf="question.type == 'radio'">
+
+          <div class="square-cell" (click)="setAnswer(value)"  *ngFor="let value of question.values" [class.selected]="form.value.answer == value">
+            <div class="radio"><div class="circle"></div></div>
+            <div class="details">{{ value }}</div>
+          </div>
+        </div>
+
+        <div *ngIf="question.type == 'rating'" class="rating-banner">
+ 
+            <div class="round-cell" (click)="setAnswer(1)">
+              <div class="circle" role="presentation" [class.selected]="form.value.answer == 1">1</div>
+              <div class="note">Strongly disagree</div>
+            </div>
+
+            <div class="round-cell" (click)="setAnswer(2)">
+              <div class="circle" role="presentation" [class.selected]="form.value.answer == 2">2</div>
+              <div class="note">Disagree</div>
+            </div>
+
+            <div class="round-cell" (click)="setAnswer(3)">
+              <div class="circle" role="presentation" [class.selected]="form.value.answer == 3">3</div>
+              <div class="note">Neither</div>
+            </div>
+
+            <div class="round-cell" (click)="setAnswer(4)">
+              <div class="circle" role="presentation" [class.selected]="form.value.answer == 4">4</div>
+              <div class="note">Agree</div>
+            </div>
+
+            <div class="round-cell" (click)="setAnswer(5)">
+              <div class="circle" role="presentation" [class.selected]="form.value.answer == 5">5</div>
+              <div class="note">Strongly Agree</div>
+            </div>
+ 
+        </div>
+      </form>
+    </div>
+  </div>
+
+</ion-content>
+<ion-footer>
+  <ion-progress-bar color="primary" value="0.{{ question_uuid }}"></ion-progress-bar>
+ 
+    <div class="footer-wrapper">
+
+      <ion-button fill="clear" class="btn-back" (click)="back()">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      </ion-button> 
+
+      <div class="step">
+        <h5>Investment proposal</h5>
+        <p>We'll make an assessment based on your answers in order to present you with an investment proposal.</p>
+      </div>
+
+      <ion-button (click)="continue()" class="btn-continue" [disabled]="!form || form.invalid">
+        Continue
+      </ion-button> 
+
+    </div> 
+</ion-footer>
