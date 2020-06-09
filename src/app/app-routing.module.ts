@@ -5,7 +5,7 @@ import {AuthService} from './providers/auth.service';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'start',
     pathMatch: 'full'
   },
   {
