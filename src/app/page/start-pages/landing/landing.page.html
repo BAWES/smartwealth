@@ -1,0 +1,63 @@
+<ion-content fullscreen="true">
+    <div class="buttons">
+      <ion-button class="lang-btn" size="small">عربي</ion-button>
+      <ion-button class="login-btn" (click)="login()">Login</ion-button>
+    </div>
+  <ion-grid>
+    <ion-row class="ion-align-items-center ion-align-items-start" *ngIf="platform.width() > 990">
+      <ion-col size="4">
+        <img src="./assets/img/main-image.png"/>
+      </ion-col>
+      <ion-col size="8">
+        <div class="main-content">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Open a NBK Capital SmartWealth account</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Get started with smarter investing habits today and open an account within minutes.
+            </ion-card-content>
+            <ion-icon slot="end" name="star"></ion-icon>
+          </ion-card>
+
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Build my financial plan in under 5 minutes</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Get started with smarter investing habits today and open an account within minutes.
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center ion-align-items-start" *ngIf="platform.width() <= 990">
+      <ion-col size="12">
+        <div class="main-content">
+          <div class="buttons inner">
+            <ion-button class="lang-btn" size="small">عربي</ion-button>
+            <ion-button class="login-btn">Login</ion-button>
+          </div>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Open a NBK Capital SmartWealth account</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Get started with smarter investing habits today and open an account within minutes.
+            </ion-card-content>
+            <ion-icon slot="end" name="star"></ion-icon>
+          </ion-card>
+
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Build my financial plan in under 5 minutes</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Get started with smarter investing habits today and open an account within minutes.
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

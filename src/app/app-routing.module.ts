@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {AuthService} from './providers/auth.service';
 
 const routes: Routes = [
   {
@@ -18,7 +19,41 @@ const routes: Routes = [
   {
     path: 'plan',
     loadChildren: () => import('./pages/logged-in/plan/plan.module').then( m => m.PlanPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./page/start-pages/login/login.module').then( m => m.LoginPageModule),
+    canActivate: [AuthService],
+    data: {
+      disableMenu: true
+    }
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./page/start-pages/register/register.module').then( m => m.RegisterPageModule),
+    canActivate: [AuthService],
+    data: {
+      disableMenu: true
+    }
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./page/start-pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule),
+    canActivate: [AuthService],
+    data: {
+      disableMenu: true
+    }
+  },
+  {
+    path: 'start',
+    loadChildren: () => import('./page/start-pages/landing/landing.module').then( m => m.LandingPageModule),
+    canActivate: [AuthService],
+    data: {
+      disableMenu: true
+    }
   }
+
+
 ];
 
 @NgModule({
