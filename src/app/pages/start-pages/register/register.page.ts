@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Platform} from '@ionic/angular';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterPage implements OnInit {
 
-  constructor() { }
+  private registerForm: FormGroup;
+  public isLoading = false;
+  constructor(
+      public platform: Platform,
+      public router: Router,
+      private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit() {
+    this.registerForm = this.formBuilder.group({
+      first_name: ['', Validators.required],
+      last_name: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+    });
   }
 
+  forgotPassword() {
+    this.router.navigate(['/forgot-password']);
+  }
+
+  login() {
+    this.isLoading = true;
+  }
 }
