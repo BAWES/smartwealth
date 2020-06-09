@@ -1,0 +1,22 @@
+.pending-header {
+    background-color: #fff;
+    padding: 24px 35px;
+    border-bottom: solid 1px #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+
+    .logo {
+        max-width: 150px;
+        width: 150px;
+    }
+
+    .language {
+        cursor: pointer;
+        font-size: 14px;
+        color: #707070;
+        margin-left: auto;
+        margin-right: 10px;
+    }
+}

@@ -1,0 +1,69 @@
+<ion-content fullscreen="true">
+  <div class="buttons">
+    <ion-button class="lang-btn" size="small">عربي</ion-button>
+  </div>
+  <ion-grid>
+    <ion-row class="ion-align-items-center ion-align-items-start">
+      <ion-col size-sm="0" size-md="0" size-xs="0" size-lg="4" *ngIf="platform.width() > 990">
+        <img src="./assets/img/main-image.png"/>
+        <h2 class="intro-text">Let's start with your email address, password, and residency<br/>
+          <small>Invest smarter, today.</small>
+        </h2>
+      </ion-col>
+      <ion-col size-md="12" size-lg="8" size-sm="12">
+        <div class="main-content">
+          <div class="buttons inner cleafix">
+            <img src="./assets/img/logo.png"/>
+            <ion-button class="lang-btn" size="small">عربي</ion-button>
+          </div>
+          <section class="login-page">
+            <form [formGroup]="registerForm" (ngSubmit)="login()" autocomplete="off" class="classicInput" novalidate>
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <div class="field-group first_name">
+                      <ion-label>First Name</ion-label>
+                      <ion-input placeholder="" name="first_name" type="text" formControlName="first_name"></ion-input>
+                    </div>
+                  </ion-col>
+                  <ion-col>
+                    <div class="field-group last_name">
+                      <ion-label>Last Name</ion-label>
+                      <ion-input placeholder="" name="last_name" type="text" formControlName="last_name"></ion-input>
+                    </div>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <div class="field-group">
+                      <ion-label>Email</ion-label>
+                      <ion-input placeholder="" name="email" type="text" #email formControlName="email"></ion-input>
+                    </div>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <div class="field-group">
+                      <ion-label>Password</ion-label>
+                      <ion-input placeholder="" name="password"
+                                 type="password" #password formControlName="password" ></ion-input>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+
+              <ion-button size="large" expand="full"  type="submit"
+                          [disabled]="!registerForm.valid || isLoading"
+                          [style.background-color]="!registerForm.valid || isLoading ? 'white':'black'"
+                          [style.color]="!registerForm.valid || isLoading ?'black':'white'">
+                <ion-spinner *ngIf="isLoading"></ion-spinner>
+                <span *ngIf="!isLoading">Continue</span>
+              </ion-button>
+              <p tappable>Already have account? <a href="/login">Login</a></p>
+            </form>
+          </section>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

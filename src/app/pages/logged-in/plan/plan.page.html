@@ -1,0 +1,114 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+  <h2 class="title">
+    We recommend a Balanced portfolio
+  </h2>
+
+  <p class="description">
+    This means your assets mix will focus on income and growth instruments to achieve greater returns. You can expect to
+    see some downturns to achieve such returns.
+  </p>
+
+  <ion-card>
+    <ion-card-content>
+
+      <h3 class="risk-title">Your Risk Tolerance </h3>
+
+      <div class="step-input">
+        <ion-icon name="remove-circle-outline"></ion-icon>
+        <span class="value"> 6 </span>
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </div>
+      
+      <h4 class="recommend-value">We recommend 6</h4>
+
+      <p class="recommend-description">For your risk profile and goals, we recommend the below asset allocation.</p>
+
+      <div class="assets-allocation">
+        <div class="charts-header">
+          <div class="entry left">
+          <span>Assets</span></div><div class="entry right"><span>Allocation</span></div>
+        </div>
+
+        <div class="charts-value">
+          <div class="entry" role="presentation">
+            <div class="type">
+              <div class="label" (click)="openAssetsInfo('fixed')">Fixed Income <ion-icon name="help-circle-outline"></ion-icon></div>
+              <div class="value">29%</div>
+            </div> 
+            <ion-progress-bar color="primary" value="0.29"></ion-progress-bar>
+          </div>
+          
+          <div class="entry" role="presentation">
+            <div class="type">
+              <div class="label"  (click)="openAssetsInfo('developed-market')">Developed Market Stocks <ion-icon name="help-circle-outline"></ion-icon></div>
+              <div class="value">60%</div>
+            </div> 
+            <ion-progress-bar color="primary" value="0.60"></ion-progress-bar>
+          </div>
+        
+          <div class="entry" role="presentation">
+            <div class="type">
+              <div class="label"  (click)="openAssetsInfo('emerging-market')">Emerging Market Stocks  <ion-icon name="help-circle-outline"></ion-icon></div>
+              <div class="value">9%</div>
+            </div> 
+            <ion-progress-bar color="secondary" value="0.09"></ion-progress-bar>
+          </div> 
+
+          <div class="entry" role="presentation">
+            <div class="type">
+              <div class="label" (click)="openAssetsInfo('real-estate')">Real Estate  <ion-icon name="help-circle-outline"></ion-icon></div>
+              <div class="value">0%</div>
+            </div> 
+            <ion-progress-bar color="secondary" value="0.0"></ion-progress-bar>
+          </div> 
+
+          <div class="entry" role="presentation">
+            <div class="type">
+              <div class="label" (click)="openAssetsInfo('cash')">Cash  <ion-icon name="help-circle-outline"></ion-icon></div>
+              <div class="value">2%</div>
+            </div> 
+            <ion-progress-bar color="warning" value="0.02"></ion-progress-bar>
+          </div> 
+
+        </div>
+      </div>
+   
+      <ion-button fill='clear' class="btn-view-history">
+        View Historical Performance 
+        <ion-icon name="chevron-down-outline"></ion-icon>
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
+<ion-footer>
+  <ion-progress-bar color="primary" value="0.9"></ion-progress-bar>
+
+
+  <div class="footer-wrapper">
+
+    <ion-button fill="clear" class="btn-change" (click)="changeAnswers()">
+      <ion-icon name="refresh-outline"></ion-icon>
+      Change my answers
+    </ion-button>
+
+    <div class="step ion-text-center">
+      <h5>Your Investment Proposal is ready </h5>
+      <!--
+      <ion-button fill="clear" >Save for later? </ion-button>
+      -->
+    </div>
+
+    <ion-button (click)="continue()" class="btn-continue" [disabled]="!form || form.invalid">
+      Continue
+    </ion-button>
+
+  </div>
+
+</ion-footer>
