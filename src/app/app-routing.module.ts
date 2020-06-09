@@ -10,11 +10,15 @@ const routes: Routes = [
   },
   {
     path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule),
-    // canActivate: [AuthService],
-    // data: {
-    //   disableMenu: true
-    // }
+    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'question-view',
+    loadChildren: () => import('./pages/logged-in/question/question-view/question-view.module').then( m => m.QuestionViewPageModule)
+  },
+  {
+    path: 'plan',
+    loadChildren: () => import('./pages/logged-in/plan/plan.module').then( m => m.PlanPageModule)
   },
   {
     path: 'login',
