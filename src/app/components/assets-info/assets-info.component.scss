@@ -1,0 +1,96 @@
+.modal-title {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.32;
+    color: #1a375f;
+    margin-top: 10px;
+}
+
+.modal-close {
+    float: right;
+    color: #96a4b6;
+    font-size: 32px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.modal-description {
+    font-size: 14px;
+    line-height: 1.43;
+    color: #6d7f99;
+    margin-top: 20px;
+}
+.target-allocation {
+    font-size: 14px;
+    line-height: 1.31;
+    color: #1a375f;
+    margin-top: 20px;
+}
+
+.target-allocation>span {
+    color: #3fb252;
+}
+.table-header {
+    margin-top: 30px;
+    min-height: 20px;
+    overflow: hidden;
+}
+.table-header .cell.security {
+    width: 50%;
+}
+
+.table-header .cell {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.33;
+    color: #1a375f;
+    float: left;
+    min-height: 20px;
+    overflow: hidden;
+    padding-left: 10px;
+}
+
+.cell.provider {
+    width: 25%;
+}
+
+.cell.allocation {
+    width: 25%;
+}
+.entry {
+    background-color: #f9f9fa;
+    min-height: 20px;
+    overflow: hidden;
+    margin-top: 2px;
+    padding: 20px 10px;
+
+    .cell {
+        float: left;
+        font-size: 14px;
+        line-height: 1.43;
+        color: #6d7f99;
+        padding-left: 10px;
+    }
+
+    .cell.allocation {
+        width: 25%;
+        padding-left: 30px;
+    }
+}
+.cell.security {
+    width: 50%;
+}
+
+ion-content.md.hydrated {
+    background: white;
+    border: 1px solid #d0cccc;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+    transition: all 0.8s;
+    padding: 40px;
+    --padding-start: 40px;
+    --padding-end: 40px;
+    --padding-top: 40px;
+    text-align: center;
+    height: auto;
+}
+

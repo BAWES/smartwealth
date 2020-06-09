@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./page/start-pages/login/login.module').then( m => m.LoginPageModule),
+    loadChildren: () => import('./pages/start-pages/login/login.module').then( m => m.LoginPageModule),
     canActivate: [AuthService],
     data: {
       disableMenu: true
@@ -30,7 +30,7 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    loadChildren: () => import('./page/start-pages/register/register.module').then( m => m.RegisterPageModule),
+    loadChildren: () => import('./pages/start-pages/register/register.module').then( m => m.RegisterPageModule),
     canActivate: [AuthService],
     data: {
       disableMenu: true
@@ -38,7 +38,7 @@ const routes: Routes = [
   },
   {
     path: 'forgot-password',
-    loadChildren: () => import('./page/start-pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule),
+    loadChildren: () => import('./pages/start-pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule),
     canActivate: [AuthService],
     data: {
       disableMenu: true
@@ -46,7 +46,7 @@ const routes: Routes = [
   },
   {
     path: 'start',
-    loadChildren: () => import('./page/start-pages/landing/landing.module').then( m => m.LandingPageModule),
+    loadChildren: () => import('./pages/start-pages/landing/landing.module').then( m => m.LandingPageModule),
     canActivate: [AuthService],
     data: {
       disableMenu: true

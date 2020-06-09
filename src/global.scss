@@ -24,3 +24,89 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+ion-footer {
+    margin-bottom: 50px;
+
+    ion-progress-bar {
+        margin-bottom: 15px;
+    }
+
+    .footer-wrapper {
+        position: relative;
+        justify-content: space-between;
+        height: 64px;//calc(100% - 8px);
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    h5 {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.5;
+        color: #000000;
+        margin-bottom: 8px;
+        text-align: left;
+    }
+
+    p {
+        font-size: 14px;
+        color: #969798;
+        margin: 0;
+    }
+
+    .btn-back {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -60px;
+        cursor: pointer;
+        
+        --padding-bottom: 0;
+        --padding-end: 0;
+        --padding-start: 0;
+        --padding-top: 0;
+
+        ion-icon {
+            height: 32px;
+            width: 32px;
+        }
+    }
+
+    .btn-continue {
+        font-size: 14px;
+        --padding: 8px 50px;
+        --background: #1439da;
+        font-weight: 600;
+        line-height: 1.67;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        color: white;
+        text-transform: none;
+        width: 160px;
+    }
+}
+
+.assets-info-fixed {
+    --height: 330px;
+}
+
+.assets-info-developed-market {
+    --height: 570px;
+}
+
+.assets-info-emerging-market {
+    --height: 420px;
+}
+
+.assets-info-real-estate {
+    --height: 280px;
+}
+
+.assets-info-cash {
+    --height: 230px;
+}
