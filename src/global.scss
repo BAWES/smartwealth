@@ -110,3 +110,24 @@ ion-footer {
 .assets-info-cash {
     --height: 230px;
 }
+.steps {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #969798;
+
+    .bold {
+        color: #333333;
+    }
+
+    .step {
+        display: flex;
+        align-items: center;
+    }
+
+    ion-icon {
+        max-width: 15px;
+        max-height: 15px;
+        margin: 0 8px;
+    }
+}
