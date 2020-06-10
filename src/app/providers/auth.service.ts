@@ -29,11 +29,11 @@ declare var navigator;
 })
 export class AuthService implements CanActivate {
 
-  public isLoggedIn = false;
+  public isLoggedIn = true;
 
   // Logged in agent details
-  public name;
-  public email;
+  public name = 'Khalid';
+  public email = 'Khalid@gmail.com';
   public disableMenu = false;
 
   constructor(
