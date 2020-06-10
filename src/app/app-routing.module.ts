@@ -79,6 +79,15 @@ const routes: Routes = [
   {
     path: 'step4',
     loadChildren: () => import('./pages/logged-in/personal/step4/step4.module').then( m => m.Step4PageModule)
+  },
+  {
+    // path: 'pending-profile-sections',
+    path: 'pending',
+    loadChildren: () => import('./pages/logged-in/pending-profile-sections/pending-profile-sections.module').then( m => m.PendingProfileSectionsPageModule),
+    canActivate: [AuthService],
+    data: {
+      disableMenu: true
+    }
   }
 ];
 
