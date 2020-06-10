@@ -10,15 +10,27 @@ const routes: Routes = [
   },
   {
     path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule),
+    canActivate: [AuthService],
+    data: {
+      disableMenu: false
+    }
   },
   {
     path: 'question-view',
-    loadChildren: () => import('./pages/logged-in/question/question-view/question-view.module').then( m => m.QuestionViewPageModule)
+    loadChildren: () => import('./pages/logged-in/question/question-view/question-view.module').then( m => m.QuestionViewPageModule),
+    canActivate: [AuthService],
+    data: {
+      disableMenu: false
+    }
   },
   {
     path: 'plan',
-    loadChildren: () => import('./pages/logged-in/plan/plan.module').then( m => m.PlanPageModule)
+    loadChildren: () => import('./pages/logged-in/plan/plan.module').then( m => m.PlanPageModule),
+    canActivate: [AuthService],
+    data: {
+      disableMenu: false
+    }
   },
   {
     path: 'login',

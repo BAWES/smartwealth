@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -7,14 +7,94 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense" class="ion-no-border">
     <ion-toolbar>
       <ion-title size="large">{{ folder }}</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <h1>Create your non-binding SmartWealth Login</h1>
+    <h1>Hello, {{authService.name}}</h1>
+    <ion-grid>
+      <ion-row>
+          <ion-col>
+            <ion-card class="continue-prof">
+              <ion-card-content>
+                <ion-item lines="none">
+                  <ion-label>
+                    <h3>Complete Your Profile</h3>
+                    Finish you profile by providing us with some personal information. We will use this to create your account and fill in your contract
+                  </ion-label>
+                  <ion-button class="continue-btn" slot="end">Continue</ion-button>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+      </ion-row>
+      <ion-row class="stats">
+          <ion-col>
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title>Total Balance</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <p>$0.00</p>
+                <small>1 Portfolio</small>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        <ion-col>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Daily Earnings</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>$0.00</p>
+              <small>As of today</small>
+            </ion-card-content>
+          </ion-card>
+          </ion-col>
+        <ion-col>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Total Deposits</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>$0.00</p>
+              <small>Latest Deposits: $0.00</small>
+            </ion-card-content>
+          </ion-card>
+          </ion-col>
+        <ion-col>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Total Earnings</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>$0.00</p>
+              <small>As of today</small>
+            </ion-card-content>
+          </ion-card>
+          </ion-col>
+      </ion-row>
+      <ion-row class="portfolio-stats">
+        <ion-col>
+          <h3>Portfolios</h3>
+          <ion-card>
+            <ion-card-content>
+              <ion-item detail lines="none">
+                <ion-button slot="start" class="globe">
+                  <ion-icon slot="icon-only"  name="planet-outline"></ion-icon>
+                </ion-button>
+                <ion-label class="general">General <ion-icon name="pencil-outline"></ion-icon> <br/><span>Pending</span></ion-label>
+                <ion-label class="msg">This portfolio has not been funded yet.</ion-label>
+                <ion-label class="earnings ion-text-end">$0.00 <br/> <small>Earning: $0.00</small></ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>
