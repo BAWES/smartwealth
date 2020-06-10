@@ -1,0 +1,10 @@
+<ion-searchbar
+    (ionInput)="searchFilter($event)"
+    debounce=250>
+</ion-searchbar>
+
+<ion-list>
+    <ion-item *ngFor="let item of displayedCollection" tappable (click)="onSelect(item)">
+      {{ item[labelAttr] }}
+    </ion-item>
+</ion-list>

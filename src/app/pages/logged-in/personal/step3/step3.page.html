@@ -1,0 +1,93 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+  <div class="kyc-content">
+
+    <div class="content-wrapper">
+      <div class="description">
+        <div class="title"><span>Personal Information</span></div>
+        <p><span>Complete the personal information fields to continue building your SmartWealth profile. Questions
+            require the sharing of personal and contact information.</span></p>
+      </div>
+
+      <form [formGroup]="form" class="form">
+
+        <div class="field-row">
+          <div class="label radio-buttons-title"><span>Is this a guardianship account?</span></div>
+          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.isGuardianshpAccount == 1" role="presentation" (click)="setIsGuardianshpAccount(1)">
+            <div class="radio-button small radio-gender" [class.checked]="form.value.isGuardianshpAccount == 1">
+              <div></div>
+            </div>
+            <span>Yes</span>
+          </div>
+          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.isGuardianshpAccount == 2" role="presentation" (click)="setIsGuardianshpAccount(2)">
+            <div class="radio-button small" [class.checked]="form.value.isGuardianshpAccount == 2">
+              <div></div>
+            </div>
+            <span>No</span>
+          </div>          
+        </div>
+
+        <div *ngIf="[1, '1'].indexOf(form.value.isGuardianshpAccount) > -1">
+
+          <div class="field-row">
+            <div class="custom-dropdown">
+              <ion-label>Guardian full name</ion-label>            
+              <ion-input placeholder="Guardian full name" autocomplete="on" formControlName="guardianFullName" type="text">
+              </ion-input>
+            </div>
+          </div>
+  
+          <div class="field-row">
+            <div class="custom-dropdown">
+              <ion-label>Guardian nationality</ion-label>
+              <select-search-input formControlName="guardianNationality" placeholder="Select nationality"
+                [collection]="countrylistData" valueAttr="country_name_en" labelAttr="country_name_en">
+              </select-search-input>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="signup-input">
+              <ion-label>Guardian civil ID number</ion-label>
+              <ion-input placeholder="Guardian civil ID number" autocomplete="on" formControlName="guardianCivilIdNumber" type="text">
+              </ion-input>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div><!-- END .content-wrapper -->
+  </div><!-- END .kyc-content -->
+</ion-content>
+<ion-footer>
+  <ion-progress-bar color="primary" value="0.1"></ion-progress-bar>
+
+  <div class="footer-wrapper">
+
+    <ion-button fill="clear" class="btn-back" (click)="back()">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+
+    <div>
+      <h5>Complete profile</h5>
+      <div class="steps">
+        <div class="bold step"><span>Personal Information</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="step"><span>Contact Information</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="step"><span>Employment and Wealth</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="step"><span>Taxes &amp; Beneficiaries</span></div>
+      </div>
+    </div>
+
+    <ion-button (click)="continue()" class="btn-continue" [disabled]="!form || form.invalid">
+      Continue
+    </ion-button>
+
+  </div>
+</ion-footer>

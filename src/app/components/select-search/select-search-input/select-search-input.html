@@ -1,0 +1,4 @@
+<ion-item (click)="onClick($event)" [class.no-value-selected]="!value" lines="none">
+  {{ selectedItem? selectedItem[labelAttr] : placeholder }}
+  <ion-icon name="chevron-down-outline"></ion-icon>
+</ion-item>

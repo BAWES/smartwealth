@@ -1,0 +1,118 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+  <div class="kyc-content">
+
+    <div class="content-wrapper">
+      <div class="description">
+        <div class="title"><span>Personal Information</span></div>
+        <p><span>Complete the personal information fields to continue building your SmartWealth profile. Questions
+            require the sharing of personal and contact information.</span></p>
+      </div>
+
+      <form [formGroup]="form" class="form">
+        
+        <div class="field-row">
+          <div class="label radio-buttons-title"><span>Gender</span></div>
+          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.gender == 1" role="presentation" (click)="setGender(1)">
+            <div class="radio-button small radio-gender" [class.checked]="form.value.gender == 1">
+              <div></div>
+            </div>
+            <span>Male</span>
+          </div>
+          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.gender == 2" role="presentation" (click)="setGender(2)">
+            <div class="radio-button small" [class.checked]="form.value.gender == 2">
+              <div></div>
+            </div>
+            <span>Female</span>
+          </div>          
+        </div>
+
+        <div class="field-row">
+          <div class="signup-input">
+            <ion-label>First name</ion-label>
+            <ion-input placeholder="e.g Bruce" autocomplete="on" formControlName="firstName"
+                        type="text"></ion-input> 
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="inline-input signup-input">
+            <ion-label>Middle name</ion-label>
+            <ion-input placeholder="e.g Lee" autocomplete="on" formControlName="middleName"
+                        type="text"></ion-input> 
+          </div>
+          <div class="inline-input signup-input">
+            <ion-label>Last name</ion-label>
+            <ion-input placeholder="e.g Wayne" autocomplete="on" formControlName="lastName"
+                        type="text"></ion-input> 
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="custom-dropdown inline-dropdown">
+            <ion-label>Country of birth</ion-label>
+            <select-search-input formControlName="country"
+            placeholder="Select Country" 
+            [collection]="countrylistData" 
+            valueAttr="country_name_en" 
+            labelAttr="country_name_en">
+          </select-search-input>
+          </div>
+          <div class="custom-date-picker inline-date-picker">
+            <ion-label>Date of birth</ion-label>
+            <ion-datetime formControlName="dob" displayFormat="DD/MM/YYYY" placeholder="dd/mm/yyyy"></ion-datetime>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class=" signup-input">
+            <ion-label>Civil ID number</ion-label>
+            <ion-input placeholder="e.g 212345859000" autocomplete="on" formControlName="civilId"
+            type="text"></ion-input>  
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="inline-input signup-input">
+            <ion-label>Civil ID serial number</ion-label>
+            <ion-input placeholder="e.g 1234567890" autocomplete="on" formControlName="civilIdSerialNumber"
+            type="text"></ion-input>
+          </div>
+          <div class="custom-date-picker inline-date-picker">
+            <ion-label>Civil ID expiry date</ion-label>
+            <ion-datetime formControlName="civilIdExpiryDate" displayFormat="DD/MM/YYYY" placeholder="dd/mm/yyyy"></ion-datetime>
+          </div>
+        </div>
+      </form>
+    </div><!-- END .content-wrapper -->
+  </div><!-- END .kyc-content -->
+</ion-content>
+<ion-footer>
+  <ion-progress-bar color="primary" value="0.1"></ion-progress-bar>
+
+  <div class="footer-wrapper">
+
+    <ion-button fill="clear" class="btn-back" (click)="back()">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+
+    <div>
+      <h5>Complete profile</h5>
+      <div class="steps">
+        <div class="bold step"><span>Personal Information</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="step"><span>Contact Information</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="step"><span>Employment and Wealth</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="step"><span>Taxes &amp; Beneficiaries</span></div>
+      </div>
+    </div>
+
+    <ion-button (click)="continue()" class="btn-continue" [disabled]="!form || form.invalid">
+      Continue
+    </ion-button>
+
+  </div>
+</ion-footer>
