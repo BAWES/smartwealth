@@ -1,0 +1,98 @@
+.btn-back {
+  ion-icon {
+    color: #000;
+  }
+}
+ion-footer {
+  img {
+    width: 305px;
+    margin-top: 64px;
+  }
+}
+
+.container {
+  padding: 5% 16%;
+  margin: 0 auto;
+
+  h1 {
+    font-weight: bold;
+    font-size: 38px;
+  }
+  .step {
+    border-left: 1px solid;
+    position: relative;
+    padding-bottom: 25px;
+
+    p, small {
+      padding-left: 39px;
+    }
+
+    .count {
+      border: 1px solid;
+      height: 50px;
+      width: 50px;
+      display: inline-block;
+      padding: 12px;
+      border-radius: 50%;
+      text-align: center;
+      background: #1439da;
+      color: #fff;
+      font-size: 22px;
+      font-style: inherit;
+
+      .complete {
+        display: none;
+      }
+
+      .counter {
+        font-style: normal;
+        display: inline-block;
+      }
+    }
+
+
+    .step-timer {
+      font-size: 15px;
+      color: gray;
+      position: absolute;
+      left: -63px;
+      top: -9px;
+
+      .done {
+        background: limegreen;
+
+        .complete {
+          display: inline-block;
+        }
+
+        .counter {
+          display: none;
+        }
+      }
+    }
+
+    .title {
+      padding-left: 39px;
+      font-weight: bold;
+    }
+
+    li {
+      list-style: none;
+    }
+  }
+}
+
+.no-border {
+  border: none!important;
+}
+.start-btn {
+  --background: #1439da;
+  background: #1439da;
+  --border-radius: 58px;
+  height: 52px;
+  width: 177px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: inherit;
+  margin-left: 37px;
+}

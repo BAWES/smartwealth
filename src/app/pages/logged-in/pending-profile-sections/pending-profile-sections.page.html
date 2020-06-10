@@ -1,0 +1,132 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+  <div class="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="row left" *ngIf="shownGroup == 1 || !shownGroup">
+            <h1>Activate your account</h1>
+            <p>
+              In order to activate your account, we need you to fill<br/>
+              out some details in order to generate the contractual<br/>
+              agreements for you to sign digitally.
+            </p>
+          </div>
+          <div class="row left" *ngIf="shownGroup == 2">
+            <h1>Upload ID</h1>
+            <p>
+              In order to verify your identity, we kindly ask you to <br/>
+              upload a copy of your Civil ID and a secondary ID.<br/>
+              You can upload the file on next page
+            </p>
+          </div>
+          <div class="row left" *ngIf="shownGroup == 3">
+            <h1>Sign Documents</h1>
+            <p>
+              On the next page you can view and sign the legal and<br/>
+              regulatory documents required to open your first<br/>
+              portfolio. Copies of the agreements will be sent to you<br/>
+              email directly, once signed.
+            </p>
+
+            <p>
+              To edit any information on the documents; click on the <br/>
+              Complete Profile step and select what you wish to edit<br/>
+              and re-launch the documents again.
+            </p>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="row right">
+            <div>
+              <div (click)="toggleGroup(1)" tappable class="step">
+                <h3>
+                  <span class="step-timer">8min
+                    <span class="count done">
+                        <i class="counter">1</i>
+                        <ion-icon name="checkmark-outline" class="complete"></ion-icon>
+                    </span>
+                  </span>
+                  <span class="title">Complete Profile</span>
+                  <ion-icon slot="end" [name]="shownGroup == 1 ? 'chevron-up-outline' : 'chevron-down-outline'"></ion-icon>
+                </h3>
+                <div *ngIf="isGroupShown(1)">
+                  <ul>
+                    <li><ion-icon name="chevron-forward-outline"></ion-icon> Personal Information</li>
+                    <li><ion-icon name="chevron-forward-outline"></ion-icon> Contact Information</li>
+                    <li><ion-icon name="chevron-forward-outline"></ion-icon> Employment & Wealth</li>
+                    <li><ion-icon name="chevron-forward-outline"></ion-icon> Taxes & Beneficiaries</li>
+                  </ul>
+
+                </div>
+              </div>
+
+              <div (click)="toggleGroup(2)" tappable  class="step">
+                <h3>
+                  <span class="step-timer">
+                    2min
+                    <span class="count done">
+                      <i class="counter">2</i>
+                      <ion-icon name="checkmark-outline" class="complete"></ion-icon>
+                    </span>
+                  </span>
+                  <span class="title">Upload ID</span>
+                  <ion-icon slot="end" [name]="shownGroup == 2 ? 'chevron-up-outline' : 'chevron-down-outline'"></ion-icon>
+                </h3>
+                <div *ngIf="isGroupShown(2)">
+                  <small>For a verification purpose we need a digital copy of your:</small>
+                  <ul>
+                    <li><ion-icon name="chevron-forward-outline"></ion-icon> Civil ID</li>
+                    <li><ion-icon name="chevron-forward-outline"></ion-icon> Passport or Kuwait Driver's License</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div (click)="toggleGroup(3)" tappable  class="step no-border">
+                <h3>
+                  <span class="step-timer">5min
+                    <span class="count">
+                      <i class="counter">3</i>
+                      <ion-icon name="checkmark-outline" class="complete"></ion-icon>
+                    </span>
+                  </span>
+                  <span class="title">Sign Documents</span>
+                  <ion-icon slot="end" [name]="shownGroup == 3 ? 'chevron-up-outline' : 'chevron-down-outline'"></ion-icon>
+                </h3>
+                <div *ngIf="isGroupShown(3)">
+                  <p>
+                    Your documents will be pre-filled with your personal information and ready for you to <br/> sign digitally in just a few minutes. <br/> Please note: by singing, you are not obligated to fund the portolio and there are no penalties if you decide not to proceed with the funding
+                  </p>
+                </div>
+              </div>
+            </div>
+            <ion-button class="start-btn">Start</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+</ion-content>
+
+<ion-footer>
+  <div class="footer-wrapper">
+
+    <ion-button fill="clear" class="btn-back" (click)="navCtrl.back()">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+
+    <div class="step">
+      <h5>Tip: Download the app and finish quicker</h5>
+      <p>With the app you can automatically fill in the information required in these steps</p>
+    </div>
+    <div slot="end">
+      <img src="/assets/img/download-app.png"/>
+    </div>
+  </div>
+</ion-footer>

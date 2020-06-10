@@ -63,9 +63,16 @@ const routes: Routes = [
     data: {
       disableMenu: true
     }
+  },
+  {
+    // path: 'pending-profile-sections',
+    path: 'pending',
+    loadChildren: () => import('./pages/logged-in/pending-profile-sections/pending-profile-sections.module').then( m => m.PendingProfileSectionsPageModule),
+    canActivate: [AuthService],
+    data: {
+      disableMenu: true
+    }
   }
-
-
 ];
 
 @NgModule({
