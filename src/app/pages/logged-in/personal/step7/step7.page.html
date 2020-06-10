@@ -1,0 +1,123 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+  <div class="kyc-content">
+
+    <div class="content-wrapper">
+      <div class="description">
+        <div class="title"><span>Employment and Wealth</span></div>
+        <p><span>Complete the employment and financial fields to complete your SmartWealth profile.
+          </span>
+        </p>
+
+        <p><span>Important: Kindly note that when entering your bank details, this information will be the default bank
+            information associated with your NBK Capital SmartWealth account for deposits and redemptions.
+          </span>
+        </p>
+
+      </div>
+
+      <form [formGroup]="form" class="form">
+
+        <div class="field-row annual-income">
+          <div class="label radio-buttons-title"><span>Annual income (in KD)</span></div>
+          <div class="radio-box">
+            <div class="radio-container kyc-radio-button income-radio " role="presentation" (click)="setTotalIncome('5,000-20,000')" [class.radio-checked]="form.value.annualIncome == '5,000-20,000'">
+              <div class="radio-button small" [class.checked]="form.value.annualIncome == '5,000-20,000'">
+                <div></div>
+              </div><span>5,000-20,000</span>
+            </div>
+            <div class="radio-container radio-checked kyc-radio-button income-radio " role="presentation" (click)="setTotalIncome('20,000-50,000')" [class.radio-checked]="form.value.annualIncome == '20,000-50,000'">
+              <div class="radio-button checked small" [class.checked]="form.value.annualIncome == '20,000-50,000'">
+                <div></div>
+              </div><span>20,000-50,000</span>
+            </div>
+            <div class="radio-container kyc-radio-button income-radio " role="presentation" (click)="setTotalIncome('50,000-250,000')" [class.radio-checked]="form.value.annualIncome == '50,000-250,000'">
+              <div class="radio-button small" [class.checked]="form.value.annualIncome == '50,000-250,000'">
+                <div></div>
+              </div><span>50,000-250,000</span>
+            </div>
+            <div class="radio-container kyc-radio-button income-radio " role="presentation" (click)="setTotalIncome('Above 250,000')" [class.radio-checked]="form.value.annualIncome == 'Above 250,000'">
+              <div class="radio-button small" [class.checked]="form.value.annualIncome == 'Above 250,000'">
+                <div></div>
+              </div><span>Above 250,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="custom-dropdown">
+            <ion-label>Primary source of income & wealth</ion-label>
+            <ion-select formControlName="incomeSource" multiple="true" interface="popover" placeholder="Select source">
+              <ion-select-option *ngFor="let s of sourcelistData">{{ s.source }}</ion-select-option>
+            </ion-select>
+          </div>
+        </div>
+
+        <div class="field-row liquid-cash">
+          <div class="label radio-buttons-title"><span>What is the total value of your cash and liquid investments (in
+              USD)?</span></div>
+          <div class="liquid-radio-box">
+            <div class="radio-container kyc-radio-button liquid-radio" (click)="setTotalInv('Less than 50,000')" [class.radio-checked]="form.value.totalInvestment == 'Less than 50,000'" role="presentation">
+              <div class="radio-button small" [class.checked]="form.value.totalInvestment == 'Less than 50,000'">
+                <div></div>
+              </div><span>Less than 50,000</span>
+            </div>
+            <div class="radio-container kyc-radio-button liquid-radio" (click)="setTotalInv('50,000 to 330,000')" [class.radio-checked]="form.value.totalInvestment == '50,000 to 330,000'" role="presentation">
+              <div class="radio-button small" [class.checked]="form.value.totalInvestment == '50,000 to 330,000'">
+                <div></div>
+              </div><span>50,000 to 330,000</span>
+            </div>
+            <div class="radio-container kyc-radio-button liquid-radio" (click)="setTotalInv('330,000 to 1,000,000')" [class.radio-checked]="form.value.totalInvestment == '330,000 to 1,000,000'" role="presentation">
+              <div class="radio-button small" [class.checked]="form.value.totalInvestment == '330,000 to 1,000,000'">
+                <div></div>
+              </div><span>330,000 to 1,000,000</span>
+            </div>
+            <div class="radio-container kyc-radio-button liquid-radio" (click)="setTotalInv('1,000,000 to 5,000,000')" [class.radio-checked]="form.value.totalInvestment == '1,000,000 to 5,000,000'" role="presentation">
+              <div class="radio-button small" [class.checked]="form.value.totalInvestment == '1,000,000 to 5,000,000'">
+                <div></div>
+              </div><span>1,000,000 to 5,000,000</span>
+            </div>
+            <div class="radio-container kyc-radio-button liquid-radio" (click)="setTotalInv('Greater than 5,000,000')" [class.radio-checked]="form.value.totalInvestment == 'Greater than 5,000,000'" role="presentation">
+              <div class="radio-button small" [class.checked]="form.value.totalInvestment == 'Greater than 5,000,000'">
+                <div></div>
+              </div><span>Greater than 5,000,000</span>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div><!-- END .content-wrapper -->
+  </div><!-- END .kyc-content -->
+</ion-content>
+<ion-footer>
+  <ion-progress-bar color="primary" value="0.1"></ion-progress-bar>
+
+  <div class="footer-wrapper">
+
+    <ion-button fill="clear" class="btn-back" (click)="back()">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+
+    <div>
+      <h5>Complete profile</h5>
+      <div class="steps">
+        <div class="bold step"><span>Personal Information</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="bold step"><span>Contact Information</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="bold step"><span>Employment and Wealth</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="step"><span>Taxes &amp; Beneficiaries</span></div>
+      </div>
+    </div>
+
+    <ion-button (click)="continue()" class="btn-continue" [disabled]="!form || form.invalid">
+      Continue
+    </ion-button>
+
+  </div>
+</ion-footer>

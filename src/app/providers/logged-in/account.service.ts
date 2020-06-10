@@ -61,4 +61,42 @@ export class AccountService {
       'operation': 'success'
     });
   }
+
+  saveStep5(params) {
+
+    localStorage.setItem('city', params.city);
+    localStorage.setItem('area', params.area);
+    localStorage.setItem('street', params.street);
+    localStorage.setItem('avenue', params.avenue);
+    localStorage.setItem('block', params.block);
+    localStorage.setItem('houseNumber', params.houseNumber);
+    localStorage.setItem('mobileNumber', params.mobileNumber);
+    
+    return of({
+      'operation': 'success'
+    });
+  }
+
+  saveStep6(params) {
+
+    localStorage.setItem('employmentStatus', params.employmentStatus);
+    localStorage.setItem('employer', params.employer);
+    localStorage.setItem('position', params.position);
+    localStorage.setItem('industry', params.industry);
+
+    return of({
+      'operation': 'success'
+    });
+  }  
+  
+  saveStep7(params) {
+
+    localStorage.setItem('annualIncome', params.annualIncome);
+    localStorage.setItem('incomeSource', params.incomeSource);
+    localStorage.setItem('totalInvestment', params.totalInvestment);
+
+    return of({
+      'operation': 'success'
+    });
+  }  
 }

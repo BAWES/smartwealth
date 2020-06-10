@@ -1,0 +1,94 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+  <div class="kyc-content">
+
+    <div class="content-wrapper">
+      <div class="description">
+        <div class="title"><span>Employment and Wealth</span></div>
+        <p><span>Complete the employment and financial fields to complete your SmartWealth profile.
+          </span>
+        </p>
+
+        <p><span>Important: Kindly note that when entering your bank details, this information will be the default bank
+            information associated with your NBK Capital SmartWealth account for deposits and redemptions.
+          </span>
+        </p>
+
+      </div>
+
+      <form [formGroup]="form" class="form">
+
+        <div class="field-row">
+          <div class=" signup-input">
+            <ion-label>Employment status</ion-label>
+            <ion-select placeholder="Select" interface="popover" formControlName="employmentStatus">
+              <ion-select-option>Employed</ion-select-option>
+              <ion-select-option>Unemployed</ion-select-option>
+              <ion-select-option>Retired</ion-select-option>
+              <ion-select-option>Self Employed</ion-select-option>
+              <ion-select-option>Student</ion-select-option>
+            </ion-select>
+          </div>
+        </div>
+
+        <div *ngIf="['Self Employed', 'Employed'].indexOf(form.value.employmentStatus) > -1">
+          <div class="field-row">
+            <div class=" signup-input">
+              <ion-label>Employer</ion-label>
+              <ion-input placeholder="e.g. Company" autocomplete="on" formControlName="employer"></ion-input>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class=" signup-input">
+              <ion-label>Position</ion-label>
+              <ion-input placeholder="e.g. Manager" autocomplete="on" formControlName="position"></ion-input>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="custom-dropdown">
+              <ion-label>Industry</ion-label>
+              <select-search-input formControlName="industry" placeholder="Select industry"
+                [collection]="industrylistData" valueAttr="industry_name_en" labelAttr="industry_name_en">
+              </select-search-input>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div><!-- END .content-wrapper -->
+  </div><!-- END .kyc-content -->
+</ion-content>
+<ion-footer>
+  <ion-progress-bar color="primary" value="0.1"></ion-progress-bar>
+
+  <div class="footer-wrapper">
+
+    <ion-button fill="clear" class="btn-back" (click)="back()">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+
+    <div>
+      <h5>Complete profile</h5>
+      <div class="steps">
+        <div class="bold step"><span>Personal Information</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="bold step"><span>Contact Information</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="bold step"><span>Employment and Wealth</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="step"><span>Taxes &amp; Beneficiaries</span></div>
+      </div>
+    </div>
+
+    <ion-button (click)="continue()" class="btn-continue" [disabled]="!form || form.invalid">
+      Continue
+    </ion-button>
+
+  </div>
+</ion-footer>

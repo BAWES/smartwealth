@@ -1,0 +1,94 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+  <div class="kyc-content">
+
+    <div class="content-wrapper">
+      <div class="description">
+        <div class="title"><span>Contact Information</span></div>
+        <p><span>Complete the contact information fields to continue building your SmartWealth profile. Questions will require the sharing of contact information and residential details.</span></p>
+      </div>
+
+      <form [formGroup]="form" class="form">
+        
+        <div class="field-row">
+          <div class="inline-input signup-input">
+            <ion-label>City</ion-label>
+            <ion-input placeholder="e.g Kuwait" autocomplete="on" formControlName="city"
+                        type="text"></ion-input> 
+          </div>
+          <div class="inline-input signup-input">
+            <ion-label>Area</ion-label>
+            <ion-input placeholder="e.g Al Mankhool road" autocomplete="on" formControlName="area"
+                        type="text"></ion-input> 
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="inline-input signup-input">
+            <ion-label>Street</ion-label>
+            <ion-input placeholder="e.g 34 or 35" autocomplete="on" formControlName="street"
+                        type="text"></ion-input> 
+          </div>
+          <div class="inline-input signup-input">
+            <ion-label>Avenue</ion-label>
+            <ion-input placeholder='if inapplicable, type "n/a"' autocomplete="on" formControlName="avenue"
+                        type="text"></ion-input> 
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="inline-input signup-input">
+            <ion-label>Block</ion-label>
+            <ion-input placeholder="e.g 3 or 4" autocomplete="on" formControlName="block"
+                        type="text"></ion-input> 
+          </div>
+          <div class="inline-input signup-input">
+            <ion-label>House number</ion-label>
+            <ion-input placeholder='e.g. 27 or apartment number' autocomplete="on" formControlName="houseNumber"
+                        type="text"></ion-input> 
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class=" signup-input">
+            <ion-label>Mobile number</ion-label>
+            <ion-input placeholder="xxxx xxxx" autocomplete="on" formControlName="mobileNumber"
+            type="number"></ion-input>  
+          </div>
+        </div>
+      </form>
+    </div><!-- END .content-wrapper -->
+  </div><!-- END .kyc-content -->
+</ion-content>
+<ion-footer>
+  <ion-progress-bar color="primary" value="0.1"></ion-progress-bar>
+
+  <div class="footer-wrapper">
+
+    <ion-button fill="clear" class="btn-back" (click)="back()">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+
+    <div>
+      <h5>Complete profile</h5>
+      <div class="steps">
+        <div class="bold step"><span>Personal Information</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="bold step"><span>Contact Information</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="step"><span>Employment and Wealth</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="step"><span>Taxes &amp; Beneficiaries</span></div>
+      </div>
+    </div>
+
+    <ion-button (click)="continue()" class="btn-continue" [disabled]="!form || form.invalid">
+      Continue
+    </ion-button>
+
+  </div>
+</ion-footer>
