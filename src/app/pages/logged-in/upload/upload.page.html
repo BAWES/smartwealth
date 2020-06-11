@@ -1,0 +1,116 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+
+<ion-content>
+  <div class="kyc-content">
+
+    <div class="content-wrapper">
+      <div class="description">
+        <div class="title"><span>Upload ID</span></div>
+        <div class="stage stage1" [class.hide]="!stage">
+          <p><span>Please upload the front and back of your CIVIL ID and Driver's License or Passport.</span></p>
+          <ul>
+            <li [class.done]="stage == 'back' || stage == 'dl'"><ion-icon name="checkmark-circle"></ion-icon> Civil ID Front</li>
+            <li [class.done]="stage == 'front' || stage == 'dl'"><ion-icon name="checkmark-circle"></ion-icon> Civil ID Back</li>
+            <li ><ion-icon name="checkmark-circle"></ion-icon> Driver's License or Passport.</li>
+          </ul>
+        </div>
+
+        <div class="stage stage2">
+          <p><span>
+            In order to verify your identity, we kindly ask you to <br/>
+            upload a copy of your Civil ID and a secondary ID.<br/>
+            You can upload the files on the next page.
+          </span></p>
+        </div>
+      </div>
+
+      <div class="row right">
+        <div [class.hide]="stage">
+          <div tappable class="step current">
+            <h3>
+                  <span class="step-timer">
+                    <span class="count">
+<!--                    <span class="count done">-->
+                        <i class="counter">1</i>
+                    </span>
+                  </span>
+              <span class="title">Civil ID</span>
+            </h3>
+            <div>
+              <small>A copy of the front and back side of your Civil ID uploaded in either one or two file</small>
+              <ul>
+<!--                <li class="uploaded"><ion-icon name="today-outline"></ion-icon> front</li>-->
+                <li class=""><ion-icon name="today-outline"></ion-icon> front</li>
+                <li><ion-icon name="terminal-outline"></ion-icon> back</li>
+              </ul>
+
+            </div>
+          </div>
+
+          <div tappable  class="step no-border">
+            <h3>
+                  <span class="step-timer">
+                    <span class="count">
+                      <i class="counter">2</i>
+                    </span>
+                  </span>
+              <span class="title">Driver's License or Passport</span>
+            </h3>
+            <div>
+              <small>A copy of the front sideof your kuwait Driver's License or of your Passports ID page.</small>
+              <ul>
+                <li><ion-icon name="today-outline"></ion-icon> Kuwait Driver's License</li>
+                <li><ion-icon name="terminal-outline"></ion-icon> Passport</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="upload-doc" [class.hide]="!stage">
+          <div class="upload-div">
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+            <h3>{{uploadTxt}}</h3>
+            <p>Drag and Drop photo here or just click for browser files</p>
+          </div>
+            <div class="btn-controller clearfix">
+                <ion-button slot="start" class="btn-delete">
+                    Delete
+                </ion-button>
+
+                <ion-button slot="end" (click)="continue()"  class="btn-continue">
+                    Next
+                </ion-button>
+            </div>
+
+        </div>
+      </div>
+    </div><!-- END .content-wrapper -->
+  </div><!-- END .kyc-content -->
+</ion-content>
+<ion-footer>
+  <div class="footer-wrapper">
+
+    <ion-button fill="clear" class="btn-back" (click)="navCtrl.back()">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+
+    <div>
+      <h5>Upload ID</h5>
+      <div class="steps">
+        <div class="bold step"><span>Civil ID Front</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="step"><span>Civil ID Back</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="step"><span>Driver's License or Passport</span></div>
+      </div>
+    </div>
+
+    <ion-button (click)="continue()" class="btn-continue">
+      Continue
+    </ion-button>
+
+  </div>
+</ion-footer>
