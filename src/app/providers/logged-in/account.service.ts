@@ -99,4 +99,28 @@ export class AccountService {
       'operation': 'success'
     });
   }  
+
+  saveStep8(params) {
+
+    localStorage.setItem('bank', params.bank);
+    localStorage.setItem('existingClient', params.existingClient);
+    localStorage.setItem('haveRelationship', params.haveRelationship);
+    localStorage.setItem('relationship', params.relationship);
+
+    return of({
+      'operation': 'success'
+    });
+  }  
+
+  saveStep9(params) {
+
+    localStorage.setItem('isUSCitizen', params.isUSCitizen);
+    localStorage.setItem('taxPayerIDNumber', params.taxPayerIDNumber);
+    localStorage.setItem('usAddress1', params.usAddress1);
+    localStorage.setItem('usAddress2', params.usAddress2);
+
+    return of({
+      'operation': 'success'
+    });
+  }  
 }

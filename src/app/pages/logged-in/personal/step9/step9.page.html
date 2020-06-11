@@ -1,0 +1,93 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+  <div class="kyc-content">
+
+    <div class="content-wrapper">
+      <div class="description">
+        <div class="title"><span>Taxes & Beneficiaries</span></div>
+        <p><span>Complete the additional information requirements to finalize your account details. Questions will require the sharing of citizenship, tax and account beneficiary details.
+          </span>
+        </p>
+      </div>
+
+      <form [formGroup]="form" class="form">
+
+        <div class="field-row">
+          <div class="label radio-buttons-title"><span>Are you a US citizen?</span></div>
+          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.isUSCitizen == 1"
+            role="presentation" (click)="setIsUSCitizen(1)">
+            <div class="radio-button small radio-gender" [class.checked]="form.value.isUSCitizen == 1">
+              <div></div>
+            </div>
+            <span>Yes</span>
+          </div>
+          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.isUSCitizen == 2"
+            role="presentation" (click)="setIsUSCitizen(2)">
+            <div class="radio-button small" [class.checked]="form.value.isUSCitizen == 2">
+              <div></div>
+            </div>
+            <span>No</span>
+          </div>
+        </div>
+
+        <div *ngIf="['1', 1].indexOf(form.value.isUSCitizen) > -1">
+
+          <div class="field-row">
+            <div class=" signup-input">
+              <ion-label>Taxpayer identification number</ion-label>
+              <ion-input autocomplete="on" formControlName="taxPayerIDNumber"></ion-input>
+            </div>
+          </div>
+          
+          <div class="field-row">
+            <div class=" signup-input">
+              <ion-label>US address 1</ion-label>
+              <ion-input autocomplete="on" formControlName="usAddress1"></ion-input>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class=" signup-input">
+              <ion-label>US address 2</ion-label>
+              <ion-input autocomplete="on" formControlName="usAddress2"></ion-input>
+            </div>
+          </div>
+
+        </div>
+
+      </form>
+    </div><!-- END .content-wrapper -->
+  </div><!-- END .kyc-content -->
+</ion-content>
+<ion-footer>
+  <ion-progress-bar color="primary" value="0.1"></ion-progress-bar>
+
+  <div class="footer-wrapper">
+
+    <ion-button fill="clear" class="btn-back" (click)="back()">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+
+    <div>
+      <h5>Complete profile</h5>
+      <div class="steps">
+        <div class="bold step"><span>Personal Information</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="bold step"><span>Contact Information</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="bold step"><span>Employment and Wealth</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="bold step"><span>Taxes &amp; Beneficiaries</span></div>
+      </div>
+    </div>
+
+    <ion-button (click)="continue()" class="btn-continue" [disabled]="!form || form.invalid">
+      Continue
+    </ion-button>
+
+  </div>
+</ion-footer>
