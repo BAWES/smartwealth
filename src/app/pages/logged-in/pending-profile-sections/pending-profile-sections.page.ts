@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-import {NavController} from '@ionic/angular';
+import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
+import { AuthService } from 'src/app/providers/auth.service';
 
 @Component({
   selector: 'app-pending-profile-sections',
@@ -10,12 +11,17 @@ import {NavController} from '@ionic/angular';
 export class PendingProfileSectionsPage implements OnInit {
 
   shownGroup = null;
+
   constructor(
-      public navCtrl: NavController
+    public authService: AuthService,
+    public navCtrl: NavController
   ) { }
 
   ngOnInit() {
+  }
 
+  ionViewWillEnter() {
+    this.authService.disableMenu = true;
   }
 
   toggleGroup(group) {
@@ -25,6 +31,7 @@ export class PendingProfileSectionsPage implements OnInit {
       this.shownGroup = group;
     }
   }
+
   isGroupShown(group) {
     return this.shownGroup === group;
   }

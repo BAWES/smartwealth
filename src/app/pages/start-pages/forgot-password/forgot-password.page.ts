@@ -14,6 +14,7 @@ export class ForgotPasswordPage implements OnInit {
   public email;
   public password;
   public isLoading = false;
+  
   constructor(
       public platform: Platform,
       public navCtrl: NavController,

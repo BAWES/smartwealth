@@ -77,12 +77,7 @@ export class Step3Page implements OnInit {
 
   ionViewWillEnter() {
     this.authService.disableMenu = true;
-    console.log(1);
   }
-
-  ionViewDidLeave() {
-    this.authService.disableMenu = false;
-  } 
 
   back() {
     this.navCtrl.back();

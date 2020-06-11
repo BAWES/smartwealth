@@ -56,10 +56,6 @@ export class Step7Page implements OnInit {
     this.authService.disableMenu = true;
   }
 
-  ionViewDidLeave() {
-    this.authService.disableMenu = false;
-  }
-
   back() {
     this.navCtrl.back();
   }

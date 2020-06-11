@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {AuthService} from '../providers/auth.service';
+import {AuthService} from '../../../providers/auth.service';
 
 @Component({
   selector: 'app-folder',
@@ -17,6 +17,10 @@ export class FolderPage implements OnInit {
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
+  }
+
+  ionViewWillEnter() {
+    this.authService.disableMenu = false;
   }
 
 }

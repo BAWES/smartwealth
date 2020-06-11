@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {NavController} from '@ionic/angular';
-import {ActivatedRoute} from '@angular/router';
+import { NavController } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/providers/auth.service';
 
 @Component({
   selector: 'app-upload',
@@ -10,10 +11,13 @@ import {ActivatedRoute} from '@angular/router';
 export class UploadPage implements OnInit {
 
   public stage = null;
+  
   public uploadTxt = null;
+
   constructor(
-      public navCtrl: NavController,
-      public activatedRoute: ActivatedRoute
+    public navCtrl: NavController,
+    public authService: AuthService,
+    public activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -27,6 +31,10 @@ export class UploadPage implements OnInit {
     }
   }
 
+  ionViewWillEnter() {
+    this.authService.disableMenu = true;
+  }
+
   continue() {
     let url;
     if (!this.stage) {
@@ -35,8 +43,8 @@ export class UploadPage implements OnInit {
       url = '/upload/back';
     } else if (this.stage == 'back') {
       url = '/upload/dl';
-    } else  {
-      url = '/upload';
+    } else {
+      url = '/sign';
     }
     this.navCtrl.navigateForward(url);
   }

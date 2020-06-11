@@ -32,6 +32,7 @@ export class LoginPage implements OnInit {
   }
 
   login() {
-    this.isLoading = true;
+    //this.isLoading = true;
+    this.router.navigate(['dashboard']);
   }
 }

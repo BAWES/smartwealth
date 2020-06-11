@@ -17,7 +17,7 @@
             <ion-button class="lang-btn" size="small">عربي</ion-button>
           </div>
           <section class="login-page">
-            <form [formGroup]="registerForm" (ngSubmit)="login()" autocomplete="off" class="classicInput" novalidate>
+            <form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off" class="classicInput" novalidate>
               <ion-grid>
                 <ion-row>
                   <ion-col>
@@ -59,7 +59,7 @@
                 <ion-spinner *ngIf="isLoading"></ion-spinner>
                 <span *ngIf="!isLoading">Continue</span>
               </ion-button>
-              <p tappable>Already have account? <a href="/login">Login</a></p>
+              <p tappable>Already have account? <a routerLink="/login">Login</a></p>
             </form>
           </section>
         </div>

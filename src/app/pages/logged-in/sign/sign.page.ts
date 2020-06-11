@@ -20,11 +20,11 @@ export class SignPage implements OnInit {
   ionViewWillEnter() {
     this.authService.disableMenu = true;
   }
-
-  ionViewDidLeave() {
-    this.authService.disableMenu = false;
-  }
   
+  continue() {
+    this.navCtrl.navigateRoot(['dashboard']);
+  }
+
   back() {
     this.navCtrl.back();
   }

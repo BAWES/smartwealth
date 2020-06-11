@@ -31,7 +31,8 @@ export class RegisterPage implements OnInit {
     this.router.navigate(['/forgot-password']);
   }
 
-  login() {
-    this.isLoading = true;
+  register() {
+    //this.isLoading = true;
+    this.router.navigate(['dashboard']);
   }
 }

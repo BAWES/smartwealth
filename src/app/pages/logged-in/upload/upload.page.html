@@ -13,7 +13,7 @@
           <p><span>Please upload the front and back of your CIVIL ID and Driver's License or Passport.</span></p>
           <ul>
             <li [class.done]="stage == 'back' || stage == 'dl'"><ion-icon name="checkmark-circle"></ion-icon> Civil ID Front</li>
-            <li [class.done]="stage == 'front' || stage == 'dl'"><ion-icon name="checkmark-circle"></ion-icon> Civil ID Back</li>
+            <li [class.done]="stage == 'dl'"><ion-icon name="checkmark-circle"></ion-icon> Civil ID Back</li>
             <li ><ion-icon name="checkmark-circle"></ion-icon> Driver's License or Passport.</li>
           </ul>
         </div>

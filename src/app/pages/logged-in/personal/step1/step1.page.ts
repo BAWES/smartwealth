@@ -55,10 +55,6 @@ export class Step1Page implements OnInit {
     this.authService.disableMenu = true;
   }
 
-  ionViewDidLeave() {
-    this.authService.disableMenu = false;
-  }
-
   setGender(value) {
     this.form.controls.gender.setValue(value);
     this.form.updateValueAndValidity();
