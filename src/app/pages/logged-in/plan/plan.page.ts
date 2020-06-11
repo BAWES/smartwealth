@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { AssetsInfoComponent } from 'src/app/components/assets-info/assets-info.component';
+import { AuthService } from 'src/app/providers/auth.service';
 
 @Component({
   selector: 'app-plan',
@@ -12,6 +13,7 @@ export class PlanPage implements OnInit {
 
   constructor(
     public modalController: ModalController,
+    public authService: AuthService,
     public router: Router) { }
 
   ngOnInit() {
@@ -19,6 +21,10 @@ export class PlanPage implements OnInit {
 
   changeAnswers() {
     this.router.navigate(['question-view', 1]);
+  }
+
+  ionViewWillEnter() {
+    this.authService.disableMenu = true;
   }
 
   continue() {

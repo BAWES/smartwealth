@@ -45,9 +45,7 @@ export class Step12Page implements OnInit {
       addPowerOfAttorney: [addPowerOfAttorney, Validators.required],
       powerOfAttorneyName: [localStorage.getItem('powerOfAttorneyName'), addPowerOfAttorney == 2 ? Validators.required: null],
       powerOfAttorneyNationality: [localStorage.getItem('powerOfAttorneyNationality'), addPowerOfAttorney == 2 ? Validators.required: null],
-      beneficiaryNationality: [localStorage.getItem('beneficiaryNationality'), addPowerOfAttorney == 2 ? Validators.required: null],
       powerOfAttorneyID: [localStorage.getItem('powerOfAttorneyID'), addPowerOfAttorney == 2 ? Validators.required: null],
-      beneficiaryID: [localStorage.getItem('beneficiaryID'), addPowerOfAttorney == 2 ? Validators.required: null]
     }); 
 
     this.form.get('addPowerOfAttorney').valueChanges.subscribe(value => {
@@ -55,24 +53,18 @@ export class Step12Page implements OnInit {
       if([1, '1'].indexOf(value) > -1) {
         this.form.get('powerOfAttorneyName').setValidators(Validators.required);
         this.form.get('powerOfAttorneyNationality').setValidators(Validators.required);
-        this.form.get('beneficiaryNationality').setValidators(Validators.required);
         this.form.get('powerOfAttorneyID').setValidators(Validators.required);
-        this.form.get('beneficiaryID').setValidators(Validators.required);
-
+      
       } else {
         this.form.get('powerOfAttorneyName').setValidators(null);
         this.form.get('powerOfAttorneyNationality').setValidators(null);
-        this.form.get('beneficiaryNationality').setValidators(null);
         this.form.get('powerOfAttorneyID').setValidators(null);
-        this.form.get('beneficiaryID').setValidators(null);
       }
 
       this.form.controls.powerOfAttorneyName.updateValueAndValidity(); 
       this.form.controls.powerOfAttorneyNationality.updateValueAndValidity(); 
-      this.form.controls.beneficiaryNationality.updateValueAndValidity(); 
       this.form.controls.powerOfAttorneyID.updateValueAndValidity(); 
-      this.form.controls.beneficiaryID.updateValueAndValidity(); 
-
+      
     }); 
    this.loadCountries();
   }
@@ -101,9 +93,7 @@ export class Step12Page implements OnInit {
     if([1, '1'].indexOf(this.form.value.addPowerOfAttorney) == -1) {
       this.form.controls.powerOfAttorneyName.setValue(null); 
       this.form.controls.powerOfAttorneyNationality.setValue(null); 
-      this.form.controls.beneficiaryNationality.setValue(null); 
       this.form.controls.powerOfAttorneyID.setValue(null); 
-      this.form.controls.beneficiaryID.setValue(null); 
     } 
 
     let params = this.form.value;

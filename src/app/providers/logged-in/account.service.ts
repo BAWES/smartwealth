@@ -16,6 +16,7 @@ export class AccountService {
     localStorage.setItem('lastName', params.lastName);
     localStorage.setItem('middleName', params.middleName);
     localStorage.setItem('country', params.country);
+    localStorage.setItem('dob', params.dob);
     localStorage.setItem('civilId', params.civilId);
     localStorage.setItem('civilIdSerialNumber', params.civilIdSerialNumber);
     localStorage.setItem('civilIdExpiryDate', params.civilIdExpiryDate);
