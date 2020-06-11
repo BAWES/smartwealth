@@ -120,7 +120,16 @@ const routes: Routes = [
     data: {
       disableMenu: true
     }
+  },
+  {
+    path: 'upload',
+    loadChildren: () => import('./pages/logged-in/upload/upload.module').then( m => m.UploadPageModule),
+    canActivate: [AuthService],
+    data: {
+      disableMenu: true
+    }
   }
+
 ];
 
 @NgModule({

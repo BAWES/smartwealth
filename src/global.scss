@@ -73,6 +73,7 @@ ion-footer {
         ion-icon {
             height: 32px;
             width: 32px;
+            color: #000;
         }
     }
 
@@ -130,6 +131,13 @@ ion-footer {
         max-height: 15px;
         margin: 0 8px;
     }
+}
+.hide {
+    display: none;
+}
+
+.show {
+    display: inline-block;
 }
 
 ion-popover {
