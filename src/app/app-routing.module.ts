@@ -101,6 +101,18 @@ const routes: Routes = [
     loadChildren: () => import('./pages/logged-in/personal/step9/step9.module').then( m => m.Step9PageModule)
   },
   {
+    path: 'step10',
+    loadChildren: () => import('./pages/logged-in/personal/step10/step10.module').then( m => m.Step10PageModule)
+  },
+  {
+    path: 'step11',
+    loadChildren: () => import('./pages/logged-in/personal/step11/step11.module').then( m => m.Step11PageModule)
+  },
+  {
+    path: 'step12',
+    loadChildren: () => import('./pages/logged-in/personal/step12/step12.module').then( m => m.Step12PageModule)
+  },
+  {
     // path: 'pending-profile-sections',
     path: 'pending',
     loadChildren: () => import('./pages/logged-in/pending-profile-sections/pending-profile-sections.module').then( m => m.PendingProfileSectionsPageModule),

@@ -123,4 +123,40 @@ export class AccountService {
       'operation': 'success'
     });
   }  
+
+  saveStep10(params) {
+
+    localStorage.setItem('payTaxInAnotherCountry', params.payTaxInAnotherCountry);
+    localStorage.setItem('taxCountry', JSON.stringify(params.taxCountry));
+
+    return of({
+      'operation': 'success'
+    });
+  }  
+
+  saveStep11(params) {
+
+    localStorage.setItem('applyForSomeoneElse', params.applyForSomeoneElse);
+    localStorage.setItem('beneficiaryName', params.beneficiaryName);
+    localStorage.setItem('beneficiaryRelation', params.beneficiaryRelation);
+    localStorage.setItem('beneficiaryNationality', params.beneficiaryNationality);
+    localStorage.setItem('beneficiaryAddress', params.beneficiaryAddress);
+    localStorage.setItem('beneficiaryID', params.beneficiaryID);
+
+    return of({
+      'operation': 'success'
+    });
+  }  
+
+  saveStep12(params) {
+
+    localStorage.setItem('addPowerOfAttorney', params.addPowerOfAttorney);
+    localStorage.setItem('powerOfAttorneyName', params.powerOfAttorneyName);
+    localStorage.setItem('powerOfAttorneyNationality', params.powerOfAttorneyNationality);
+    localStorage.setItem('powerOfAttorneyID', params.powerOfAttorneyID);
+
+    return of({
+      'operation': 'success'
+    });
+  }  
 }

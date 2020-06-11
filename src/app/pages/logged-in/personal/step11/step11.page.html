@@ -1,0 +1,112 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+  <div class="kyc-content">
+
+    <div class="content-wrapper">
+      <div class="description">
+        <div class="title"><span>Taxes & Beneficiaries</span></div>
+        <p><span>Complete the additional information requirements to finalize your account details. Questions will
+            require the sharing of citizenship, tax and account beneficiary details.
+          </span>
+        </p>
+      </div>
+
+      <form [formGroup]="form" class="form">
+
+        <div class="field-row">
+          <div class="label radio-buttons-title"><span>Are you applying for someone else?</span></div>
+          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.applyForSomeoneElse == 1"
+            role="presentation" (click)="setApplyForSomeoneElse(1)">
+            <div class="radio-button small radio-gender" [class.checked]="form.value.applyForSomeoneElse == 1">
+              <div></div>
+            </div>
+            <span>Yes</span>
+          </div>
+          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.applyForSomeoneElse == 2"
+            role="presentation" (click)="setApplyForSomeoneElse(2)">
+            <div class="radio-button small" [class.checked]="form.value.applyForSomeoneElse == 2">
+              <div></div>
+            </div>
+            <span>No</span>
+          </div>
+        </div>
+
+        <div *ngIf="['1', 1].indexOf(form.value.applyForSomeoneElse) > -1">
+
+          <div class="field-row">
+            <div class=" signup-input">
+              <ion-label>Full name of beneficiary</ion-label>
+              <ion-input autocomplete="on" formControlName="beneficiaryName"></ion-input>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class=" signup-input">
+              <ion-label>What is your relationship to the beneficiary?</ion-label>
+              <select-search-input formControlName="beneficiaryRelation" placeholder="Select relationship"
+                [collection]="relationlistData" valueAttr="relation" labelAttr="relation">
+              </select-search-input>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class=" signup-input">
+              <ion-label>What is the nationality of the beneficiary?</ion-label>
+              <select-search-input formControlName="beneficiaryNationality" placeholder="Select nationality"
+                [collection]="countrylistData" valueAttr="country_name_en" labelAttr="country_name_en">
+              </select-search-input>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class=" signup-input">
+              <ion-label>What is the address of the beneficiary?</ion-label>
+              <ion-input autocomplete="on" formControlName="beneficiaryAddress"></ion-input>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class=" signup-input">
+              <ion-label>What is the civil ID No. or the passport No. of the beneficiary?</ion-label>
+              <ion-input autocomplete="on" formControlName="beneficiaryID"></ion-input>
+            </div>
+          </div>
+
+        </div>
+
+      </form>
+    </div><!-- END .content-wrapper -->
+  </div><!-- END .kyc-content -->
+</ion-content>
+<ion-footer>
+  <ion-progress-bar color="primary" value="0.1"></ion-progress-bar>
+
+  <div class="footer-wrapper">
+
+    <ion-button fill="clear" class="btn-back" (click)="back()">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+
+    <div>
+      <h5>Complete profile</h5>
+      <div class="steps">
+        <div class="bold step"><span>Personal Information</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="bold step"><span>Contact Information</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="bold step"><span>Employment and Wealth</span></div>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <div class="bold step"><span>Taxes &amp; Beneficiaries</span></div>
+      </div>
+    </div>
+
+    <ion-button (click)="continue()" class="btn-continue" [disabled]="!form || form.invalid">
+      Continue
+    </ion-button>
+
+  </div>
+</ion-footer>
