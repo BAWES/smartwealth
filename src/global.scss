@@ -35,7 +35,7 @@ ion-footer {
     .footer-wrapper {
         position: relative;
         justify-content: space-between;
-        height: 64px;//calc(100% - 8px);
+        height: 64px; //calc(100% - 8px);
         display: flex;
         align-items: center;
         width: 100%;
@@ -64,7 +64,7 @@ ion-footer {
         transform: translateY(-50%);
         left: -60px;
         cursor: pointer;
-        
+
         --padding-bottom: 0;
         --padding-end: 0;
         --padding-start: 0;
@@ -111,6 +111,7 @@ ion-footer {
 .assets-info-cash {
     --height: 230px;
 }
+
 .steps {
     display: flex;
     align-items: center;
@@ -132,6 +133,7 @@ ion-footer {
         margin: 0 8px;
     }
 }
+
 .hide {
     display: none;
 }
@@ -142,4 +144,14 @@ ion-footer {
 
 ion-popover {
     --width: 395px;
+}
+
+.col-bg-img {
+    background: url('src/assets/img/main-image.png') 100% 100%;
+    background-position: -1px 0px;
+
+    img {
+        opacity: 0;
+        height: calc(100vh - 3px)
+    }
 }

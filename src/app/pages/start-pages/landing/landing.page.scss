@@ -11,15 +11,6 @@ ion-col {
   display: none;
 }
 
-.col-bg-img {
-  background: url('src/assets/img/main-image.png') 100% 100%;
-
-  img {
-    opacity: 0;
-    height: calc(100vh - 3px)
-  }
-}
-
 .main-content {
   width: 79%;
   margin: 0 auto;
