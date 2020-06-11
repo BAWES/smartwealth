@@ -3,16 +3,23 @@ ion-row,
 ion-col {
   padding: 0;
   //height: 100%;
-}
-img {
-  height: 100%;
-}
+} 
 .buttons {
   display: block;
 }
 .buttons.inner{
   display: none;
 }
+
+.col-bg-img {
+  background: url('src/assets/img/main-image.png') 100% 100%;
+
+  img {
+    opacity: 0;
+    height: calc(100vh - 3px)
+  }
+}
+
 .main-content {
   width: 79%;
   margin: 0 auto;
