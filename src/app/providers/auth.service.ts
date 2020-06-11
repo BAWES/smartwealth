@@ -42,6 +42,10 @@ export class AuthService implements CanActivate {
   ) {
   }
 
+  logout() {
+    //this.isLoggedIn = false; 
+  }
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot

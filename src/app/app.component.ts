@@ -12,11 +12,12 @@ import {AuthService} from './providers/auth.service';
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
+
   public appPages = [
     {
-      title: 'Home',
-      url: '/folder/Home',
-      icon: 'home'
+      title: 'Dashboard',
+      url: '/folder',
+      icon: 'rocket'
     },
     {
       title: 'Settings',
@@ -26,12 +27,12 @@ export class AppComponent implements OnInit {
     {
       title: 'عربي',
       url: '/folder/Arabic',
-      icon: 'heart'
+      icon: 'globe'
     },
     {
       title: 'Logout',
-      url: '/folder/Logout',
-      icon: 'archive'
+      url: '/start',
+      icon: 'power'
     }
   ];
   public labels = ['Portfolio', 'Accounts', 'Investments'];

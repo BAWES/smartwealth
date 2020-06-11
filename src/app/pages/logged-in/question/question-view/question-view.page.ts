@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { QuestionService } from 'src/app/providers/logged-in/question.service';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { NavController } from '@ionic/angular';
+import { AuthService } from 'src/app/providers/auth.service';
 
 
 @Component({
@@ -25,6 +26,7 @@ export class QuestionViewPage implements OnInit {
     public route: ActivatedRoute,
     public _fb: FormBuilder,
     public navCtrl: NavController,
+    public authService: AuthService,
     public questionService: QuestionService
   ) { }
 
@@ -44,6 +46,10 @@ export class QuestionViewPage implements OnInit {
 
   back() {
     this.navCtrl.back();
+  }
+
+  ionViewWillEnter() {
+    this.authService.disableMenu = true;
   }
 
   setAnswer(value) {
