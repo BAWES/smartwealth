@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AccountService } from 'src/app/providers/logged-in/account.service';
 import { CountryService } from 'src/app/providers/country.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-step1',
@@ -19,6 +20,7 @@ export class Step1Page implements OnInit {
   constructor(
     public router: Router,
     public _fb: FormBuilder,
+    public navCtrl: NavController,
     public countryService: CountryService,
     public accountService: AccountService,
     public authService: AuthService
@@ -60,6 +62,10 @@ export class Step1Page implements OnInit {
   setGender(value) {
     this.form.controls.gender.setValue(value);
     this.form.updateValueAndValidity();
+  }
+
+  back() {
+    this.navCtrl.back();
   }
 
   continue() {

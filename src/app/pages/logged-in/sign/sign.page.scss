@@ -1,0 +1,39 @@
+.sign-document-content {
+    padding-top: 64px;
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    min-height: 100px;
+    overflow: hidden;
+    margin-bottom: 50px;
+    height: 1000px;
+}
+
+.desctiption p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #333333;
+}
+
+.link {
+    cursor: pointer;
+    color: #1439da;
+}
+
+#myHSContainer {
+    margin-top: 50px;
+    height: 100%;
+    width: 100%;
+}
+.x-hellosign-embedded__iframe {
+    min-height: 400px;
+    background-color: #F7F8F9;
+    height: 100%;
+    border: none;
+    min-width: 100%;
+    width: 100px;
+}
+
+.x-hellosign-embedded {
+    height: 100%;
+}

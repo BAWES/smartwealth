@@ -113,6 +113,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/logged-in/personal/step12/step12.module').then( m => m.Step12PageModule)
   },
   {
+    path: 'sign',
+    loadChildren: () => import('./pages/logged-in/sign/sign.module').then( m => m.SignPageModule)
+  },
+  {
     // path: 'pending-profile-sections',
     path: 'pending',
     loadChildren: () => import('./pages/logged-in/pending-profile-sections/pending-profile-sections.module').then( m => m.PendingProfileSectionsPageModule),
@@ -128,6 +132,10 @@ const routes: Routes = [
     data: {
       disableMenu: true
     }
+  },
+  {
+    path: 'sign',
+    loadChildren: () => import('./pages/logged-in/sign/sign.module').then( m => m.SignPageModule)
   }
 
 ];

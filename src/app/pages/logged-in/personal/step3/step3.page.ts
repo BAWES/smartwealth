@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 //services
 import { AccountService } from 'src/app/providers/logged-in/account.service';
 import { CountryService } from 'src/app/providers/country.service';
+import { NavController } from '@ionic/angular';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class Step3Page implements OnInit {
   constructor(
     public router: Router,
     public _fb: FormBuilder,
+    public navCtrl: NavController,
     public countryService: CountryService,
     public accountService: AccountService,
     public authService: AuthService
@@ -81,6 +83,10 @@ export class Step3Page implements OnInit {
   ionViewDidLeave() {
     this.authService.disableMenu = false;
   } 
+
+  back() {
+    this.navCtrl.back();
+  }
 
   continue() {
 

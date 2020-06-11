@@ -1,0 +1,37 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+  <div class="sign-document-content">
+    <div class="desctiption">
+      <p><span>Kindly note that by electronically signing the agreement, it is legally binding and you are responsible
+          for the truthfulness of the information provided. If any of your personal information is misrepresented, you
+          can click</span>&nbsp;<a role="presentation" class="link" href="#"><span>here</span></a>&nbsp;<span>to edit your
+          details. For further questions or inquiries, please contact us through the chat or</span>&nbsp;<a class="link" href="mailto:support@smartwealth.com">support@smartwealth.com</a></p>
+    </div>
+    <div id="myHSContainer">
+      <div class="x-hellosign-embedded">
+        <iframe class="x-hellosign-embedded__iframe" name="x-hellosign-embedded"
+          src="https://www.soundczech.cz/temp/lorem-ipsum.pdf"
+          scrolling="no"></iframe>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+
+  <div class="footer-wrapper">
+
+    <ion-button fill="clear" class="btn-back" (click)="back()">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+
+    <div class="step">
+      <h5>Sign Agreement</h5>
+    </div>
+
+  </div>
+</ion-footer>
