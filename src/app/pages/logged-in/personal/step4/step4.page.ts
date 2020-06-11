@@ -131,7 +131,7 @@ export class Step4Page implements OnInit {
     let params = this.form.value;
 
     this.accountService.saveStep4(params).subscribe(data => {
-      this.router.navigate(['step4']);
+      this.router.navigate(['step5']);
     });    
   }
 }
