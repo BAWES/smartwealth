@@ -117,7 +117,11 @@ export class PlanPage implements OnInit {
   }
 
   continue() {
-    this.router.navigate(['signup']);
+    if(this.authService.isLoggedIn ) {
+      this.router.navigate(['dashboard']);
+    } else {
+      this.router.navigate(['register']);
+    }
   }
 
   async openAssetsInfo(type) {

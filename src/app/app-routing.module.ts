@@ -133,11 +133,33 @@ const routes: Routes = [
       disableMenu: true
     }
   },
-  {
-    path: 'sign',
-    loadChildren: () => import('./pages/logged-in/sign/sign.module').then( m => m.SignPageModule)
-  }
 
+  {
+    path: 'no-internet',
+    loadChildren: () => import('./pages/errors/no-internet/no-internet.module').then(m => m.NoInternetPageModule),
+    data: {
+      disableMenu: true
+    }
+  },
+  {
+    path: 'server-error',
+    loadChildren: () => import('./pages/errors/server-error/server-error.module').then(m => m.ServerErrorPageModule),
+    data: {
+      disableMenu: true
+    }
+  },
+  {
+    path: 'page-not-found',
+    loadChildren: () => import('./pages/errors/not-found/not-found.module').then(m => m.NotFoundPageModule),
+    data: {
+      disableMenu: true
+    }
+  },
+  {
+    path: '**',
+    redirectTo: 'page-not-found',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({
