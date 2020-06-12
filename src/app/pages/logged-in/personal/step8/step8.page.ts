@@ -26,14 +26,14 @@ export class Step8Page implements OnInit {
 
   ngOnInit() {
 
-    let haveRelationship = parseInt(localStorage.getItem('haveRelationship')) > 0 ? localStorage.getItem('haveRelationship') : 2; 
-    let existingClient  = parseInt(localStorage.getItem('existingClient')) > 0 ? localStorage.getItem('existingClient') : 2; 
+    let haveRelationship =localStorage.getItem('haveRelationship'); 
+    let existingClient  = localStorage.getItem('existingClient'); 
 
     this.form = this._fb.group({
       bank: [localStorage.getItem('bank'), Validators.required],
       existingClient: [existingClient],
-      haveRelationship: [haveRelationship, existingClient == 2 ? Validators.required: null],
-      relationship: [localStorage.getItem('relationship'), haveRelationship == 2 ? Validators.required: null]
+      haveRelationship: [haveRelationship, existingClient == '2' ? Validators.required: null],
+      relationship: [localStorage.getItem('relationship'), haveRelationship == '2' ? Validators.required: null]
     }); 
 
     this.form.get('existingClient').valueChanges.subscribe(value => {

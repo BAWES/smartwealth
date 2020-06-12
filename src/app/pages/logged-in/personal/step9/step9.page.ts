@@ -26,13 +26,13 @@ export class Step9Page implements OnInit {
 
   ngOnInit() {
 
-    let isUSCitizen = parseInt(localStorage.getItem('isUSCitizen')) > 0 ? localStorage.getItem('isUSCitizen') : 2; 
+    let isUSCitizen = localStorage.getItem('isUSCitizen'); 
 
     this.form = this._fb.group({
       isUSCitizen: [isUSCitizen, Validators.required],
-      taxPayerIDNumber: [localStorage.getItem('taxPayerIDNumber'), isUSCitizen == 2 ? Validators.required: null],
-      usAddress1: [localStorage.getItem('usAddress1'), isUSCitizen == 2 ? Validators.required: null],
-      usAddress2: [localStorage.getItem('usAddress2'), isUSCitizen == 2 ? Validators.required: null]
+      taxPayerIDNumber: [localStorage.getItem('taxPayerIDNumber'), isUSCitizen == '2' ? Validators.required: null],
+      usAddress1: [localStorage.getItem('usAddress1'), isUSCitizen == '2' ? Validators.required: null],
+      usAddress2: [localStorage.getItem('usAddress2'), isUSCitizen == '2' ? Validators.required: null]
     }); 
 
     this.form.get('isUSCitizen').valueChanges.subscribe(value => {

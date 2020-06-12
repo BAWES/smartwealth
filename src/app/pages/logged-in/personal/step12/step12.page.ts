@@ -39,13 +39,13 @@ export class Step12Page implements OnInit {
 
   ngOnInit() {
 
-    let addPowerOfAttorney = parseInt(localStorage.getItem('addPowerOfAttorney')) > 0 ? localStorage.getItem('addPowerOfAttorney') : 2; 
+    let addPowerOfAttorney = localStorage.getItem('addPowerOfAttorney'); 
 
     this.form = this._fb.group({
       addPowerOfAttorney: [addPowerOfAttorney, Validators.required],
-      powerOfAttorneyName: [localStorage.getItem('powerOfAttorneyName'), addPowerOfAttorney == 2 ? Validators.required: null],
-      powerOfAttorneyNationality: [localStorage.getItem('powerOfAttorneyNationality'), addPowerOfAttorney == 2 ? Validators.required: null],
-      powerOfAttorneyID: [localStorage.getItem('powerOfAttorneyID'), addPowerOfAttorney == 2 ? Validators.required: null],
+      powerOfAttorneyName: [localStorage.getItem('powerOfAttorneyName'), addPowerOfAttorney == '2' ? Validators.required: null],
+      powerOfAttorneyNationality: [localStorage.getItem('powerOfAttorneyNationality'), addPowerOfAttorney == '2' ? Validators.required: null],
+      powerOfAttorneyID: [localStorage.getItem('powerOfAttorneyID'), addPowerOfAttorney == '2' ? Validators.required: null],
     }); 
 
     this.form.get('addPowerOfAttorney').valueChanges.subscribe(value => {

@@ -30,7 +30,7 @@ export class Step3Page implements OnInit {
 
   ngOnInit() {
 
-    let isGuardianshpAccount = localStorage.getItem('isGuardianshpAccount') ? parseInt(localStorage.getItem('isGuardianshpAccount')): null;
+    let isGuardianshpAccount = localStorage.getItem('isGuardianshpAccount');
 
     this.form = this._fb.group({
       isGuardianshpAccount: [isGuardianshpAccount, Validators.required],
