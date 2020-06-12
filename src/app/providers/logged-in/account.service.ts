@@ -93,7 +93,7 @@ export class AccountService {
   saveStep7(params) {
 
     localStorage.setItem('annualIncome', params.annualIncome);
-    localStorage.setItem('incomeSource', params.incomeSource);
+    localStorage.setItem('incomeSource', JSON.stringify(params.incomeSource));
     localStorage.setItem('totalInvestment', params.totalInvestment);
 
     return of({

@@ -35,9 +35,23 @@ export class Step7Page implements OnInit {
 
   ngOnInit() {
 
+    let incomeSource;
+     
+    if(localStorage.getItem('incomeSource')) {
+      try {
+        incomeSource = JSON.parse(localStorage.getItem('incomeSource'));
+      } catch {
+        
+      }
+    }
+
+    if(!incomeSource) {
+      incomeSource = [];
+    }
+
     this.form = this._fb.group({
       annualIncome: [localStorage.getItem('annualIncome'), Validators.required],
-      incomeSource: [localStorage.getItem('incomeSource'), Validators.required],
+      incomeSource: [incomeSource, Validators.required],
       totalInvestment: [localStorage.getItem('totalInvestment'), Validators.required],
     }); 
   } 
