@@ -30,6 +30,7 @@
 .stage {
   ul {
     padding: 0;
+
     li {
       list-style: none;
       position: relative;
@@ -45,6 +46,7 @@
         font-size: 23px;
       }
     }
+
     li.done {
       ion-icon {
         color: green;
@@ -53,7 +55,7 @@
   }
 }
 
-.row.right{
+.row.right {
   width: 50%;
   float: left;
 
@@ -61,15 +63,22 @@
     font-weight: bold;
     font-size: 38px;
   }
+
   .step {
     border-left: 1px solid;
     position: relative;
     padding-bottom: 25px;
 
-    p, small {
+    h3 {
+      margin-top: 0;
+    }
+
+    p,
+    small {
       padding-left: 39px;
       font-size: 16px;
       color: grey;
+      display: block;
     }
 
     .count {
@@ -85,17 +94,17 @@
       font-style: inherit;
       overflow: hidden;
       background: #fff;
+
       .counter {
         font-style: normal;
       }
     }
 
-
     .step-timer {
       font-size: 15px;
       color: gray;
       position: absolute;
-      left: -27px;
+      left: -26px;
       top: -9px;
 
       .done {
@@ -116,12 +125,16 @@
       list-style: none;
       font-size: 18px;
       margin-bottom: 15px;
-      ion-icon{
+
+      ion-icon {
         color: gray;
         margin-right: 10px;
+        position: relative;
+        top: 3px;
       }
     }
   }
+
   .step.current {
     .count {
       background: #1439da;
@@ -129,6 +142,7 @@
     }
   }
 }
+
 .upload-doc {
   width: 550px;
   text-align: center;
@@ -140,21 +154,24 @@
     padding: 69px;
     border-radius: 19px;
     margin-bottom: 27px;
+
     ion-icon {
       font-size: 90px;
-      color:#1439da;
+      color: #1439da;
     }
   }
+
   .btn-controller {
     .btn-delete {
       background: #fff;
       --background: #fff;
       border-radius: 5px;
-      border:1px solid gray;
-      color:gray;
-      float:left;
+      border: 1px solid gray;
+      color: gray;
+      float: left;
       width: 150px;
     }
+
     .btn-continue {
       background: #1439da;
       --background: #1439da;
@@ -164,10 +181,11 @@
     }
   }
 }
+
 .no-border {
-  border: none!important;
+  border: none !important;
 }
 
 li.uploaded {
-  color:#1439da;
+  color: #1439da;
 }

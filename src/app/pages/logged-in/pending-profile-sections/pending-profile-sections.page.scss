@@ -5,6 +5,12 @@ ion-footer {
   }
 }
 
+h3 ion-icon {
+  position: relative;
+  top: 4px;
+  left: 3px;
+}
+
 .container {
   padding: 5% 16%;
   margin: 0 auto;
@@ -85,7 +91,6 @@ ion-footer {
 
 .start-btn {
   --background: #1439da;
-  background: #1439da;
   --border-radius: 58px;
   height: 52px;
   width: 177px;
