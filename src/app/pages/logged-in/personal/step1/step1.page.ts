@@ -28,7 +28,7 @@ export class Step1Page implements OnInit {
 
   ngOnInit() {
 
-    let gender = localStorage.getItem('gender')? parseInt(localStorage.getItem('gender')): null;
+    let gender = localStorage.getItem('gender');
 
     this.form = this._fb.group({
       gender: [gender, Validators.required],

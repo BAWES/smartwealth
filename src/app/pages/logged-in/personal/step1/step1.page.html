@@ -14,52 +14,48 @@
       </div>
 
       <form [formGroup]="form" class="form">
-        
-        <div class="field-row">
+
+        <div class="field-row-2">
           <div class="label radio-buttons-title"><span>Gender</span></div>
-          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.gender == 1" role="presentation" (click)="setGender(1)">
-            <div class="radio-button small radio-gender" [class.checked]="form.value.gender == 1">
-              <div></div>
+          <ion-radio-group formControlName="gender">
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="1"></ion-radio>
+                <ion-label>Male</ion-label>
+              </ion-item>
             </div>
-            <span>Male</span>
-          </div>
-          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.gender == 2" role="presentation" (click)="setGender(2)">
-            <div class="radio-button small" [class.checked]="form.value.gender == 2">
-              <div></div>
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="2"></ion-radio>
+                <ion-label>Female</ion-label>
+              </ion-item>
             </div>
-            <span>Female</span>
-          </div>          
+          </ion-radio-group>
         </div>
 
         <div class="field-row">
           <div class="signup-input">
             <ion-label>First name</ion-label>
-            <ion-input placeholder="e.g Bruce" autocomplete="on" formControlName="firstName"
-                        type="text"></ion-input> 
+            <ion-input placeholder="e.g Bruce" autocomplete="on" formControlName="firstName" type="text"></ion-input>
           </div>
         </div>
 
         <div class="field-row">
           <div class="inline-input signup-input">
             <ion-label>Middle name</ion-label>
-            <ion-input placeholder="e.g Lee" autocomplete="on" formControlName="middleName"
-                        type="text"></ion-input> 
+            <ion-input placeholder="e.g Lee" autocomplete="on" formControlName="middleName" type="text"></ion-input>
           </div>
           <div class="inline-input signup-input">
             <ion-label>Last name</ion-label>
-            <ion-input placeholder="e.g Wayne" autocomplete="on" formControlName="lastName"
-                        type="text"></ion-input> 
+            <ion-input placeholder="e.g Wayne" autocomplete="on" formControlName="lastName" type="text"></ion-input>
           </div>
         </div>
         <div class="field-row">
           <div class="custom-dropdown inline-dropdown">
             <ion-label>Country of birth</ion-label>
-            <select-search-input formControlName="country"
-            placeholder="Select Country" 
-            [collection]="countrylistData" 
-            valueAttr="country_name_en" 
-            labelAttr="country_name_en">
-          </select-search-input>
+            <select-search-input formControlName="country" placeholder="Select Country" [collection]="countrylistData"
+              valueAttr="country_name_en" labelAttr="country_name_en">
+            </select-search-input>
           </div>
           <div class="custom-date-picker inline-date-picker">
             <ion-label>Date of birth</ion-label>
@@ -69,19 +65,20 @@
         <div class="field-row">
           <div class=" signup-input">
             <ion-label>Civil ID number</ion-label>
-            <ion-input placeholder="e.g 212345859000" autocomplete="on" formControlName="civilId"
-            type="text"></ion-input>  
+            <ion-input placeholder="e.g 212345859000" autocomplete="on" formControlName="civilId" type="text">
+            </ion-input>
           </div>
         </div>
         <div class="field-row">
           <div class="inline-input signup-input">
             <ion-label>Civil ID serial number</ion-label>
-            <ion-input placeholder="e.g 1234567890" autocomplete="on" formControlName="civilIdSerialNumber"
-            type="text"></ion-input>
+            <ion-input placeholder="e.g 1234567890" autocomplete="on" formControlName="civilIdSerialNumber" type="text">
+            </ion-input>
           </div>
           <div class="custom-date-picker inline-date-picker">
             <ion-label>Civil ID expiry date</ion-label>
-            <ion-datetime formControlName="civilIdExpiryDate" displayFormat="DD/MM/YYYY" placeholder="dd/mm/yyyy"></ion-datetime>
+            <ion-datetime formControlName="civilIdExpiryDate" displayFormat="DD/MM/YYYY" placeholder="dd/mm/yyyy">
+            </ion-datetime>
           </div>
         </div>
       </form>

@@ -16,22 +16,22 @@
 
       <form [formGroup]="form" class="form">
 
-        <div class="field-row">
+        <div class="field-row-2">
           <div class="label radio-buttons-title"><span>Do you pay taxes in another country?</span></div>
-          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.payTaxInAnotherCountry == 1"
-            role="presentation" (click)="setPayTaxInAnotherCountry(1)">
-            <div class="radio-button small radio-gender" [class.checked]="form.value.payTaxInAnotherCountry == 1">
-              <div></div>
+          <ion-radio-group formControlName="payTaxInAnotherCountry">
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="1"></ion-radio>
+                <ion-label>Yes</ion-label>
+              </ion-item>
             </div>
-            <span>Yes</span>
-          </div>
-          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.payTaxInAnotherCountry == 2"
-            role="presentation" (click)="setPayTaxInAnotherCountry(2)">
-            <div class="radio-button small" [class.checked]="form.value.payTaxInAnotherCountry == 2">
-              <div></div>
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="2"></ion-radio>
+                <ion-label>No</ion-label>
+              </ion-item>
             </div>
-            <span>No</span>
-          </div>
+          </ion-radio-group>
         </div>
 
         <div *ngIf="['1', 1].indexOf(form.value.payTaxInAnotherCountry) > -1">
@@ -59,7 +59,7 @@
             </ion-card-content>
           </ion-card>
                     
-          <ion-button fill="clear" (click)="addAnotherCountry()">
+          <ion-button fill="clear" class="btn-add-country" (click)="addAnotherCountry()">
             <ion-icon name="add-circle-outline"></ion-icon> Add another tax country
           </ion-button>
           

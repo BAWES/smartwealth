@@ -156,3 +156,12 @@ ion-popover {
         height: calc(100vh - 3px)
     }
 }
+
+.field-row-2 ion-item {
+    --padding-start: 0;
+
+    ion-radio[slot="start"] {
+        margin-right: 10px;
+    }
+}
+

@@ -46,8 +46,8 @@ export class Step4Page implements OnInit {
 
   ngOnInit() {
 
-    let isPoliticallyExposed = localStorage.getItem('isPoliticallyExposed') ? parseInt(localStorage.getItem('isPoliticallyExposed')): null;
-    let havePoliticalPosition = localStorage.getItem('havePoliticalPosition') ? parseInt(localStorage.getItem('havePoliticalPosition')): null;
+    let isPoliticallyExposed = localStorage.getItem('isPoliticallyExposed');
+    let havePoliticalPosition = localStorage.getItem('havePoliticalPosition');
 
     this.form = this._fb.group({
       isPoliticallyExposed: [isPoliticallyExposed, Validators.required],

@@ -39,15 +39,15 @@ export class Step11Page implements OnInit {
 
   ngOnInit() {
 
-    let applyForSomeoneElse = parseInt(localStorage.getItem('applyForSomeoneElse')) > 0 ? localStorage.getItem('applyForSomeoneElse') : 2; 
+    let applyForSomeoneElse = localStorage.getItem('applyForSomeoneElse'); 
 
     this.form = this._fb.group({
       applyForSomeoneElse: [applyForSomeoneElse, Validators.required],
-      beneficiaryName: [localStorage.getItem('beneficiaryName'), applyForSomeoneElse == 2 ? Validators.required: null],
-      beneficiaryRelation: [localStorage.getItem('beneficiaryRelation'), applyForSomeoneElse == 2 ? Validators.required: null],
-      beneficiaryNationality: [localStorage.getItem('beneficiaryNationality'), applyForSomeoneElse == 2 ? Validators.required: null],
-      beneficiaryAddress: [localStorage.getItem('beneficiaryAddress'), applyForSomeoneElse == 2 ? Validators.required: null],
-      beneficiaryID: [localStorage.getItem('beneficiaryID'), applyForSomeoneElse == 2 ? Validators.required: null]
+      beneficiaryName: [localStorage.getItem('beneficiaryName'), applyForSomeoneElse == '2' ? Validators.required: null],
+      beneficiaryRelation: [localStorage.getItem('beneficiaryRelation'), applyForSomeoneElse == '2' ? Validators.required: null],
+      beneficiaryNationality: [localStorage.getItem('beneficiaryNationality'), applyForSomeoneElse == '2' ? Validators.required: null],
+      beneficiaryAddress: [localStorage.getItem('beneficiaryAddress'), applyForSomeoneElse == '2' ? Validators.required: null],
+      beneficiaryID: [localStorage.getItem('beneficiaryID'), applyForSomeoneElse == '2' ? Validators.required: null]
     }); 
 
     this.form.get('applyForSomeoneElse').valueChanges.subscribe(value => {

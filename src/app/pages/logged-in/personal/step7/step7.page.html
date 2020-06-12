@@ -22,30 +22,34 @@
 
       <form [formGroup]="form" class="form">
 
-        <div class="field-row annual-income">
+        <div class="field-row-2 annual-income">
           <div class="label radio-buttons-title"><span>Annual income (in KD)</span></div>
-          <div class="radio-box">
-            <div class="radio-container kyc-radio-button income-radio " role="presentation" (click)="setTotalIncome('5,000-20,000')" [class.radio-checked]="form.value.annualIncome == '5,000-20,000'">
-              <div class="radio-button small" [class.checked]="form.value.annualIncome == '5,000-20,000'">
-                <div></div>
-              </div><span>5,000-20,000</span>
+          <ion-radio-group formControlName="annualIncome">
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="5,000-20,000"></ion-radio>
+                <ion-label>5,000-20,000</ion-label>
+              </ion-item>
             </div>
-            <div class="radio-container radio-checked kyc-radio-button income-radio " role="presentation" (click)="setTotalIncome('20,000-50,000')" [class.radio-checked]="form.value.annualIncome == '20,000-50,000'">
-              <div class="radio-button checked small" [class.checked]="form.value.annualIncome == '20,000-50,000'">
-                <div></div>
-              </div><span>20,000-50,000</span>
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="20,000-50,000"></ion-radio>
+                <ion-label>20,000-50,000</ion-label>
+              </ion-item>
             </div>
-            <div class="radio-container kyc-radio-button income-radio " role="presentation" (click)="setTotalIncome('50,000-250,000')" [class.radio-checked]="form.value.annualIncome == '50,000-250,000'">
-              <div class="radio-button small" [class.checked]="form.value.annualIncome == '50,000-250,000'">
-                <div></div>
-              </div><span>50,000-250,000</span>
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="50,000-250,000"></ion-radio>
+                <ion-label>50,000-250,000</ion-label>
+              </ion-item>
             </div>
-            <div class="radio-container kyc-radio-button income-radio " role="presentation" (click)="setTotalIncome('Above 250,000')" [class.radio-checked]="form.value.annualIncome == 'Above 250,000'">
-              <div class="radio-button small" [class.checked]="form.value.annualIncome == 'Above 250,000'">
-                <div></div>
-              </div><span>Above 250,000</span>
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="Above 250,000"></ion-radio>
+                <ion-label>Above 250,000</ion-label>
+              </ion-item>
             </div>
-          </div>
+          </ion-radio-group>
         </div>
 
         <div class="field-row">
@@ -57,36 +61,45 @@
           </div>
         </div>
 
-        <div class="field-row liquid-cash">
+        <div class="field-row-2 liquid-cash">
           <div class="label radio-buttons-title"><span>What is the total value of your cash and liquid investments (in
               USD)?</span></div>
-          <div class="liquid-radio-box">
-            <div class="radio-container kyc-radio-button liquid-radio" (click)="setTotalInv('Less than 50,000')" [class.radio-checked]="form.value.totalInvestment == 'Less than 50,000'" role="presentation">
-              <div class="radio-button small" [class.checked]="form.value.totalInvestment == 'Less than 50,000'">
-                <div></div>
-              </div><span>Less than 50,000</span>
+
+          <ion-radio-group formControlName="totalInvestment">
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="Less than 50,000"></ion-radio>
+                <ion-label>Less than 50,000</ion-label>
+              </ion-item>
             </div>
-            <div class="radio-container kyc-radio-button liquid-radio" (click)="setTotalInv('50,000 to 330,000')" [class.radio-checked]="form.value.totalInvestment == '50,000 to 330,000'" role="presentation">
-              <div class="radio-button small" [class.checked]="form.value.totalInvestment == '50,000 to 330,000'">
-                <div></div>
-              </div><span>50,000 to 330,000</span>
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="50,000 to 330,000"></ion-radio>
+                <ion-label>50,000 to 330,000</ion-label>
+              </ion-item>
             </div>
-            <div class="radio-container kyc-radio-button liquid-radio" (click)="setTotalInv('330,000 to 1,000,000')" [class.radio-checked]="form.value.totalInvestment == '330,000 to 1,000,000'" role="presentation">
-              <div class="radio-button small" [class.checked]="form.value.totalInvestment == '330,000 to 1,000,000'">
-                <div></div>
-              </div><span>330,000 to 1,000,000</span>
+
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="330,000 to 1,000,000"></ion-radio>
+                <ion-label>330,000 to 1,000,000</ion-label>
+              </ion-item>
             </div>
-            <div class="radio-container kyc-radio-button liquid-radio" (click)="setTotalInv('1,000,000 to 5,000,000')" [class.radio-checked]="form.value.totalInvestment == '1,000,000 to 5,000,000'" role="presentation">
-              <div class="radio-button small" [class.checked]="form.value.totalInvestment == '1,000,000 to 5,000,000'">
-                <div></div>
-              </div><span>1,000,000 to 5,000,000</span>
+
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="1,000,000 to 5,000,000"></ion-radio>
+                <ion-label>1,000,000 to 5,000,000</ion-label>
+              </ion-item>
             </div>
-            <div class="radio-container kyc-radio-button liquid-radio" (click)="setTotalInv('Greater than 5,000,000')" [class.radio-checked]="form.value.totalInvestment == 'Greater than 5,000,000'" role="presentation">
-              <div class="radio-button small" [class.checked]="form.value.totalInvestment == 'Greater than 5,000,000'">
-                <div></div>
-              </div><span>Greater than 5,000,000</span>
+
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="Greater than 5,000,000"></ion-radio>
+                <ion-label>Greater than 5,000,000</ion-label>
+              </ion-item>
             </div>
-          </div>
+          </ion-radio-group>
         </div>
 
       </form>

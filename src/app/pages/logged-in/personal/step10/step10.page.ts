@@ -26,14 +26,12 @@ export class Step10Page implements OnInit {
 
   ngOnInit() {
 
-    let payTaxInAnotherCountry = parseInt(localStorage.getItem('payTaxInAnotherCountry')) > 0 ? localStorage.getItem('payTaxInAnotherCountry') : 2; 
+    let payTaxInAnotherCountry = localStorage.getItem('payTaxInAnotherCountry'); 
 
     this.form = this._fb.group({
       payTaxInAnotherCountry: [payTaxInAnotherCountry, Validators.required],
       taxCountry: new FormArray([]),
     });
-
-    console.log( localStorage.getItem('taxCountry'));
 
     let taxCountry = [];
     
@@ -54,7 +52,14 @@ export class Step10Page implements OnInit {
     }
     
     this.form.get('payTaxInAnotherCountry').valueChanges.subscribe(value => {
-      if(value && (!this.form.value.taxCountry || this.form.value.taxCountry.length == 0)) {
+
+      if(value != "1") {
+        return;
+      }
+
+      this.form.controls.taxCountry.enable();
+
+      if(!this.form.value.taxCountry || this.form.value.taxCountry.length == 0) {
         this.addAnotherCountry();
       }
     });
@@ -90,7 +95,7 @@ export class Step10Page implements OnInit {
   continue() {
 
     if([1, '1'].indexOf(this.form.value.payTaxInAnotherCountry) == -1) {
-      this.form.controls.taxCountry.setValue([]); 
+      this.form.controls.taxCountry.disable();
     } 
 
     let params = this.form.value;

@@ -16,22 +16,22 @@
 
       <form [formGroup]="form" class="form">
 
-        <div class="field-row">
+        <div class="field-row-2">
           <div class="label radio-buttons-title"><span>Are you a US citizen?</span></div>
-          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.isUSCitizen == 1"
-            role="presentation" (click)="setIsUSCitizen(1)">
-            <div class="radio-button small radio-gender" [class.checked]="form.value.isUSCitizen == 1">
-              <div></div>
+          <ion-radio-group formControlName="isUSCitizen">
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="1"></ion-radio>
+                <ion-label>Yes</ion-label>
+              </ion-item>
             </div>
-            <span>Yes</span>
-          </div>
-          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.isUSCitizen == 2"
-            role="presentation" (click)="setIsUSCitizen(2)">
-            <div class="radio-button small" [class.checked]="form.value.isUSCitizen == 2">
-              <div></div>
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="2"></ion-radio>
+                <ion-label>No</ion-label>
+              </ion-item>
             </div>
-            <span>No</span>
-          </div>
+          </ion-radio-group>
         </div>
 
         <div *ngIf="['1', 1].indexOf(form.value.isUSCitizen) > -1">

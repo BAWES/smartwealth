@@ -41,36 +41,40 @@
           </div>
         </div>
 
-        <div class="field-row">
+        <div class="field-row-2">
           <div class="label radio-buttons-title"><span>Are you an existing NBK banking client?</span></div>
-          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.existingClient == 1" role="presentation" (click)="setExistingClient(1)">
-            <div class="radio-button small radio-gender" [class.checked]="form.value.existingClient == 1">
-              <div></div>
+          <ion-radio-group formControlName="existingClient">
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="1"></ion-radio>
+                <ion-label>Yes</ion-label>
+              </ion-item>
             </div>
-            <span>Yes</span>
-          </div>
-          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.existingClient == 2" role="presentation" (click)="setExistingClient(2)">
-            <div class="radio-button small" [class.checked]="form.value.existingClient == 2">
-              <div></div>
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="2"></ion-radio>
+                <ion-label>No</ion-label>
+              </ion-item>
             </div>
-            <span>No</span>
-          </div>          
+          </ion-radio-group>
         </div>
 
-        <div class="field-row" *ngIf="['1', 1].indexOf(form.value.existingClient) > -1">
+        <div class="field-row-2" *ngIf="['1', 1].indexOf(form.value.existingClient) > -1">
           <div class="label radio-buttons-title"><span>Have you been assisted or referred to NBK Capital SmartWealth by a NBK relationship manager?</span></div>
-          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.haveRelationship == 1" role="presentation" (click)="setHaveRelationship(1)">
-            <div class="radio-button small radio-gender" [class.checked]="form.value.haveRelationship == 1">
-              <div></div>
+          <ion-radio-group formControlName="haveRelationship">
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="1"></ion-radio>
+                <ion-label>Yes</ion-label>
+              </ion-item>
             </div>
-            <span>Yes</span>
-          </div>
-          <div class="radio-container kyc-radio-button" [class.radio-checked]="form.value.haveRelationship == 2" role="presentation" (click)="setHaveRelationship(2)">
-            <div class="radio-button small" [class.checked]="form.value.haveRelationship == 2">
-              <div></div>
+            <div class="radio-container kyc-radio-button">
+              <ion-item lines="none">
+                <ion-radio slot="start" value="2"></ion-radio>
+                <ion-label>No</ion-label>
+              </ion-item>
             </div>
-            <span>No</span>
-          </div>          
+          </ion-radio-group>
         </div>
         
         <div class="field-row" *ngIf="['1', 1].indexOf(form.value.haveRelationship) > -1">
