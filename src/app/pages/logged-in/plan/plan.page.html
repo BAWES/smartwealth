@@ -19,9 +19,9 @@
       <h3 class="risk-title">Your Risk Tolerance </h3>
 
       <div class="step-input">
-        <ion-icon name="remove-circle-outline"></ion-icon>
-        <span class="value"> 6 </span>
-        <ion-icon name="add-circle-outline"></ion-icon>
+        <ion-icon name="remove-circle-outline" (click)="decreaseRisk()"></ion-icon>
+        <span class="value"> {{ riskFactor }} </span>
+        <ion-icon name="add-circle-outline" (click)="increaseRisk()"></ion-icon>
       </div>
       
       <h4 class="recommend-value">We recommend 6</h4>
@@ -38,41 +38,41 @@
           <div class="entry" role="presentation">
             <div class="type">
               <div class="label" (click)="openAssetsInfo('fixed')">Fixed Income <ion-icon name="help-circle-outline"></ion-icon></div>
-              <div class="value">29%</div>
+              <div class="value">{{ assetsAllocation[riskFactor - 1]['fixed'] }} %</div>
             </div> 
-            <ion-progress-bar color="primary" value="0.29"></ion-progress-bar>
+            <ion-progress-bar color="primary" value="{{ assetsAllocation[riskFactor - 1]['fixed']/100 }}"></ion-progress-bar>
           </div>
           
           <div class="entry" role="presentation">
             <div class="type">
               <div class="label"  (click)="openAssetsInfo('developed-market')">Developed Market Stocks <ion-icon name="help-circle-outline"></ion-icon></div>
-              <div class="value">60%</div>
+              <div class="value">{{ assetsAllocation[riskFactor - 1]['developed-market'] }}%</div>
             </div> 
-            <ion-progress-bar color="primary" value="0.60"></ion-progress-bar>
+            <ion-progress-bar color="primary" value="{{ assetsAllocation[riskFactor - 1]['developed-market']/100 }}"></ion-progress-bar>
           </div>
         
           <div class="entry" role="presentation">
             <div class="type">
               <div class="label"  (click)="openAssetsInfo('emerging-market')">Emerging Market Stocks  <ion-icon name="help-circle-outline"></ion-icon></div>
-              <div class="value">9%</div>
+              <div class="value">{{ assetsAllocation[riskFactor - 1]['emerging-market'] }}%</div>
             </div> 
-            <ion-progress-bar color="secondary" value="0.09"></ion-progress-bar>
+            <ion-progress-bar color="secondary" value="{{ assetsAllocation[riskFactor - 1]['emerging-market']/100 }}"></ion-progress-bar>
           </div> 
 
           <div class="entry" role="presentation">
             <div class="type">
               <div class="label" (click)="openAssetsInfo('real-estate')">Real Estate  <ion-icon name="help-circle-outline"></ion-icon></div>
-              <div class="value">0%</div>
+              <div class="value">{{ assetsAllocation[riskFactor - 1]['real-estate'] }}%</div>
             </div> 
-            <ion-progress-bar color="secondary" value="0.0"></ion-progress-bar>
+            <ion-progress-bar color="secondary" value="{{ assetsAllocation[riskFactor - 1]['real-estate']/100 }}"></ion-progress-bar>
           </div> 
 
           <div class="entry" role="presentation">
             <div class="type">
               <div class="label" (click)="openAssetsInfo('cash')">Cash  <ion-icon name="help-circle-outline"></ion-icon></div>
-              <div class="value">2%</div>
+              <div class="value">{{ assetsAllocation[riskFactor - 1]['cash'] }}%</div>
             </div> 
-            <ion-progress-bar color="warning" value="0.02"></ion-progress-bar>
+            <ion-progress-bar color="warning" value="{{ assetsAllocation[riskFactor - 1]['cash']/100 }}"></ion-progress-bar>
           </div> 
 
         </div>
@@ -98,12 +98,10 @@
       Change my answers
     </ion-button>
       
-    <!--
     <div class="step ion-text-center">
       <h5>Your Investment Proposal is ready </h5>
       <ion-button fill="clear" >Save for later? </ion-button>
-    </div>
-    -->
+    </div>    
 
     <ion-button (click)="continue()" class="btn-continue" [disabled]="!form || form.invalid">
       Continue

@@ -38,9 +38,13 @@ export class Step10Page implements OnInit {
     let taxCountry = [];
     
     try {
-      taxCountry = JSON.parse(localStorage.getItem('taxCountry'));
+      if(localStorage.getItem('taxCountry'))
+        taxCountry = JSON.parse(localStorage.getItem('taxCountry'));
     } catch (error) {      
     } 
+
+    if(!taxCountry)
+      taxCountry = [];
 
     for(let a of taxCountry) {
       this.taxCountry.push(this._fb.group({

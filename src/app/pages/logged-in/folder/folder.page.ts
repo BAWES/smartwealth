@@ -23,4 +23,8 @@ export class FolderPage implements OnInit {
     this.authService.disableMenu = false;
   }
 
+  ionViewWillLeave() {
+    this.authService.disableMenu = true;
+  }
+
 }

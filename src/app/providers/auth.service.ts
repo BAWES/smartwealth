@@ -34,7 +34,8 @@ export class AuthService implements CanActivate {
   // Logged in agent details
   public name = 'Khalid';
   public email = 'Khalid@gmail.com';
-  public disableMenu = false;
+  
+  public disableMenu = true;
 
   constructor(
       public router: Router,
