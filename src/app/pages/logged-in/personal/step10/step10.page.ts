@@ -53,14 +53,16 @@ export class Step10Page implements OnInit {
     
     this.form.get('payTaxInAnotherCountry').valueChanges.subscribe(value => {
 
-      if(value != "1") {
-        return;
-      }
+      if(value == "1") {
 
-      this.form.controls.taxCountry.enable();
+        if(!this.form.value.taxCountry || this.form.value.taxCountry.length == 0) {
+          this.addAnotherCountry();
+        }
+      } else {
 
-      if(!this.form.value.taxCountry || this.form.value.taxCountry.length == 0) {
-        this.addAnotherCountry();
+        for(let index in this.taxCountry.controls) {
+          this.taxCountry.removeAt(parseInt(index));
+        }
       }
     });
   } 
@@ -93,10 +95,6 @@ export class Step10Page implements OnInit {
   }
 
   continue() {
-
-    if([1, '1'].indexOf(this.form.value.payTaxInAnotherCountry) == -1) {
-      this.form.controls.taxCountry.disable();
-    } 
 
     let params = this.form.value;
 
