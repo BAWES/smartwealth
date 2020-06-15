@@ -1,3 +1,9 @@
+.kyc-content {
+    padding-top: 36px;
+}
+.kyc-content.left {
+    padding-left: 113px;
+}
 
 .form {
     //width: 50%;
@@ -210,11 +216,14 @@ ion-label {
     display: inline-block;
 }
 
+
 @media only screen and (max-width: 800px) {
-    .step-flow {
-        display: none;
+    .kyc-content {
+        padding-top: 0;
     }
-    ion-footer ion-progress-bar {
-        margin-bottom: 1px;
+    .kyc-content.left {
+        padding-left: 0;
+        border-bottom: 1px solid gray;
+        margin-bottom: 21px;
     }
 }

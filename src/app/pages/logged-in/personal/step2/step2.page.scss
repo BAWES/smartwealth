@@ -1,14 +1,10 @@
 .kyc-content {
-    width: 100%;
-    max-width: 80%;
-    margin: 0 auto;
-    padding-top: 64px;
+    padding-top: 36px;
 }
-
+.kyc-content.left {
+    padding-left: 113px;
+}
 .form {
-    width: 50%;
-    float: left;
-
     .field-row {
         display: inline-block;
         width: 100%;
@@ -139,11 +135,7 @@
     }
 }
 
-.kyc-content .description {
-    padding-right: 150px;
-    width: 50%;
-    float: left;
-
+.description {
     .title {
         font-size: 28px;
         font-weight: bold;
@@ -159,16 +151,6 @@
         margin-bottom: 20px;
         max-width: 400px;
     }
-}
-
-.content-wrapper {
-    display: inline-block;
-    width: 100%;
-}
-
-.inline-dropdown:first-child {
-    margin-right: 10%;
-    float: left;
 }
 
 .custom-date-picker.inline-date-picker,
@@ -215,4 +197,14 @@ ion-label {
     color: #333;
     margin-bottom: 8px;
     display: flex;
+}
+@media only screen and (max-width: 800px) {
+    .kyc-content {
+        padding-top: 0;
+    }
+    .kyc-content.left {
+        padding-left: 0;
+        border-bottom: 1px solid gray;
+        margin-bottom: 21px;
+    }
 }

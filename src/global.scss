@@ -210,3 +210,13 @@ ion-header.add-border:after {
 .clear-header ion-toolbar {
     --border-width: 0 !important;
 }
+
+
+@media only screen and (max-width: 800px) {
+    .step-flow {
+        display: none!important;
+    }
+    ion-footer ion-progress-bar {
+        margin-bottom: 1px;
+    }
+}

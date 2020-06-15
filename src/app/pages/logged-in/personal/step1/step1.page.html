@@ -7,7 +7,7 @@
   <ion-grid>
     <ion-row>
       <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
-        <div class="kyc-content">
+        <div class="kyc-content left">
           <div class="content-wrapper">
             <div class="description">
               <div class="title"><span>Personal Information</span></div>
@@ -18,7 +18,8 @@
         </div>
       </ion-col>
       <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
-        <div class="content-wrapper">
+        <div class="kyc-content right">
+          <div class="content-wrapper">
             <form [formGroup]="form" class="form">
 
               <div class="field-row-2">
@@ -89,6 +90,7 @@
               </div>
             </form>
       </div><!-- END .content-wrapper -->
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
