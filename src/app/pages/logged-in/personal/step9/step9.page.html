@@ -2,66 +2,73 @@
   <app-header></app-header>
 </ion-header>
 
-<ion-content>
-
-  <div class="kyc-content">
-
-    <div class="content-wrapper">
-      <div class="description">
-        <div class="title"><span>Taxes & Beneficiaries</span></div>
-        <p><span>Complete the additional information requirements to finalize your account details. Questions will require the sharing of citizenship, tax and account beneficiary details.
-          </span>
-        </p>
-      </div>
-
-      <form [formGroup]="form" class="form">
-
-        <div class="field-row-2">
-          <div class="label radio-buttons-title"><span>Are you a US citizen?</span></div>
-          <ion-radio-group formControlName="isUSCitizen">
-            <div class="radio-container kyc-radio-button">
-              <ion-item lines="none">
-                <ion-radio slot="start" value="1"></ion-radio>
-                <ion-label>Yes</ion-label>
-              </ion-item>
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
+        <div class="kyc-content left">
+          <div class="content-wrapper">
+            <div class="description">
+              <div class="title"><span>Taxes & Beneficiaries</span></div>
+              <p><span>Complete the additional information requirements to finalize your account details. Questions will require the sharing of citizenship, tax and account beneficiary details.
+                </span>
+              </p>
             </div>
-            <div class="radio-container kyc-radio-button">
-              <ion-item lines="none">
-                <ion-radio slot="start" value="2"></ion-radio>
-                <ion-label>No</ion-label>
-              </ion-item>
-            </div>
-          </ion-radio-group>
-        </div>
+          </div><!-- END .content-wrapper -->
+        </div><!-- END .kyc-content -->
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
+        <div class="kyc-content right">
+            <form [formGroup]="form" class="form">
 
-        <div *ngIf="['1', 1].indexOf(form.value.isUSCitizen) > -1">
+              <div class="field-row-2">
+                <div class="label radio-buttons-title"><span>Are you a US citizen?</span></div>
+                <ion-radio-group formControlName="isUSCitizen">
+                  <div class="radio-container kyc-radio-button">
+                    <ion-item lines="none">
+                      <ion-radio mode="md" slot="start" value="1"></ion-radio>
+                      <ion-label>Yes</ion-label>
+                    </ion-item>
+                  </div>
+                  <div class="radio-container kyc-radio-button">
+                    <ion-item lines="none">
+                      <ion-radio mode="md" slot="start" value="2"></ion-radio>
+                      <ion-label>No</ion-label>
+                    </ion-item>
+                  </div>
+                </ion-radio-group>
+              </div>
 
-          <div class="field-row">
-            <div class=" signup-input">
-              <ion-label>Taxpayer identification number</ion-label>
-              <ion-input autocomplete="on" formControlName="taxPayerIDNumber"></ion-input>
-            </div>
-          </div>
-          
-          <div class="field-row">
-            <div class=" signup-input">
-              <ion-label>US address 1</ion-label>
-              <ion-input autocomplete="on" formControlName="usAddress1"></ion-input>
-            </div>
-          </div>
+              <div *ngIf="['1', 1].indexOf(form.value.isUSCitizen) > -1">
 
-          <div class="field-row">
-            <div class=" signup-input">
-              <ion-label>US address 2</ion-label>
-              <ion-input autocomplete="on" formControlName="usAddress2"></ion-input>
-            </div>
-          </div>
+                <div class="field-row">
+                  <div class=" signup-input">
+                    <ion-label>Taxpayer identification number</ion-label>
+                    <ion-input autocomplete="on" formControlName="taxPayerIDNumber"></ion-input>
+                  </div>
+                </div>
 
-        </div>
+                <div class="field-row">
+                  <div class=" signup-input">
+                    <ion-label>US address 1</ion-label>
+                    <ion-input autocomplete="on" formControlName="usAddress1"></ion-input>
+                  </div>
+                </div>
 
-      </form>
-    </div><!-- END .content-wrapper -->
-  </div><!-- END .kyc-content -->
+                <div class="field-row">
+                  <div class=" signup-input">
+                    <ion-label>US address 2</ion-label>
+                    <ion-input autocomplete="on" formControlName="usAddress2"></ion-input>
+                  </div>
+                </div>
+
+              </div>
+
+            </form>
+        </div><!-- END .kyc-content -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 <ion-footer>
   <ion-progress-bar color="primary" value="0.72"></ion-progress-bar>
@@ -72,7 +79,7 @@
       <ion-icon name="arrow-back-circle-outline"></ion-icon>
     </ion-button>
 
-    <div>
+    <div class="step-flow">
       <h5>Complete profile</h5>
       <div class="steps">
         <div class="bold step"><span>Personal Information</span></div>

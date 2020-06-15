@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NavController, Platform} from '@ionic/angular';
-import {Router} from '@angular/router';
+import { CustomValidator } from 'src/app/validators/custom.validator';
+
 
 @Component({
   selector: 'app-forgot-password',
@@ -23,7 +24,7 @@ export class ForgotPasswordPage implements OnInit {
 
   ngOnInit() {
     this.forgotForm = this.formBuilder.group({
-      email: ['', Validators.required]
+      email: ['', [Validators.required, CustomValidator.emailValidator]]
     });
   }
 

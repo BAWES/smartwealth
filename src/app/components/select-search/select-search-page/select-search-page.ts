@@ -35,11 +35,11 @@ export class SelectSearchPage {
    * When an item is selected from list
    */
   onSelect(selectedItem){
-    this.modalCtrl.getTop().then(overlay => {
+    /*this.modalCtrl.getTop().then(overlay => {
       if(overlay) {
         this.modalCtrl.dismiss(selectedItem);
       }
-    }); 
+    }); */
     
     this.popoverCtrl.getTop().then(overlay => {
       if(overlay) {

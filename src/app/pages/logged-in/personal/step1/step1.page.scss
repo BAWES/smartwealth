@@ -1,13 +1,13 @@
 .kyc-content {
-    width: 100%;
-    max-width: 80%;
-    margin: 0 auto;
-    padding-top: 64px;
+    padding-top: 36px;
+}
+.kyc-content.left {
+    padding-left: 113px;
 }
 
 .form {
-    width: 50%;
-    float: left;
+    //width: 50%;
+    //float: left;
 
     .field-row {
         display: inline-block;
@@ -19,12 +19,13 @@
         }
 
         .inline-input:first-child {
-            float: left;
             margin-right: 10%;
         }
         
+        .inline-dropdown,
         .inline-input {
-            display: inline-block;
+            float: left;
+            //display: inline-block;
             width: 45%;
         }
 
@@ -55,7 +56,6 @@
             width: calc(100% - 30px);
             line-height: 1.5;
             font-size: 14px;
-            padding: 0;
             padding: 13px 16px 15px 16px;
             border: none;
         }
@@ -139,10 +139,10 @@
     }
 }
 
-.kyc-content .description {
-    padding-right: 150px;
-    width: 50%;
-    float: left;
+.description {
+    //padding-right: 150px;
+    //width: 50%;
+    //float: left;
 
     .title {
         font-size: 28px;
@@ -161,14 +161,9 @@
     }
 }
 
-.content-wrapper {
-    display: inline-block;
-    width: 100%;
-}
-
 .inline-dropdown:first-child {
     margin-right: 10%;
-    float: left;
+    //float: left;
 }
 
 .custom-date-picker.inline-date-picker,
@@ -215,4 +210,20 @@ ion-label {
     color: #333;
     margin-bottom: 8px;
     display: flex;
+}
+
+.step-flow {
+    display: inline-block;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .kyc-content {
+        padding-top: 0;
+    }
+    .kyc-content.left {
+        padding-left: 0;
+        border-bottom: 1px solid gray;
+        margin-bottom: 21px;
+    }
 }

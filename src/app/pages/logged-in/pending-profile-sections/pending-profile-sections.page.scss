@@ -1,11 +1,13 @@
 ion-footer {
+  padding-top: 22px;
+
   img {
     width: 305px;
     margin-top: 64px;
   }
 }
 
-h3 ion-icon {
+h3 ion-icon[slot="end"] {
   position: relative;
   top: 4px;
   left: 3px;
@@ -24,6 +26,10 @@ h3 ion-icon {
     border-left: 1px solid;
     position: relative;
     padding-bottom: 25px;
+
+    h3 {
+      margin-top: 0;
+    }
 
     p,
     small {
@@ -98,4 +104,31 @@ h3 ion-icon {
   font-weight: bold;
   text-transform: inherit;
   margin-left: 37px;
+}
+
+.row.right {
+  padding-left: 60px;
+}
+
+@media only screen and (max-width: 991px) {
+
+  .container {
+    padding: 5% 15px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+
+  .container {
+    padding: 0 15px;
+  }
+
+  ion-footer {
+    padding-top: 0;
+    
+    img {
+      width: 205px;
+      margin-top: 5px;
+    }
+  }
 }

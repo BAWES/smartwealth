@@ -6,9 +6,9 @@
 }
 
 .kyc-content .description {
-  padding-right: 150px;
-  width: 50%;
-  float: left;
+  padding-right: 50px;
+  //width: 50%;
+  //float: left;
 
   .title {
     font-size: 28px;
@@ -56,8 +56,8 @@
 }
 
 .row.right {
-  width: 50%;
-  float: left;
+  //width: 50%;
+  //float: left;
 
   h1 {
     font-weight: bold;
@@ -144,7 +144,7 @@
 }
 
 .upload-doc {
-  width: 550px;
+  width: 100%;
   text-align: center;
   margin: 0 auto;
 
@@ -163,21 +163,21 @@
 
   .btn-controller {
     .btn-delete {
-      background: #fff;
+      //background: #fff;
       --background: #fff;
       border-radius: 5px;
       border: 1px solid gray;
       color: gray;
       float: left;
-      width: 150px;
+      width: 100px;
     }
 
     .btn-continue {
-      background: #1439da;
+      //background: #1439da;
       --background: #1439da;
       border-radius: 5px;
       float: right;
-      width: 150px;
+      width: 100px;
     }
   }
 }
@@ -189,3 +189,37 @@
 li.uploaded {
   color: #1439da;
 }
+
+@media only screen and (max-width: 800px) {
+  .kyc-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 64px;
+    padding: 22px;
+
+    .description {
+      padding-right: 50px;
+      border-bottom: 1px solid gray;
+      padding-bottom: 19px;
+      margin-bottom: 32px;
+    }
+  }
+
+  .row.right .step .title {
+    font-size: 19px;
+  }
+}
+
+ion-footer {
+  padding-top: 14px;
+}
+
+@media only screen and (max-width: 767px) {
+  
+  ion-footer {
+    padding-top: 0;
+    margin-bottom: 0px;
+  }
+}
+

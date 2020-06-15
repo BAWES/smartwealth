@@ -130,6 +130,35 @@ ion-content {
     margin: 10px auto;
 }
 
+@media only screen and (max-width: 767px) {
+    
+    .description {
+        max-width: 84%;
+    }
+
+    .footer-wrapper .btn-change,
+    .footer-wrapper .btn-back {
+       position: relative;
+       top: auto;
+       transform: none;
+       left: auto;
+   }
+
+   .footer-wrapper .btn-continue {
+    position: relative;
+    right: auto;
+   }
+
+   .footer-wrapper .step {
+       display: none;
+   }
+
+   ion-progress-bar,
+   ion-footer {
+       margin-bottom: 0;
+   }
+}
+
 ion-card {
     max-width: 1100px;
     border-radius: 5px;

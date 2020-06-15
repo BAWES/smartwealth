@@ -1,4 +1,4 @@
-<ion-header [translucent]="true" class="ion-no-border">
+<ion-header [class.add-border]="borderLimit" class="clear-header" mode="md">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -7,13 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <ion-header collapse="condense" class="ion-no-border">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+<ion-content scrollEvents="true" (ionScroll)="logScrolling($event)" [fullscreen]="true" class="ion-padding">
   <div id="container">
     <h1>Hello, {{authService.name}}</h1>
     <ion-grid>
@@ -22,12 +16,13 @@
             <ion-card class="continue-prof">
               <ion-card-content>
                 <ion-item lines="none">
-                  <ion-label>
+                  <ion-label class="continue-lbl">
                     <h3>Complete Your Profile</h3>
                     Finish you profile by providing us with some personal information. We will use this to create your account and fill in your contract
                   </ion-label>
-                  <ion-button class="continue-btn" slot="end" routerLink="/step1">Continue</ion-button>
+                  <ion-button class="continue-btn desktop" slot="end" routerLink="/step1" >Continue</ion-button>
                 </ion-item>
+                <ion-button class="continue-btn mobile" slot="end" routerLink="/step1" >Continue</ion-button>
               </ion-card-content>
             </ion-card>
           </ion-col>
@@ -62,7 +57,7 @@
             </ion-card-header>
             <ion-card-content>
               <p>$0.00</p>
-              <small>Latest Deposits: $0.00</small>
+              <small>Latest: $0.00</small>
             </ion-card-content>
           </ion-card>
           </ion-col>
@@ -84,7 +79,7 @@
           <ion-card>
             <ion-card-content>
               <ion-item detail lines="none">
-                <ion-button slot="start" class="globe">
+                <ion-button slot="start" class="globe icon">
                   <ion-icon slot="icon-only" name="planet-outline"></ion-icon>
                 </ion-button>
                 <ion-label class="general">General <ion-icon routerLink="/question-view/1" tappable name="pencil-outline"></ion-icon> <br/><span>Pending</span></ion-label>

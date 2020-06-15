@@ -2,50 +2,54 @@
   <app-header></app-header>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
+        <div class="kyc-content left">
+          <div class="content-wrapper">
+            <div class="description">
+              <div class="title"><span>Employment and Wealth</span></div>
+              <p><span>Complete the employment and financial fields to complete your SmartWealth profile.
+                </span>
+              </p>
 
-  <div class="kyc-content">
-
-    <div class="content-wrapper">
-      <div class="description">
-        <div class="title"><span>Employment and Wealth</span></div>
-        <p><span>Complete the employment and financial fields to complete your SmartWealth profile.
-          </span>
-        </p>
-
-        <p><span>Important: Kindly note that when entering your bank details, this information will be the default bank
-            information associated with your NBK Capital SmartWealth account for deposits and redemptions.
-          </span>
-        </p>
-
-      </div>
-
-      <form [formGroup]="form" class="form">
+              <p><span>Important: Kindly note that when entering your bank details, this information will be the default bank
+                  information associated with your NBK Capital SmartWealth account for deposits and redemptions.
+                </span>
+              </p>
+            </div>
+          </div><!-- END .content-wrapper -->
+        </div><!-- END .kyc-content -->
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
+        <div class="kyc-content right">
+          <form [formGroup]="form" class="form">
 
         <div class="field-row-2 annual-income">
           <div class="label radio-buttons-title"><span>Annual income (in KD)</span></div>
           <ion-radio-group formControlName="annualIncome">
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="5,000-20,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="5,000-20,000"></ion-radio>
                 <ion-label>5,000-20,000</ion-label>
               </ion-item>
             </div>
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="20,000-50,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="20,000-50,000"></ion-radio>
                 <ion-label>20,000-50,000</ion-label>
               </ion-item>
             </div>
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="50,000-250,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="50,000-250,000"></ion-radio>
                 <ion-label>50,000-250,000</ion-label>
               </ion-item>
             </div>
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="Above 250,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="Above 250,000"></ion-radio>
                 <ion-label>Above 250,000</ion-label>
               </ion-item>
             </div>
@@ -55,7 +59,7 @@
         <div class="field-row">
           <div class="custom-dropdown">
             <ion-label>Primary source of income & wealth</ion-label>
-            <ion-select formControlName="incomeSource" multiple="true" interface="popover" placeholder="Select source">
+            <ion-select formControlName="incomeSource" multiple="true" placeholder="Select source">
               <ion-select-option *ngFor="let s of sourcelistData">{{ s.source }}</ion-select-option>
             </ion-select>
           </div>
@@ -68,34 +72,34 @@
           <ion-radio-group formControlName="totalInvestment">
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="Less than 50,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="Less than 50,000"></ion-radio>
                 <ion-label>Less than 50,000</ion-label>
               </ion-item>
             </div>
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="50,000 to 330,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="50,000 to 330,000"></ion-radio>
                 <ion-label>50,000 to 330,000</ion-label>
               </ion-item>
             </div>
 
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="330,000 to 1,000,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="330,000 to 1,000,000"></ion-radio>
                 <ion-label>330,000 to 1,000,000</ion-label>
               </ion-item>
             </div>
 
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="1,000,000 to 5,000,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="1,000,000 to 5,000,000"></ion-radio>
                 <ion-label>1,000,000 to 5,000,000</ion-label>
               </ion-item>
             </div>
 
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="Greater than 5,000,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="Greater than 5,000,000"></ion-radio>
                 <ion-label>Greater than 5,000,000</ion-label>
               </ion-item>
             </div>
@@ -103,8 +107,10 @@
         </div>
 
       </form>
-    </div><!-- END .content-wrapper -->
-  </div><!-- END .kyc-content -->
+        </div><!-- END .kyc-content -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 <ion-footer>
   <ion-progress-bar color="primary" value="0.56"></ion-progress-bar>
@@ -115,7 +121,7 @@
       <ion-icon name="arrow-back-circle-outline"></ion-icon>
     </ion-button>
 
-    <div>
+    <div class="step-flow">
       <h5>Complete profile</h5>
       <div class="steps">
         <div class="bold step"><span>Personal Information</span></div>

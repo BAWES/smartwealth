@@ -66,14 +66,14 @@ export class SelectSearchInputComponent implements ControlValueAccessor {
         labelAttr: this.labelAttr
       }
     });
-    selectPage.onDidDismiss().then(e => {
-
-      if (e && e.data) {
-        this.value = e.data[this.valueAttr];
-        this.selectedItem = e.data;
-      }
-    });
     selectPage.present();
+
+    const { data } = await selectPage.onDidDismiss();
+
+    if (data) {
+      this.value = data[this.valueAttr];
+      this.selectedItem = data;
+    }
   }
 
   /**

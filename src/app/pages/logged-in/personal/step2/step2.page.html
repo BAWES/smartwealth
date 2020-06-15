@@ -2,59 +2,65 @@
   <app-header></app-header>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
 
-  <div class="kyc-content">
-
-    <div class="content-wrapper">
-      <div class="description">
-        <div class="title"><span>Personal Information</span></div>
-        <p><span>Complete the personal information fields to continue building your SmartWealth profile. Questions
-            require the sharing of personal and contact information.</span></p>
-      </div>
-
-      <form [formGroup]="form" class="form">
-
-        <div class="field-row">
-          <div class="custom-dropdown">
-            <ion-label>Nationality</ion-label>
-            <select-search-input formControlName="nationality" placeholder="Select nationality"
-              [collection]="countrylistData" valueAttr="country_name_en" labelAttr="country_name_en">
-            </select-search-input>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
+        <div class="kyc-content left">
+          <div class="description">
+            <div class="title"><span>Personal Information</span></div>
+            <p><span>Complete the personal information fields to continue building your SmartWealth profile. Questions
+              require the sharing of personal and contact information.</span></p>
           </div>
         </div>
-
-        <div *ngIf="form.value.nationality && form.value.nationality != 'Kuwait'">
-
-          <div class="field-row">
-            <div class="signup-input">
-              <ion-label>Passport number</ion-label>
-              <ion-input placeholder="Passport number" autocomplete="on" formControlName="passport" type="text">
-              </ion-input>
-            </div>
-          </div>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
+        <div class="kyc-content right">
+          <form [formGroup]="form" class="form">
 
           <div class="field-row">
             <div class="custom-dropdown">
-              <ion-label>Passport country</ion-label>
-              <select-search-input formControlName="passportCountry" placeholder="Select country"
-                [collection]="countrylistData" valueAttr="country_name_en" labelAttr="country_name_en">
+              <ion-label>Nationality</ion-label>
+              <select-search-input formControlName="nationality" placeholder="Select nationality"
+                                   [collection]="countrylistData" valueAttr="country_name_en" labelAttr="country_name_en">
               </select-search-input>
             </div>
           </div>
 
-          <div class="field-row">
-            <div class="signup-input">
-              <ion-label>Passport expiry date</ion-label>
-              <ion-datetime formControlName="passportExpiry" [min]="minExpiry" displayFormat="DD/MM/YYYY" placeholder="dd/mm/yyyy">
-              </ion-datetime>
-            </div>
-          </div>
+          <div *ngIf="form.value.nationality && form.value.nationality != 'Kuwait'">
 
+            <div class="field-row">
+              <div class="signup-input">
+                <ion-label>Passport number</ion-label>
+                <ion-input placeholder="Passport number" autocomplete="on" formControlName="passport" type="text">
+                </ion-input>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="custom-dropdown">
+                <ion-label>Passport country</ion-label>
+                <select-search-input formControlName="passportCountry" placeholder="Select country"
+                                     [collection]="countrylistData" valueAttr="country_name_en" labelAttr="country_name_en">
+                </select-search-input>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="signup-input">
+                <ion-label>Passport expiry date</ion-label>
+                <ion-datetime formControlName="passportExpiry" [min]="minExpiry" displayFormat="DD/MM/YYYY" placeholder="dd/mm/yyyy">
+                </ion-datetime>
+              </div>
+            </div>
+
+          </div>
+        </form>
         </div>
-      </form>
-    </div><!-- END .content-wrapper -->
-  </div><!-- END .kyc-content -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 <ion-footer>
   <ion-progress-bar color="primary" value="0.16"></ion-progress-bar>
@@ -65,7 +71,7 @@
       <ion-icon name="arrow-back-circle-outline"></ion-icon>
     </ion-button>
 
-    <div>
+    <div class="step-flow">
       <h5>Complete profile</h5>
       <div class="steps">
         <div class="bold step"><span>Personal Information</span></div>

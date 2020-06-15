@@ -40,12 +40,13 @@ export class Step2Page implements OnInit {
 
     this.form = this._fb.group({
       nationality: [localStorage.getItem('nationality'), Validators.required],
-      passport: [localStorage.getItem('passport')],
-      passportCountry: [localStorage.getItem('passportCountry')],
-      passportExpiry: [localStorage.getItem('passportExpiry')]
+      passport: [localStorage.getItem('passport'), !isKuwaity? Validators.required: null],
+      passportCountry: [localStorage.getItem('passportCountry'), !isKuwaity? Validators.required: null],
+      passportExpiry: [localStorage.getItem('passportExpiry'), !isKuwaity? Validators.required: null],
     });
     
     this.form.get('nationality').valueChanges.subscribe(value => {
+      
       if(value != 'Kuwait') {
         this.form.get('passport').setValidators(Validators.required);
         this.form.get('passportCountry').setValidators(Validators.required);
@@ -56,7 +57,9 @@ export class Step2Page implements OnInit {
         this.form.get('passportExpiry').setValidators(null);
       }
 
-      this.form.updateValueAndValidity();
+      this.form.controls.passport.updateValueAndValidity();
+      this.form.controls.passportCountry.updateValueAndValidity();
+      this.form.controls.passportExpiry.updateValueAndValidity();
     });
 
     this.loadCountries();

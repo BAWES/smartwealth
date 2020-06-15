@@ -25,6 +25,10 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+.error .field {
+    border-color: #eb5f56;
+}
+
 ion-footer {
     margin-bottom: 50px;
 
@@ -89,6 +93,24 @@ ion-footer {
         color: white;
         text-transform: none;
         width: 160px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .footer-wrapper .btn-back {
+        position: relative;
+        top: auto;
+        transform: none;
+        left: auto;
+    }
+
+    .footer-wrapper .step {
+        display: none;
+    }
+
+    ion-progress-bar,
+    ion-footer {
+        margin-bottom: 0;
     }
 }
 
@@ -165,6 +187,79 @@ ion-popover {
     }
 }
 
-ion-split-pane, ion-footer {
+ion-split-pane,
+ion-footer {
     background: #fff;
+}
+
+h2.intro-text {
+    top: 124px !important;
+}
+
+.flex {
+    display: flex;
+}
+
+ion-header.add-border:after {
+    display: inline !important;
+}
+
+.clear-header:after {
+    display: none;
+}
+
+ion-header.add-border:after {
+    display: inline;
+}
+
+.clear-header ion-toolbar {
+    --border-width: 0 !important;
+}
+
+ion-input {
+    --padding-top: 13px !important;
+    --padding-start: 16px !important;
+    --padding-end: 16px !important;
+    --padding-bottom: 15px !important;
+}
+
+ion-button {
+    --border-radius: 4px;
+}
+
+.error-message {
+    display: inline-block;
+    width: 100%;
+    margin-top: 3px;
+    font-size: 11px;
+    line-height: 1.33;
+    color: #eb5f56;
+}
+
+@media only screen and (max-width: 538px) {
+
+    .have-mobile-full-input {
+        margin-bottom: 0 !important;
+    }
+
+    .mobile-full-input {
+        width: 100% !important;
+        margin-bottom: 23px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .kyc-content.left {
+        padding-left: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .step-flow {
+        display: none !important;
+    }
+
+    ion-footer ion-progress-bar {
+        margin-bottom: 1px;
+    }
 }

@@ -8,7 +8,11 @@ import {AuthService} from '../../../providers/auth.service';
   styleUrls: ['./folder.page.scss'],
 })
 export class FolderPage implements OnInit {
+
   public folder: string;
+
+  public scrollPosition = 0;
+  public borderLimit = false;
 
   constructor(
       private activatedRoute: ActivatedRoute,
@@ -27,4 +31,7 @@ export class FolderPage implements OnInit {
     this.authService.disableMenu = true;
   }
 
+  logScrolling(e) {
+    this.borderLimit = (e.detail.scrollTop > 20);
+  }
 }

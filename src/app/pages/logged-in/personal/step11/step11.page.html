@@ -2,85 +2,92 @@
   <app-header></app-header>
 </ion-header>
 
-<ion-content>
-
-  <div class="kyc-content">
-
-    <div class="content-wrapper">
-      <div class="description">
-        <div class="title"><span>Taxes & Beneficiaries</span></div>
-        <p><span>Complete the additional information requirements to finalize your account details. Questions will
-            require the sharing of citizenship, tax and account beneficiary details.
-          </span>
-        </p>
-      </div>
-
-      <form [formGroup]="form" class="form">
-
-        <div class="field-row-2">
-          <div class="label radio-buttons-title"><span>Are you applying for someone else?</span></div>
-          <ion-radio-group formControlName="applyForSomeoneElse">
-            <div class="radio-container kyc-radio-button">
-              <ion-item lines="none">
-                <ion-radio slot="start" value="1"></ion-radio>
-                <ion-label>Yes</ion-label>
-              </ion-item>
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
+        <div class="kyc-content left">
+          <div class="content-wrapper">
+            <div class="description">
+              <div class="title"><span>Taxes & Beneficiaries</span></div>
+              <p><span>Complete the additional information requirements to finalize your account details. Questions will
+                  require the sharing of citizenship, tax and account beneficiary details.
+                </span>
+              </p>
             </div>
-            <div class="radio-container kyc-radio-button">
-              <ion-item lines="none">
-                <ion-radio slot="start" value="2"></ion-radio>
-                <ion-label>No</ion-label>
-              </ion-item>
-            </div>
-          </ion-radio-group>
-        </div>
+          </div><!-- END .content-wrapper -->
+        </div><!-- END .kyc-content -->
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
+        <div class="kyc-content right">
+            <form [formGroup]="form" class="form">
 
-        <div *ngIf="['1', 1].indexOf(form.value.applyForSomeoneElse) > -1">
+              <div class="field-row-2">
+                <div class="label radio-buttons-title"><span>Are you applying for someone else?</span></div>
+                <ion-radio-group formControlName="applyForSomeoneElse">
+                  <div class="radio-container kyc-radio-button">
+                    <ion-item lines="none">
+                      <ion-radio mode="md" slot="start" value="1"></ion-radio>
+                      <ion-label>Yes</ion-label>
+                    </ion-item>
+                  </div>
+                  <div class="radio-container kyc-radio-button">
+                    <ion-item lines="none">
+                      <ion-radio mode="md" slot="start" value="2"></ion-radio>
+                      <ion-label>No</ion-label>
+                    </ion-item>
+                  </div>
+                </ion-radio-group>
+              </div>
 
-          <div class="field-row">
-            <div class=" signup-input">
-              <ion-label>Full name of beneficiary</ion-label>
-              <ion-input autocomplete="on" formControlName="beneficiaryName"></ion-input>
-            </div>
-          </div>
+              <div *ngIf="['1', 1].indexOf(form.value.applyForSomeoneElse) > -1">
 
-          <div class="field-row">
-            <div class=" signup-input">
-              <ion-label>What is your relationship to the beneficiary?</ion-label>
-              <select-search-input formControlName="beneficiaryRelation" placeholder="Select relationship"
-                [collection]="relationlistData" valueAttr="relation" labelAttr="relation">
-              </select-search-input>
-            </div>
-          </div>
+                <div class="field-row">
+                  <div class=" signup-input">
+                    <ion-label>Full name of beneficiary</ion-label>
+                    <ion-input autocomplete="on" formControlName="beneficiaryName"></ion-input>
+                  </div>
+                </div>
 
-          <div class="field-row">
-            <div class=" signup-input">
-              <ion-label>What is the nationality of the beneficiary?</ion-label>
-              <select-search-input formControlName="beneficiaryNationality" placeholder="Select nationality"
-                [collection]="countrylistData" valueAttr="country_name_en" labelAttr="country_name_en">
-              </select-search-input>
-            </div>
-          </div>
+                <div class="field-row">
+                  <div class=" signup-input">
+                    <ion-label>What is your relationship to the beneficiary?</ion-label>
+                    <select-search-input formControlName="beneficiaryRelation" placeholder="Select relationship"
+                      [collection]="relationlistData" valueAttr="relation" labelAttr="relation">
+                    </select-search-input>
+                  </div>
+                </div>
 
-          <div class="field-row">
-            <div class=" signup-input">
-              <ion-label>What is the address of the beneficiary?</ion-label>
-              <ion-input autocomplete="on" formControlName="beneficiaryAddress"></ion-input>
-            </div>
-          </div>
+                <div class="field-row">
+                  <div class=" signup-input">
+                    <ion-label>What is the nationality of the beneficiary?</ion-label>
+                    <select-search-input formControlName="beneficiaryNationality" placeholder="Select nationality"
+                      [collection]="countrylistData" valueAttr="country_name_en" labelAttr="country_name_en">
+                    </select-search-input>
+                  </div>
+                </div>
 
-          <div class="field-row">
-            <div class=" signup-input">
-              <ion-label>What is the civil ID No. or the passport No. of the beneficiary?</ion-label>
-              <ion-input autocomplete="on" formControlName="beneficiaryID"></ion-input>
-            </div>
-          </div>
+                <div class="field-row">
+                  <div class=" signup-input">
+                    <ion-label>What is the address of the beneficiary?</ion-label>
+                    <ion-input autocomplete="on" formControlName="beneficiaryAddress"></ion-input>
+                  </div>
+                </div>
 
-        </div>
+                <div class="field-row">
+                  <div class=" signup-input">
+                    <ion-label>What is the civil ID No. or the passport No. of the beneficiary?</ion-label>
+                    <ion-input autocomplete="on" formControlName="beneficiaryID"></ion-input>
+                  </div>
+                </div>
 
-      </form>
-    </div><!-- END .content-wrapper -->
-  </div><!-- END .kyc-content -->
+              </div>
+
+            </form>
+        </div><!-- END .kyc-content -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 <ion-footer>
   <ion-progress-bar color="primary" value="0.88"></ion-progress-bar>
@@ -91,7 +98,7 @@
       <ion-icon name="arrow-back-circle-outline"></ion-icon>
     </ion-button>
 
-    <div>
+    <div class="step-flow">
       <h5>Complete profile</h5>
       <div class="steps">
         <div class="bold step"><span>Personal Information</span></div>
