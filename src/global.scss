@@ -92,6 +92,24 @@ ion-footer {
     }
 }
 
+@media only screen and (max-width: 767px) {
+    .footer-wrapper .btn-back {
+        position: relative;
+        top: auto;
+        transform: none;
+        left: auto;
+    }
+
+    .footer-wrapper .step {
+        display: none;
+    }
+
+    ion-progress-bar,
+    ion-footer {
+        margin-bottom: 0;
+    }
+}
+
 .assets-info-fixed {
     --height: 330px;
 }
