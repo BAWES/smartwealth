@@ -2,91 +2,100 @@
   <app-header></app-header>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
 
-  <div class="kyc-content">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
+        <div class="kyc-content left">
+          <div class="content-wrapper">
+            <div class="description">
+              <div class="title"><span>Employment and Wealth</span></div>
+              <p><span>Complete the employment and financial fields to complete your SmartWealth profile.
+                </span>
+              </p>
 
-    <div class="content-wrapper">
-      <div class="description">
-        <div class="title"><span>Employment and Wealth</span></div>
-        <p><span>Complete the employment and financial fields to complete your SmartWealth profile.
-          </span>
-        </p>
+              <p><span>Important: Kindly note that when entering your bank details, this information will be the default bank
+                  information associated with your NBK Capital SmartWealth account for deposits and redemptions.
+                </span>
+              </p>
 
-        <p><span>Important: Kindly note that when entering your bank details, this information will be the default bank
-            information associated with your NBK Capital SmartWealth account for deposits and redemptions.
-          </span>
-        </p>
-
-      </div>
-
-      <form [formGroup]="form" class="form">
-
-        <div class="field-row">
-          <div class=" signup-input">
-            <ion-label>Bank (to be associated with your SmartWealth account)</ion-label>
-            <ion-select placeholder="Select bank" interface="popover" formControlName="bank">
-              <ion-select-option>National Bank of Kuwait (K.S.C)</ion-select-option>
-              <ion-select-option>Commercial Bank of Kuwait (K.S.C)</ion-select-option>
-              <ion-select-option>Gulf Bank (K.S.C)</ion-select-option>
-              <ion-select-option>Al Ahli Bank of Kuwait (K.S.C.P.)</ion-select-option>
-              <ion-select-option>Al Ahli United Bank</ion-select-option>
-              <ion-select-option>Burgan Bank (K.S.C)</ion-select-option>
-              <ion-select-option>Kuwait International Bank (K.S.C)</ion-select-option>
-              <ion-select-option>The Industrial Bank of Kuwait (K.S.C)</ion-select-option>
-              <ion-select-option>Kuwait Finance House</ion-select-option>
-              <ion-select-option>Boubyan Bank (K.S.C)</ion-select-option>
-              <ion-select-option>Warba Bank</ion-select-option>
-            </ion-select>
-          </div>
-        </div>
-
-        <div class="field-row-2">
-          <div class="label radio-buttons-title"><span>Are you an existing NBK banking client?</span></div>
-          <ion-radio-group formControlName="existingClient">
-            <div class="radio-container kyc-radio-button">
-              <ion-item lines="none">
-                <ion-radio slot="start" value="1"></ion-radio>
-                <ion-label>Yes</ion-label>
-              </ion-item>
             </div>
-            <div class="radio-container kyc-radio-button">
-              <ion-item lines="none">
-                <ion-radio slot="start" value="2"></ion-radio>
-                <ion-label>No</ion-label>
-              </ion-item>
-            </div>
-          </ion-radio-group>
-        </div>
+          </div><!-- END .content-wrapper -->
+        </div><!-- END .kyc-content -->
+      </ion-col>
 
-        <div class="field-row-2" *ngIf="['1', 1].indexOf(form.value.existingClient) > -1">
-          <div class="label radio-buttons-title"><span>Have you been assisted or referred to NBK Capital SmartWealth by a NBK relationship manager?</span></div>
-          <ion-radio-group formControlName="haveRelationship">
-            <div class="radio-container kyc-radio-button">
-              <ion-item lines="none">
-                <ion-radio slot="start" value="1"></ion-radio>
-                <ion-label>Yes</ion-label>
-              </ion-item>
-            </div>
-            <div class="radio-container kyc-radio-button">
-              <ion-item lines="none">
-                <ion-radio slot="start" value="2"></ion-radio>
-                <ion-label>No</ion-label>
-              </ion-item>
-            </div>
-          </ion-radio-group>
-        </div>
-        
-        <div class="field-row" *ngIf="['1', 1].indexOf(form.value.haveRelationship) > -1">
-          <div class=" signup-input">
-            <ion-label>Please provide your Relationship Manager's unique referral code</ion-label>
-            <ion-input placeholder="NBK relationship manager code" autocomplete="on" formControlName="relationship"></ion-input>  
-          </div>
-        </div>
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
+        <div class="kyc-content right">
+            <form [formGroup]="form" class="form">
 
-      </form>
-    </div><!-- END .content-wrapper -->
-  </div><!-- END .kyc-content -->
+              <div class="field-row">
+                <div class=" signup-input">
+                  <ion-label>Bank (to be associated with your SmartWealth account)</ion-label>
+                  <ion-select placeholder="Select bank" interface="popover" formControlName="bank">
+                    <ion-select-option>National Bank of Kuwait (K.S.C)</ion-select-option>
+                    <ion-select-option>Commercial Bank of Kuwait (K.S.C)</ion-select-option>
+                    <ion-select-option>Gulf Bank (K.S.C)</ion-select-option>
+                    <ion-select-option>Al Ahli Bank of Kuwait (K.S.C.P.)</ion-select-option>
+                    <ion-select-option>Al Ahli United Bank</ion-select-option>
+                    <ion-select-option>Burgan Bank (K.S.C)</ion-select-option>
+                    <ion-select-option>Kuwait International Bank (K.S.C)</ion-select-option>
+                    <ion-select-option>The Industrial Bank of Kuwait (K.S.C)</ion-select-option>
+                    <ion-select-option>Kuwait Finance House</ion-select-option>
+                    <ion-select-option>Boubyan Bank (K.S.C)</ion-select-option>
+                    <ion-select-option>Warba Bank</ion-select-option>
+                  </ion-select>
+                </div>
+              </div>
+
+              <div class="field-row-2">
+                <div class="label radio-buttons-title"><span>Are you an existing NBK banking client?</span></div>
+                <ion-radio-group formControlName="existingClient">
+                  <div class="radio-container kyc-radio-button">
+                    <ion-item lines="none">
+                      <ion-radio slot="start" value="1"></ion-radio>
+                      <ion-label>Yes</ion-label>
+                    </ion-item>
+                  </div>
+                  <div class="radio-container kyc-radio-button">
+                    <ion-item lines="none">
+                      <ion-radio slot="start" value="2"></ion-radio>
+                      <ion-label>No</ion-label>
+                    </ion-item>
+                  </div>
+                </ion-radio-group>
+              </div>
+
+              <div class="field-row-2" *ngIf="['1', 1].indexOf(form.value.existingClient) > -1">
+                <div class="label radio-buttons-title"><span>Have you been assisted or referred to NBK Capital SmartWealth by a NBK relationship manager?</span></div>
+                <ion-radio-group formControlName="haveRelationship">
+                  <div class="radio-container kyc-radio-button">
+                    <ion-item lines="none">
+                      <ion-radio slot="start" value="1"></ion-radio>
+                      <ion-label>Yes</ion-label>
+                    </ion-item>
+                  </div>
+                  <div class="radio-container kyc-radio-button">
+                    <ion-item lines="none">
+                      <ion-radio slot="start" value="2"></ion-radio>
+                      <ion-label>No</ion-label>
+                    </ion-item>
+                  </div>
+                </ion-radio-group>
+              </div>
+
+              <div class="field-row" *ngIf="['1', 1].indexOf(form.value.haveRelationship) > -1">
+                <div class=" signup-input">
+                  <ion-label>Please provide your Relationship Manager's unique referral code</ion-label>
+                  <ion-input placeholder="NBK relationship manager code" autocomplete="on" formControlName="relationship"></ion-input>
+                </div>
+              </div>
+
+            </form>
+        </div><!-- END .kyc-content -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 <ion-footer>
   <ion-progress-bar color="primary" value="0.64"></ion-progress-bar>
@@ -97,7 +106,7 @@
       <ion-icon name="arrow-back-circle-outline"></ion-icon>
     </ion-button>
 
-    <div>
+    <div class="step-flow">
       <h5>Complete profile</h5>
       <div class="steps">
         <div class="bold step"><span>Personal Information</span></div>

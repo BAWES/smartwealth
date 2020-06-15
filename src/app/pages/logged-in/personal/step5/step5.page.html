@@ -2,67 +2,75 @@
   <app-header></app-header>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
 
-  <div class="kyc-content">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
+        <div class="kyc-content left">
+          <div class="content-wrapper">
+            <div class="description">
+              <div class="title"><span>Contact Information</span></div>
+              <p><span>Complete the contact information fields to continue building your SmartWealth profile. Questions will require the sharing of contact information and residential details.</span></p>
+            </div>
+          </div><!-- END .content-wrapper -->
+        </div><!-- END .kyc-content -->
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
+        <div class="kyc-content right">
+            <form [formGroup]="form" class="form">
 
-    <div class="content-wrapper">
-      <div class="description">
-        <div class="title"><span>Contact Information</span></div>
-        <p><span>Complete the contact information fields to continue building your SmartWealth profile. Questions will require the sharing of contact information and residential details.</span></p>
-      </div>
+              <div class="field-row">
+                <div class="inline-input signup-input">
+                  <ion-label>City</ion-label>
+                  <ion-input placeholder="e.g Kuwait" autocomplete="on" formControlName="city"
+                             type="text"></ion-input>
+                </div>
+                <div class="inline-input signup-input">
+                  <ion-label>Area</ion-label>
+                  <ion-input placeholder="e.g Al Mankhool road" autocomplete="on" formControlName="area"
+                             type="text"></ion-input>
+                </div>
+              </div>
 
-      <form [formGroup]="form" class="form">
-        
-        <div class="field-row">
-          <div class="inline-input signup-input">
-            <ion-label>City</ion-label>
-            <ion-input placeholder="e.g Kuwait" autocomplete="on" formControlName="city"
-                        type="text"></ion-input> 
-          </div>
-          <div class="inline-input signup-input">
-            <ion-label>Area</ion-label>
-            <ion-input placeholder="e.g Al Mankhool road" autocomplete="on" formControlName="area"
-                        type="text"></ion-input> 
-          </div>
-        </div>
+              <div class="field-row">
+                <div class="inline-input signup-input">
+                  <ion-label>Street</ion-label>
+                  <ion-input placeholder="e.g 34 or 35" autocomplete="on" formControlName="street"
+                             type="text"></ion-input>
+                </div>
+                <div class="inline-input signup-input">
+                  <ion-label>Avenue</ion-label>
+                  <ion-input placeholder='if inapplicable, type "n/a"' autocomplete="on" formControlName="avenue"
+                             type="text"></ion-input>
+                </div>
+              </div>
 
-        <div class="field-row">
-          <div class="inline-input signup-input">
-            <ion-label>Street</ion-label>
-            <ion-input placeholder="e.g 34 or 35" autocomplete="on" formControlName="street"
-                        type="text"></ion-input> 
-          </div>
-          <div class="inline-input signup-input">
-            <ion-label>Avenue</ion-label>
-            <ion-input placeholder='if inapplicable, type "n/a"' autocomplete="on" formControlName="avenue"
-                        type="text"></ion-input> 
-          </div>
-        </div>
+              <div class="field-row">
+                <div class="inline-input signup-input">
+                  <ion-label>Block</ion-label>
+                  <ion-input placeholder="e.g 3 or 4" autocomplete="on" formControlName="block"
+                             type="text"></ion-input>
+                </div>
+                <div class="inline-input signup-input">
+                  <ion-label>House number</ion-label>
+                  <ion-input placeholder='e.g. 27 or apartment number' autocomplete="on" formControlName="houseNumber"
+                             type="text"></ion-input>
+                </div>
+              </div>
 
-        <div class="field-row">
-          <div class="inline-input signup-input">
-            <ion-label>Block</ion-label>
-            <ion-input placeholder="e.g 3 or 4" autocomplete="on" formControlName="block"
-                        type="text"></ion-input> 
-          </div>
-          <div class="inline-input signup-input">
-            <ion-label>House number</ion-label>
-            <ion-input placeholder='e.g. 27 or apartment number' autocomplete="on" formControlName="houseNumber"
-                        type="text"></ion-input> 
-          </div>
-        </div>
-
-        <div class="field-row">
-          <div class=" signup-input">
-            <ion-label>Mobile number</ion-label>
-            <ion-input placeholder="xxxx xxxx" autocomplete="on" formControlName="mobileNumber"
-            type="number"></ion-input>  
-          </div>
-        </div>
-      </form>
-    </div><!-- END .content-wrapper -->
-  </div><!-- END .kyc-content -->
+              <div class="field-row">
+                <div class=" signup-input">
+                  <ion-label>Mobile number</ion-label>
+                  <ion-input placeholder="xxxx xxxx" autocomplete="on" formControlName="mobileNumber"
+                             type="number"></ion-input>
+                </div>
+              </div>
+            </form>
+        </div><!-- END .kyc-content -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 <ion-footer>
   <ion-progress-bar color="primary" value="0.40"></ion-progress-bar>
@@ -73,7 +81,7 @@
       <ion-icon name="arrow-back-circle-outline"></ion-icon>
     </ion-button>
 
-    <div>
+    <div class="step-flow">
       <h5>Complete profile</h5>
       <div class="steps">
         <div class="bold step"><span>Personal Information</span></div>
