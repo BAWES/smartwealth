@@ -210,3 +210,16 @@ li.uploaded {
     font-size: 19px;
   }
 }
+
+ion-footer {
+  padding-top: 14px;
+}
+
+@media only screen and (max-width: 767px) {
+  
+  ion-footer {
+    padding-top: 0;
+    margin-bottom: 0px;
+  }
+}
+

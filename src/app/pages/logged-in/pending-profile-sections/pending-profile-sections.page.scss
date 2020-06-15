@@ -1,6 +1,6 @@
 ion-footer {
   padding-top: 22px;
-  
+
   img {
     width: 305px;
     margin-top: 64px;
@@ -123,8 +123,12 @@ h3 ion-icon[slot="end"] {
     padding: 0 15px;
   }
 
-  ion-footer img {
-    width: 205px;
-    margin-top: 5px;
+  ion-footer {
+    padding-top: 0;
+    
+    img {
+      width: 205px;
+      margin-top: 5px;
+    }
   }
 }
