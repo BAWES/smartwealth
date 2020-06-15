@@ -2,88 +2,96 @@
   <app-header></app-header>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
 
-  <div class="kyc-content">
-
-    <div class="content-wrapper">
-      <div class="description">
-        <div class="title"><span>Personal Information</span></div>
-        <p><span>Complete the personal information fields to continue building your SmartWealth profile. Questions
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
+        <div class="kyc-content">
+          <div class="content-wrapper">
+            <div class="description">
+              <div class="title"><span>Personal Information</span></div>
+              <p><span>Complete the personal information fields to continue building your SmartWealth profile. Questions
             require the sharing of personal and contact information.</span></p>
-      </div>
-
-      <form [formGroup]="form" class="form">
-
-        <div class="field-row-2">
-          <div class="label radio-buttons-title"><span>Gender</span></div>
-          <ion-radio-group formControlName="gender">
-            <div class="radio-container kyc-radio-button">
-              <ion-item lines="none">
-                <ion-radio slot="start" value="1"></ion-radio>
-                <ion-label>Male</ion-label>
-              </ion-item>
             </div>
-            <div class="radio-container kyc-radio-button">
-              <ion-item lines="none">
-                <ion-radio slot="start" value="2"></ion-radio>
-                <ion-label>Female</ion-label>
-              </ion-item>
-            </div>
-          </ion-radio-group>
+          </div>
         </div>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="6" size-xl="6">
+        <div class="content-wrapper">
+            <form [formGroup]="form" class="form">
 
-        <div class="field-row">
-          <div class="signup-input">
-            <ion-label>First name</ion-label>
-            <ion-input placeholder="e.g Bruce" autocomplete="on" formControlName="firstName" type="text"></ion-input>
-          </div>
-        </div>
+              <div class="field-row-2">
+                <div class="label radio-buttons-title"><span>Gender</span></div>
+                <ion-radio-group formControlName="gender">
+                  <div class="radio-container kyc-radio-button">
+                    <ion-item lines="none">
+                      <ion-radio slot="start" value="1"></ion-radio>
+                      <ion-label>Male</ion-label>
+                    </ion-item>
+                  </div>
+                  <div class="radio-container kyc-radio-button">
+                    <ion-item lines="none">
+                      <ion-radio slot="start" value="2"></ion-radio>
+                      <ion-label>Female</ion-label>
+                    </ion-item>
+                  </div>
+                </ion-radio-group>
+              </div>
 
-        <div class="field-row">
-          <div class="inline-input signup-input">
-            <ion-label>Middle name</ion-label>
-            <ion-input placeholder="e.g Lee" autocomplete="on" formControlName="middleName" type="text"></ion-input>
-          </div>
-          <div class="inline-input signup-input">
-            <ion-label>Last name</ion-label>
-            <ion-input placeholder="e.g Wayne" autocomplete="on" formControlName="lastName" type="text"></ion-input>
-          </div>
-        </div>
-        <div class="field-row">
-          <div class="custom-dropdown inline-dropdown">
-            <ion-label>Country of birth</ion-label>
-            <select-search-input formControlName="country" placeholder="Select Country" [collection]="countrylistData"
-              valueAttr="country_name_en" labelAttr="country_name_en">
-            </select-search-input>
-          </div>
-          <div class="custom-date-picker inline-date-picker">
-            <ion-label>Date of birth</ion-label>
-            <ion-datetime formControlName="dob" displayFormat="DD/MM/YYYY" placeholder="dd/mm/yyyy"></ion-datetime>
-          </div>
-        </div>
-        <div class="field-row">
-          <div class=" signup-input">
-            <ion-label>Civil ID number</ion-label>
-            <ion-input placeholder="e.g 212345859000" autocomplete="on" formControlName="civilId" type="text">
-            </ion-input>
-          </div>
-        </div>
-        <div class="field-row">
-          <div class="inline-input signup-input">
-            <ion-label>Civil ID serial number</ion-label>
-            <ion-input placeholder="e.g 1234567890" autocomplete="on" formControlName="civilIdSerialNumber" type="text">
-            </ion-input>
-          </div>
-          <div class="custom-date-picker inline-date-picker">
-            <ion-label>Civil ID expiry date</ion-label>
-            <ion-datetime formControlName="civilIdExpiryDate" displayFormat="DD/MM/YYYY" placeholder="dd/mm/yyyy">
-            </ion-datetime>
-          </div>
-        </div>
-      </form>
-    </div><!-- END .content-wrapper -->
-  </div><!-- END .kyc-content -->
+              <div class="field-row">
+                <div class="signup-input">
+                  <ion-label>First name</ion-label>
+                  <ion-input placeholder="e.g Bruce" autocomplete="on" formControlName="firstName" type="text"></ion-input>
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="inline-input signup-input">
+                  <ion-label>Middle name</ion-label>
+                  <ion-input placeholder="e.g Lee" autocomplete="on" formControlName="middleName" type="text"></ion-input>
+                </div>
+                <div class="inline-input signup-input">
+                  <ion-label>Last name</ion-label>
+                  <ion-input placeholder="e.g Wayne" autocomplete="on" formControlName="lastName" type="text"></ion-input>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="custom-dropdown inline-dropdown">
+                  <ion-label>Country of birth</ion-label>
+                  <select-search-input formControlName="country" placeholder="Select Country" [collection]="countrylistData"
+                                       valueAttr="country_name_en" labelAttr="country_name_en">
+                  </select-search-input>
+                </div>
+                <div class="custom-date-picker inline-date-picker">
+                  <ion-label>Date of birth</ion-label>
+                  <ion-datetime formControlName="dob" displayFormat="DD/MM/YYYY" placeholder="dd/mm/yyyy"></ion-datetime>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class=" signup-input">
+                  <ion-label>Civil ID number</ion-label>
+                  <ion-input placeholder="e.g 212345859000" autocomplete="on" formControlName="civilId" type="text">
+                  </ion-input>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="inline-input signup-input">
+                  <ion-label>Civil ID serial number</ion-label>
+                  <ion-input placeholder="e.g 1234567890" autocomplete="on" formControlName="civilIdSerialNumber" type="text">
+                  </ion-input>
+                </div>
+                <div class="custom-date-picker inline-date-picker">
+                  <ion-label>Civil ID expiry date</ion-label>
+                  <ion-datetime formControlName="civilIdExpiryDate" displayFormat="DD/MM/YYYY" placeholder="dd/mm/yyyy">
+                  </ion-datetime>
+                </div>
+              </div>
+            </form>
+      </div><!-- END .content-wrapper -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 <ion-footer>
   <ion-progress-bar color="primary" value="0.08"></ion-progress-bar>
@@ -94,7 +102,7 @@
       <ion-icon name="arrow-back-circle-outline"></ion-icon>
     </ion-button>
 
-    <div>
+    <div class="step-flow">
       <h5>Complete profile</h5>
       <div class="steps">
         <div class="bold step"><span>Personal Information</span></div>

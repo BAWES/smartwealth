@@ -1,13 +1,7 @@
-.kyc-content {
-    width: 100%;
-    max-width: 80%;
-    margin: 0 auto;
-    padding-top: 64px;
-}
 
 .form {
-    width: 50%;
-    float: left;
+    //width: 50%;
+    //float: left;
 
     .field-row {
         display: inline-block;
@@ -19,7 +13,7 @@
         }
 
         .inline-input:first-child {
-            float: left;
+            //float: left;
             margin-right: 10%;
         }
         
@@ -139,10 +133,10 @@
     }
 }
 
-.kyc-content .description {
-    padding-right: 150px;
-    width: 50%;
-    float: left;
+.description {
+    //padding-right: 150px;
+    //width: 50%;
+    //float: left;
 
     .title {
         font-size: 28px;
@@ -161,14 +155,9 @@
     }
 }
 
-.content-wrapper {
-    display: inline-block;
-    width: 100%;
-}
-
 .inline-dropdown:first-child {
     margin-right: 10%;
-    float: left;
+    //float: left;
 }
 
 .custom-date-picker.inline-date-picker,
@@ -215,4 +204,17 @@ ion-label {
     color: #333;
     margin-bottom: 8px;
     display: flex;
+}
+
+.step-flow {
+    display: inline-block;
+}
+
+@media only screen and (max-width: 800px) {
+    .step-flow {
+        display: none;
+    }
+    ion-footer ion-progress-bar {
+        margin-bottom: 1px;
+    }
 }
