@@ -163,3 +163,11 @@ ion-card {
     margin-bottom: 15px;
   }
 }
+
+
+@media only screen and (max-width: 538px) {
+  .portfolio-stats ion-card-content {
+    padding: 0;
+  }
+}
+

@@ -31,25 +31,25 @@
           <ion-radio-group formControlName="annualIncome">
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="5,000-20,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="5,000-20,000"></ion-radio>
                 <ion-label>5,000-20,000</ion-label>
               </ion-item>
             </div>
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="20,000-50,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="20,000-50,000"></ion-radio>
                 <ion-label>20,000-50,000</ion-label>
               </ion-item>
             </div>
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="50,000-250,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="50,000-250,000"></ion-radio>
                 <ion-label>50,000-250,000</ion-label>
               </ion-item>
             </div>
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="Above 250,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="Above 250,000"></ion-radio>
                 <ion-label>Above 250,000</ion-label>
               </ion-item>
             </div>
@@ -59,7 +59,7 @@
         <div class="field-row">
           <div class="custom-dropdown">
             <ion-label>Primary source of income & wealth</ion-label>
-            <ion-select formControlName="incomeSource" multiple="true" interface="popover" placeholder="Select source">
+            <ion-select formControlName="incomeSource" multiple="true" placeholder="Select source">
               <ion-select-option *ngFor="let s of sourcelistData">{{ s.source }}</ion-select-option>
             </ion-select>
           </div>
@@ -72,34 +72,34 @@
           <ion-radio-group formControlName="totalInvestment">
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="Less than 50,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="Less than 50,000"></ion-radio>
                 <ion-label>Less than 50,000</ion-label>
               </ion-item>
             </div>
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="50,000 to 330,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="50,000 to 330,000"></ion-radio>
                 <ion-label>50,000 to 330,000</ion-label>
               </ion-item>
             </div>
 
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="330,000 to 1,000,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="330,000 to 1,000,000"></ion-radio>
                 <ion-label>330,000 to 1,000,000</ion-label>
               </ion-item>
             </div>
 
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="1,000,000 to 5,000,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="1,000,000 to 5,000,000"></ion-radio>
                 <ion-label>1,000,000 to 5,000,000</ion-label>
               </ion-item>
             </div>
 
             <div class="radio-container kyc-radio-button">
               <ion-item lines="none">
-                <ion-radio slot="start" value="Greater than 5,000,000"></ion-radio>
+                <ion-radio mode="md" slot="start" value="Greater than 5,000,000"></ion-radio>
                 <ion-label>Greater than 5,000,000</ion-label>
               </ion-item>
             </div>

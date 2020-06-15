@@ -26,9 +26,7 @@
                                            type="password" #password formControlName="password" ></ion-input>
                             </div>
                             <ion-button size="large" type="submit"
-                                        [disabled]="!loginForm.valid || isLoading"
-                                        [style.background-color]="!loginForm.valid || isLoading ? 'white':'black'"
-                                        [style.color]="!loginForm.valid || isLoading ?'black':'white'">
+                                        [disabled]="!loginForm.valid || isLoading">
                                 <ion-spinner *ngIf="isLoading"></ion-spinner>
                                 <span *ngIf="!isLoading">Login</span>
                             </ion-button>

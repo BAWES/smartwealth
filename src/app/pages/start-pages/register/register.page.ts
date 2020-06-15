@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Platform} from '@ionic/angular';
 import {Router} from '@angular/router';
+import { CustomValidator } from 'src/app/validators/custom.validator';
 
 @Component({
   selector: 'app-register',
@@ -22,7 +23,7 @@ export class RegisterPage implements OnInit {
     this.registerForm = this.formBuilder.group({
       first_name: ['', Validators.required],
       last_name: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', [Validators.required, CustomValidator.emailValidator]],
       password: ['', Validators.required],
     });
   }

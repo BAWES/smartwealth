@@ -43,11 +43,11 @@ export class Step11Page implements OnInit {
 
     this.form = this._fb.group({
       applyForSomeoneElse: [applyForSomeoneElse, Validators.required],
-      beneficiaryName: [localStorage.getItem('beneficiaryName'), applyForSomeoneElse == '2' ? Validators.required: null],
-      beneficiaryRelation: [localStorage.getItem('beneficiaryRelation'), applyForSomeoneElse == '2' ? Validators.required: null],
-      beneficiaryNationality: [localStorage.getItem('beneficiaryNationality'), applyForSomeoneElse == '2' ? Validators.required: null],
-      beneficiaryAddress: [localStorage.getItem('beneficiaryAddress'), applyForSomeoneElse == '2' ? Validators.required: null],
-      beneficiaryID: [localStorage.getItem('beneficiaryID'), applyForSomeoneElse == '2' ? Validators.required: null]
+      beneficiaryName: [localStorage.getItem('beneficiaryName'), applyForSomeoneElse == '1' ? Validators.required: null],
+      beneficiaryRelation: [localStorage.getItem('beneficiaryRelation'), applyForSomeoneElse == '1' ? Validators.required: null],
+      beneficiaryNationality: [localStorage.getItem('beneficiaryNationality'), applyForSomeoneElse == '1' ? Validators.required: null],
+      beneficiaryAddress: [localStorage.getItem('beneficiaryAddress'), applyForSomeoneElse == '1' ? Validators.required: null],
+      beneficiaryID: [localStorage.getItem('beneficiaryID'), applyForSomeoneElse == '1' ? Validators.required: null]
     }); 
 
     this.form.get('applyForSomeoneElse').valueChanges.subscribe(value => {

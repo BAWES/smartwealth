@@ -30,7 +30,7 @@
             <div class="field-row">
               <div class=" signup-input">
                 <ion-label>Employment status</ion-label>
-                <ion-select placeholder="Select" interface="popover" formControlName="employmentStatus">
+                <ion-select placeholder="Select" [interface]="platform.is('mobile')? 'action-sheet':'popover'" formControlName="employmentStatus">
                   <ion-select-option>Employed</ion-select-option>
                   <ion-select-option>Unemployed</ion-select-option>
                   <ion-select-option>Retired</ion-select-option>

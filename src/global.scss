@@ -187,12 +187,13 @@ ion-popover {
     }
 }
 
-ion-split-pane, ion-footer {
+ion-split-pane,
+ion-footer {
     background: #fff;
 }
 
 h2.intro-text {
-    top: 124px!important;
+    top: 124px !important;
 }
 
 .flex {
@@ -200,7 +201,7 @@ h2.intro-text {
 }
 
 ion-header.add-border:after {
-    display: inline!important;
+    display: inline !important;
 }
 
 .clear-header:after {
@@ -215,6 +216,17 @@ ion-header.add-border:after {
     --border-width: 0 !important;
 }
 
+ion-input {
+    --padding-top: 13px !important;
+    --padding-start: 16px !important;
+    --padding-end: 16px !important;
+    --padding-bottom: 15px !important;
+}
+
+ion-button {
+    --border-radius: 4px;
+}
+
 .error-message {
     display: inline-block;
     width: 100%;
@@ -225,7 +237,7 @@ ion-header.add-border:after {
 }
 
 @media only screen and (max-width: 538px) {
-    
+
     .have-mobile-full-input {
         margin-bottom: 0 !important;
     }
@@ -244,8 +256,9 @@ ion-header.add-border:after {
 
 @media only screen and (max-width: 800px) {
     .step-flow {
-        display: none!important;
+        display: none !important;
     }
+
     ion-footer ion-progress-bar {
         margin-bottom: 1px;
     }

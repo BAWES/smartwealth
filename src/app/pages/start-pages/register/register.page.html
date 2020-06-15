@@ -53,9 +53,7 @@
               </ion-grid>
 
               <ion-button size="large" type="submit"
-                          [disabled]="!registerForm.valid || isLoading"
-                          [style.background-color]="!registerForm.valid || isLoading ? 'white':'black'"
-                          [style.color]="!registerForm.valid || isLoading ?'black':'white'">
+                          [disabled]="!registerForm.valid || isLoading">
                 <ion-spinner *ngIf="isLoading"></ion-spinner>
                 <span *ngIf="!isLoading">Continue</span>
               </ion-button>

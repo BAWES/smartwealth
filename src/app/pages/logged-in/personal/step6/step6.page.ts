@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 //services
 import { AccountService } from 'src/app/providers/logged-in/account.service';
 import { AuthService } from 'src/app/providers/auth.service';
-import { NavController } from '@ionic/angular';
+import { NavController, Platform } from '@ionic/angular';
 
 
 @Component({
@@ -30,6 +30,7 @@ export class Step6Page implements OnInit {
   constructor(
     public router: Router,
     public _fb: FormBuilder, 
+    public platform: Platform,
     public navCtrl: NavController,
     public accountService: AccountService,
     public authService: AuthService

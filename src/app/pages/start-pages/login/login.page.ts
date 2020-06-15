@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NavController, Platform} from '@ionic/angular';
 import {Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { CustomValidator } from 'src/app/validators/custom.validator';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,7 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
+      email: ['', [Validators.required, CustomValidator.emailValidator]],
       password: ['', Validators.required],
     });
   }

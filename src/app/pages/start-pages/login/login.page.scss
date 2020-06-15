@@ -53,8 +53,7 @@ ion-col {
     margin-top: 32px;
     font-size: 14px;
     width: 119px;
-    background-color: #1439da;
-    background: #1439da;
+    height: 40px;
     --background: #1439da;
     box-shadow: none;
     --box-shadow: none;
@@ -136,11 +135,12 @@ ion-label {
 form ion-button {
     margin-top: 12px;
     width: 100%;
+    height: 40px;
     font-size: 14px;
-    background-color: #000fff;
-    --background-color: #000fff;
+    margin-left: 0;
+    margin-right: 0;
     --background: #000fff;
-    background-image: linear-gradient(105deg, #1439da, #000fff);
+    //background-image: linear-gradient(105deg, #1439da, #000fff);
     font-weight: 600;
     line-height: 1.67;
     border-radius: 4px;
