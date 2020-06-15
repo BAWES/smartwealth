@@ -15,6 +15,8 @@ import { NavController } from '@ionic/angular';
 export class Step5Page implements OnInit {
  
   public form: FormGroup;
+  
+  mobNumberPattern = "^((\\+965-?)|0)?[0-9]{8}$";
 
   constructor(
     public router: Router,

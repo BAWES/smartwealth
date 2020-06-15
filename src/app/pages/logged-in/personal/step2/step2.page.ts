@@ -46,7 +46,6 @@ export class Step2Page implements OnInit {
     });
     
     this.form.get('nationality').valueChanges.subscribe(value => {
-      console.log(value);
       
       if(value != 'Kuwait') {
         this.form.get('passport').setValidators(Validators.required);

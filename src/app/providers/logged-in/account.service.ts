@@ -128,7 +128,7 @@ export class AccountService {
   saveStep10(params) {
 
     localStorage.setItem('payTaxInAnotherCountry', params.payTaxInAnotherCountry? params.payTaxInAnotherCountry: '');
-    localStorage.setItem('taxCountry', JSON.stringify(params.taxCountry)? params.taxCountry: '');
+    localStorage.setItem('taxCountry', params.taxCountry? JSON.stringify(params.taxCountry): '');
 
     return of({
       'operation': 'success'

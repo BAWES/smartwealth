@@ -25,6 +25,10 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+.error .field {
+    border-color: #eb5f56;
+}
+
 ion-footer {
     margin-bottom: 50px;
 
@@ -211,6 +215,14 @@ ion-header.add-border:after {
     --border-width: 0 !important;
 }
 
+.error-message {
+    display: inline-block;
+    width: 100%;
+    margin-top: 3px;
+    font-size: 11px;
+    line-height: 1.33;
+    color: #eb5f56;
+}
 
 @media only screen and (max-width: 538px) {
     
