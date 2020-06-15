@@ -52,14 +52,14 @@
                 </ion-row>
               </ion-grid>
 
-              <ion-button size="large" expand="full"  type="submit"
+              <ion-button size="large" type="submit"
                           [disabled]="!registerForm.valid || isLoading"
                           [style.background-color]="!registerForm.valid || isLoading ? 'white':'black'"
                           [style.color]="!registerForm.valid || isLoading ?'black':'white'">
                 <ion-spinner *ngIf="isLoading"></ion-spinner>
                 <span *ngIf="!isLoading">Continue</span>
               </ion-button>
-              <p tappable>Already have account? <a routerLink="/login">Login</a></p>
+              <p tappable>Already have account? <a class="btn-login" routerLink="/login">Login</a></p>
             </form>
           </section>
         </div>
