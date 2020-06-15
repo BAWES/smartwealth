@@ -1,4 +1,4 @@
-<ion-header [translucent]="true" class="ion-no-border">
+<ion-header [translucent]="true" [class.add-border]="borderLimit" class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
+<ion-content scrollEvents="true" (ionScroll)="logScrolling($event)" [fullscreen]="true" class="ion-padding">
   <div id="container">
     <h1>Hello, {{authService.name}}</h1>
     <ion-grid>
@@ -57,7 +57,7 @@
             </ion-card-header>
             <ion-card-content>
               <p>$0.00</p>
-              <small>Latest Deposits: $0.00</small>
+              <small>Latest: $0.00</small>
             </ion-card-content>
           </ion-card>
           </ion-col>

@@ -7,8 +7,9 @@ ion-card {
 }
 
 #container {
-  padding:0 10px;
+  padding: 0 10px;
 }
+
 //  text-align: center;
 //  position: absolute;
 //  left: 0;
@@ -35,14 +36,17 @@ ion-card {
 h1 {
   font-weight: bold;
 }
+
 ion-label {
   font-size: 17px;
 }
+
 h3 {
   font-weight: bold;
   font-size: 24px;
   margin-bottom: 12px;
 }
+
 .continue-btn {
   border-radius: 5px;
   height: 48px;
@@ -50,13 +54,16 @@ h3 {
   --background: #1439da;
   width: 133px;
 }
+
 .continue-prof {
-  padding:16px;
+  padding: 16px;
   border-left: 5px solid #1439da;
 }
-ion-card{
+
+ion-card {
   border-radius: 10px;
 }
+
 .stats {
   ion-card {
     padding: 14px;
@@ -75,16 +82,19 @@ ion-card{
     }
   }
 }
-.portfolio-stats{
+
+.portfolio-stats {
   ion-label {
-    color:#000;
+    color: #000;
   }
+
   .globe {
     --border-radius: 50%;
     border-radius: 50%;
-    height:50px;
-    width:50px;
+    height: 50px;
+    width: 50px;
   }
+
   .general {
     font-weight: bold;
     font-size: 23px;
@@ -94,26 +104,34 @@ ion-card{
       font-size: 15px;
     }
   }
+
   ion-label.msg {
     color: gray;
     text-align: right;
   }
+
   .earnings {
     font-size: 21px;
     font-weight: bold;
     padding-right: 12px;
+
     small {
       color: grey;
       font-size: 14px;
     }
   }
 }
-.continue-btn.desktop,.globe.icon,.msg {
+
+.continue-btn.desktop,
+.globe.icon,
+.msg {
   display: inline-block;
 }
+
 .continue-btn.mobile {
   display: none;
 }
+
 .continue-lbl {
   overflow: inherit;
   white-space: normal;
@@ -121,21 +139,27 @@ ion-card{
 
 @media only screen and (max-width: 800px) {
   #container {
-    padding:0;
+    padding: 0;
   }
 
-  .stats ion-card{
+  .stats ion-card {
     padding: 14px 5px;
     min-height: 212px;
   }
 
-  .continue-prof{
+  .continue-prof {
     padding: 0;
   }
-  .globe.icon, .continue-btn.desktop,.msg {
+
+  .globe.icon,
+  .continue-btn.desktop,
+  .msg {
     display: none;
   }
+
   .continue-btn.mobile {
-    display: inline-block;
+    display: block;
+    float: right;
+    margin-bottom: 15px;
   }
 }

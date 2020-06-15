@@ -145,13 +145,31 @@
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+@media only screen and (max-width: 767px) {
+    .footer-wrapper .btn-back {
+        position: relative;
+        top: auto;
+        transform: none;
+        left: auto;
+    }
+
+    .footer-wrapper .step {
+        display: none;
+    }
+
+    ion-progress-bar,
+    ion-footer {
+        margin-bottom: 0;
+    }
 }
 
 @media (max-width: 991px) {
