@@ -212,6 +212,24 @@ ion-header.add-border:after {
 }
 
 
+@media only screen and (max-width: 538px) {
+    
+    .have-mobile-full-input {
+        margin-bottom: 0 !important;
+    }
+
+    .mobile-full-input {
+        width: 100% !important;
+        margin-bottom: 23px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .kyc-content.left {
+        padding-left: 0 !important;
+    }
+}
+
 @media only screen and (max-width: 800px) {
     .step-flow {
         display: none!important;

@@ -19,12 +19,13 @@
         }
 
         .inline-input:first-child {
-            //float: left;
             margin-right: 10%;
         }
         
+        .inline-dropdown,
         .inline-input {
-            display: inline-block;
+            float: left;
+            //display: inline-block;
             width: 45%;
         }
 

@@ -40,7 +40,7 @@ export class Step6Page implements OnInit {
     this.form = this._fb.group({
       employmentStatus: [localStorage.getItem('employmentStatus'), Validators.required],
       employer: [localStorage.getItem('employer')],
-      postion: [localStorage.getItem('postion')],
+      position: [localStorage.getItem('position')],
       industry: [localStorage.getItem('industry')],
     }); 
 
@@ -48,16 +48,16 @@ export class Step6Page implements OnInit {
  
       if(['Self Employed', 'Employed'].indexOf(value) > -1) {
         this.form.get('employer').setValidators(Validators.required);
-        this.form.get('postion').setValidators(Validators.required);
+        this.form.get('position').setValidators(Validators.required);
         this.form.get('industry').setValidators(Validators.required);
       } else {
         this.form.get('employer').setValidators(null);
-        this.form.get('postion').setValidators(null);
+        this.form.get('position').setValidators(null);
         this.form.get('industry').setValidators(null);
       }
 
       this.form.controls.employer.updateValueAndValidity();
-      this.form.controls.postion.updateValueAndValidity();
+      this.form.controls.position.updateValueAndValidity();
       this.form.controls.industry.updateValueAndValidity();
     }); 
   } 
@@ -74,7 +74,7 @@ export class Step6Page implements OnInit {
 
     if(['Self Employed', 'Employed'].indexOf(this.form.value.employmentStatus) == -1) {
       this.form.controls.employer.setValue(null);
-      this.form.controls.postion.setValue(null);
+      this.form.controls.position.setValue(null);
       this.form.controls.industry.setValue(null);
     } 
 

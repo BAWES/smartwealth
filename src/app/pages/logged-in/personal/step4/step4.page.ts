@@ -51,10 +51,10 @@ export class Step4Page implements OnInit {
 
     this.form = this._fb.group({
       isPoliticallyExposed: [isPoliticallyExposed, Validators.required],
-      havePoliticalPosition: [havePoliticalPosition],
-      politicalPositionName: [localStorage.getItem('politicalPositionName')],
-      politicalPositionRelation: [localStorage.getItem('politicalPositionRelation')],
-      position: [localStorage.getItem('position')]
+      havePoliticalPosition: [havePoliticalPosition, isPoliticallyExposed == '1'? Validators.required: null],
+      politicalPositionName: [localStorage.getItem('politicalPositionName'), isPoliticallyExposed == '1' && havePoliticalPosition == '2'? Validators.required: null],
+      politicalPositionRelation: [localStorage.getItem('politicalPositionRelation'), isPoliticallyExposed == '1' && havePoliticalPosition == '2'? Validators.required: null],
+      politicalPosition: [localStorage.getItem('politicalPosition'), isPoliticallyExposed == '1'? Validators.required: null]    
     });
     
     this.form.get('isPoliticallyExposed').valueChanges.subscribe(value => {
@@ -62,24 +62,33 @@ export class Step4Page implements OnInit {
       if([1, '1'].indexOf(value) > -1) {
 
         this.form.get('havePoliticalPosition').setValidators(Validators.required);
-        this.form.get('position').setValidators(Validators.required);
+        this.form.get('politicalPosition').setValidators(Validators.required);
 
-        if(!this.form.value.havePoliticalPosition) {
-          this.form.controls.havePoliticalPosition.setValue(2);
+        if([2, '2'].indexOf(this.form.controls.havePoliticalPosition.value) > -1) {
+          this.form.get('politicalPositionName').setValidators(Validators.required);
+          this.form.get('politicalPositionRelation').setValidators(Validators.required);
+        } else {
+          this.form.get('politicalPositionName').setValidators(null);
+          this.form.get('politicalPositionRelation').setValidators(null);
         }
+
       } else {
 
         this.form.get('havePoliticalPosition').setValidators(null);
-        this.form.get('position').setValidators(null);
+        this.form.get('politicalPosition').setValidators(null);
+        this.form.get('politicalPositionName').setValidators(null);
+        this.form.get('politicalPositionRelation').setValidators(null);
       }
 
       this.form.controls.havePoliticalPosition.updateValueAndValidity();
-      this.form.controls.position.updateValueAndValidity();
+      this.form.controls.politicalPosition.updateValueAndValidity();
+      this.form.controls.politicalPositionName.updateValueAndValidity();
+      this.form.controls.politicalPositionRelation.updateValueAndValidity();
     }); 
 
     this.form.get('havePoliticalPosition').valueChanges.subscribe(value => {
  
-      if([1, '1'].indexOf(this.form.value.isPoliticallyExposed) > -1 && [2, '2'].indexOf(value) > -1) {
+      if([1, '1'].indexOf(this.form.controls.isPoliticallyExposed.value) > -1 && [2, '2'].indexOf(value) > -1) {
         this.form.get('politicalPositionName').setValidators(Validators.required);
         this.form.get('politicalPositionRelation').setValidators(Validators.required);
       } else {
@@ -118,7 +127,7 @@ export class Step4Page implements OnInit {
     
     if([1, '1'].indexOf(this.form.value.isPoliticallyExposed) == -1) {
       this.form.controls.havePoliticalPosition.setValue(null);
-      this.form.controls.position.setValue(null);
+      this.form.controls.politicalPosition.setValue(null);
       this.form.controls.politicalPositionName.setValue(null);
       this.form.controls.politicalPositionRelation.setValue(null);
       this.form.updateValueAndValidity();

@@ -30,9 +30,9 @@ export class Step9Page implements OnInit {
 
     this.form = this._fb.group({
       isUSCitizen: [isUSCitizen, Validators.required],
-      taxPayerIDNumber: [localStorage.getItem('taxPayerIDNumber'), isUSCitizen == '2' ? Validators.required: null],
-      usAddress1: [localStorage.getItem('usAddress1'), isUSCitizen == '2' ? Validators.required: null],
-      usAddress2: [localStorage.getItem('usAddress2'), isUSCitizen == '2' ? Validators.required: null]
+      taxPayerIDNumber: [localStorage.getItem('taxPayerIDNumber'), isUSCitizen == '1' ? Validators.required: null],
+      usAddress1: [localStorage.getItem('usAddress1'), isUSCitizen == '1' ? Validators.required: null],
+      usAddress2: [localStorage.getItem('usAddress2'), isUSCitizen == '1' ? Validators.required: null]
     }); 
 
     this.form.get('isUSCitizen').valueChanges.subscribe(value => {
@@ -40,14 +40,16 @@ export class Step9Page implements OnInit {
       if([1, '1'].indexOf(value) > -1) {
         this.form.get('taxPayerIDNumber').setValidators(Validators.required);
         this.form.get('usAddress1').setValidators(Validators.required);
-        this.form.get('usAddress1').setValidators(Validators.required);
+        this.form.get('usAddress2').setValidators(Validators.required);
       } else {
         this.form.get('taxPayerIDNumber').setValidators(null);
         this.form.get('usAddress1').setValidators(null);
-        this.form.get('usAddress1').setValidators(null);
+        this.form.get('usAddress2').setValidators(null);
       }
 
       this.form.controls.taxPayerIDNumber.updateValueAndValidity(); 
+      this.form.controls.usAddress1.updateValueAndValidity(); 
+      this.form.controls.usAddress2.updateValueAndValidity(); 
     }); 
   } 
 

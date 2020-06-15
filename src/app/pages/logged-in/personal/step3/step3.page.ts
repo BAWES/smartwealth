@@ -34,9 +34,9 @@ export class Step3Page implements OnInit {
 
     this.form = this._fb.group({
       isGuardianshpAccount: [isGuardianshpAccount, Validators.required],
-      guardianFullName: [localStorage.getItem('guardianFullName')],
-      guardianNationality: [localStorage.getItem('guardianNationality')],
-      guardianCivilIdNumber: [localStorage.getItem('guardianCivilIdNumber')]
+      guardianFullName: [localStorage.getItem('guardianFullName'), isGuardianshpAccount == '1'? Validators.required: null],
+      guardianNationality: [localStorage.getItem('guardianNationality'), isGuardianshpAccount == '1'? Validators.required: null],
+      guardianCivilIdNumber: [localStorage.getItem('guardianCivilIdNumber'), isGuardianshpAccount == '1'? Validators.required: null]
     });
     
     this.form.get('isGuardianshpAccount').valueChanges.subscribe(value => {
@@ -56,7 +56,6 @@ export class Step3Page implements OnInit {
       this.form.controls.guardianFullName.updateValueAndValidity();
       this.form.controls.guardianNationality.updateValueAndValidity();
       this.form.controls.guardianCivilIdNumber.updateValueAndValidity();
-
     });
 
     this.loadCountries();

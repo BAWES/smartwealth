@@ -43,9 +43,9 @@ export class Step12Page implements OnInit {
 
     this.form = this._fb.group({
       addPowerOfAttorney: [addPowerOfAttorney, Validators.required],
-      powerOfAttorneyName: [localStorage.getItem('powerOfAttorneyName'), addPowerOfAttorney == '2' ? Validators.required: null],
-      powerOfAttorneyNationality: [localStorage.getItem('powerOfAttorneyNationality'), addPowerOfAttorney == '2' ? Validators.required: null],
-      powerOfAttorneyID: [localStorage.getItem('powerOfAttorneyID'), addPowerOfAttorney == '2' ? Validators.required: null],
+      powerOfAttorneyName: [localStorage.getItem('powerOfAttorneyName'), addPowerOfAttorney == '1' ? Validators.required: null],
+      powerOfAttorneyNationality: [localStorage.getItem('powerOfAttorneyNationality'), addPowerOfAttorney == '1' ? Validators.required: null],
+      powerOfAttorneyID: [localStorage.getItem('powerOfAttorneyID'), addPowerOfAttorney == '1' ? Validators.required: null],
     }); 
 
     this.form.get('addPowerOfAttorney').valueChanges.subscribe(value => {
