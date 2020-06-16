@@ -16,7 +16,7 @@
               </p>
 
               <p><span>Important: Kindly note that when entering your bank details, this information will be the default bank
-                  information associated with your NBK Capital SmartWealth account for deposits and redemptions.
+                  information associated with your Kamco Capital SmartWealth account for deposits and redemptions.
                 </span>
               </p>
 
@@ -49,7 +49,7 @@
               </div>
 
               <div class="field-row-2">
-                <div class="label radio-buttons-title"><span>Are you an existing NBK banking client?</span></div>
+                <div class="label radio-buttons-title"><span>Are you an existing Kamco banking client?</span></div>
                 <ion-radio-group formControlName="existingClient">
                   <div class="radio-container kyc-radio-button">
                     <ion-item lines="none">
@@ -67,7 +67,7 @@
               </div>
 
               <div class="field-row-2" *ngIf="['1', 1].indexOf(form.value.existingClient) > -1">
-                <div class="label radio-buttons-title"><span>Have you been assisted or referred to NBK Capital SmartWealth by a NBK relationship manager?</span></div>
+                <div class="label radio-buttons-title"><span>Have you been assisted or referred to Kamco Capital SmartWealth by a Kamco relationship manager?</span></div>
                 <ion-radio-group formControlName="haveRelationship">
                   <div class="radio-container kyc-radio-button">
                     <ion-item lines="none">
@@ -87,7 +87,7 @@
               <div class="field-row" *ngIf="['1', 1].indexOf(form.value.haveRelationship) > -1">
                 <div class=" signup-input">
                   <ion-label>Please provide your Relationship Manager's unique referral code</ion-label>
-                  <ion-input placeholder="NBK relationship manager code" autocomplete="on" formControlName="relationship"></ion-input>
+                  <ion-input placeholder="Kamco relationship manager code" autocomplete="on" formControlName="relationship"></ion-input>
                 </div>
               </div>
 
