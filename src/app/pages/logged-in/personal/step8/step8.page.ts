@@ -33,8 +33,8 @@ export class Step8Page implements OnInit {
     this.form = this._fb.group({
       bank: [localStorage.getItem('bank'), Validators.required],
       existingClient: [existingClient],
-      haveRelationship: [haveRelationship, existingClient == '2' ? Validators.required: null],
-      relationship: [localStorage.getItem('relationship'), haveRelationship == '2' ? Validators.required: null]
+      haveRelationship: [haveRelationship, existingClient == '1' ? Validators.required: null],
+      relationship: [localStorage.getItem('relationship'), haveRelationship == '1' ? Validators.required: null]
     }); 
 
     this.form.get('existingClient').valueChanges.subscribe(value => {
