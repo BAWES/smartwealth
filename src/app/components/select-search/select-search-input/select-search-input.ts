@@ -2,7 +2,7 @@ import { Component, Input, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { SelectSearchPage } from '../select-search-page/select-search-page';
-import { PopoverController } from '@ionic/angular';
+import { PopoverController, Platform } from '@ionic/angular';
 
 /*
   Select search component, renders a select form input with search filter functionality.
@@ -50,6 +50,7 @@ export class SelectSearchInputComponent implements ControlValueAccessor {
   private _propagateChange = (_: any) => { };
 
   constructor(
+    public platform: Platform,
     private _popoverCtrl: PopoverController
   ) { }
 
@@ -59,7 +60,7 @@ export class SelectSearchInputComponent implements ControlValueAccessor {
   async onClick(event) {
     let selectPage = await this._popoverCtrl.create({
       component: SelectSearchPage,
-      event: event,
+      event: this.platform.is('mobile')? null: event,//open as full screen on mobile 
       componentProps: {
         collection: this.collection,
         valueAttr: this.valueAttr,

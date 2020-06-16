@@ -91,6 +91,9 @@ ion-menu.ios ion-content {
 
 ion-menu.ios ion-list {
   padding: 20px 0 0 0;
+  background: inherit;
+  --background: inherit;
+  --color:#fff;
 }
 
 ion-menu.ios ion-note {
@@ -102,6 +105,9 @@ ion-menu.ios ion-item {
   --padding-start: 16px;
   --padding-end: 16px;
   --min-height: 50px;
+  background: inherit;
+  --background: inherit;
+  --color:#fff;
 }
 
 ion-menu.ios ion-item.selected ion-icon {
@@ -136,4 +142,7 @@ ion-note {
 
 ion-item.selected {
   --color: var(--ion-color-primary);
+}
+ion-list-header {
+  color:#fff;
 }
