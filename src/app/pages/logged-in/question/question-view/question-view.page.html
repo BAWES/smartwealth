@@ -13,7 +13,7 @@
       <form [formGroup]="form" *ngIf="form" class="body">
 
         <div class="age-input" *ngIf="question.type == 'number'">
-          <ion-input type="text" formControlName="answer" inputmode="number">
+          <ion-input type="text" maxlength="2" formControlName="answer" inputmode="number">
             <label slot="end" *ngIf="form.value.answer > 0">years</label>
           </ion-input>
         </div>
