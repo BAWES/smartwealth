@@ -100,7 +100,7 @@
 
   <div class="footer-wrapper">
 
-    <ion-button fill="clear" class="btn-back" (click)="back()">
+    <ion-button fill="clear" slot="start" class="btn-back" (click)="back()">
       <ion-icon name="arrow-back-circle-outline"></ion-icon>
     </ion-button>
 
@@ -117,7 +117,7 @@
       </div>
     </div>
 
-    <ion-button (click)="continue()" class="btn-continue" [disabled]="!form || form.invalid">
+    <ion-button slot="end" (click)="continue()" class="btn-continue" [disabled]="!form || form.invalid">
       Continue
     </ion-button>
 
