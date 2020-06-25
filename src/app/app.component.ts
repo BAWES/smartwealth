@@ -22,16 +22,6 @@ export class AppComponent implements OnInit {
       color : 'orange',
     },
     {
-      title: 'Settings',
-      url: '/dashboard',
-      icon: 'settings'
-    },
-    {
-      title: 'عربي',
-      url: '/dashboard',
-      icon: 'globe'
-    },
-    {
       title: 'Users',
       url: '/dashboard',
       icon: 'people',
@@ -39,11 +29,22 @@ export class AppComponent implements OnInit {
       color : 'green',
       user : 'admin'
     },
-    {
-      title: 'Logout',
-      url: '/start',
-      icon: 'power'
-    }
+    // {
+    //   title: 'Settings',
+    //   url: '/dashboard',
+    //   icon: 'settings'
+    // },
+    // {
+    //   title: 'عربي',
+    //   url: '/dashboard',
+    //   icon: 'globe'
+    // },
+
+    // {
+    //   title: 'Logout',
+    //   url: '/start',
+    //   icon: 'power'
+    // }
   ];
   public labels = ['Portfolio', 'Accounts', 'Investments'];
 

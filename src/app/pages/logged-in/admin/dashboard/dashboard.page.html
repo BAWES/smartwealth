@@ -9,13 +9,15 @@
         <ion-badge>3</ion-badge>
         <ion-icon name="notifications-outline"></ion-icon>
       </div>
-      <ion-label>
-        <span class="user-name text-bold-600">John Doe</span>
-        <small>Available</small>
-      </ion-label>
-      <ion-avatar>
-        <img src="assets/img/avatar-s-11.jpg">
-      </ion-avatar>
+      <ion-button class="user-control" (click)="presentPopover($event)">
+        <ion-label>
+          <span class="user-name text-bold-600">John Doe</span>
+          <small>Available</small>
+        </ion-label>
+        <ion-avatar>
+          <img src="assets/img/avatar-s-11.jpg">
+        </ion-avatar>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>

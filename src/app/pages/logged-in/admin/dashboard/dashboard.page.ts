@@ -13,6 +13,8 @@ import {
         ApexNonAxisChartSeries,
         ApexPlotOptions,
 } from 'ng-apexcharts';
+import {PopoverController} from '@ionic/angular';
+import {PopoverComponent} from './popover.component';
 
 export type ChartOptions = {
     series: ApexAxisChartSeries;
@@ -22,9 +24,16 @@ export type ChartOptions = {
     stroke: ApexStroke;
     tooltip: ApexTooltip;
     dataLabels: ApexDataLabels;
+};
+
+export type ChartOptions1 = {
+    series: ApexNonAxisChartSeries;
+    chart: ApexChart;
     labels: string[];
+    stroke: ApexStroke;
     plotOptions: ApexPlotOptions;
 };
+
 
 @Component({
   selector: 'app-dashboard',
@@ -40,7 +49,7 @@ export class DashboardPage implements OnInit {
   public chartOptions1: Partial<ChartOptions>;
 
   @ViewChild('chart2') chart2: ChartComponent;
-  public chartOptions2: Partial<ChartOptions>;
+  public chartOptions2: Partial<ChartOptions1>;
 
 
   public folder: string;
@@ -52,7 +61,8 @@ export class DashboardPage implements OnInit {
   dataSource2: {};
     constructor(
       private activatedRoute: ActivatedRoute,
-      public authService: AuthService
+      public authService: AuthService,
+      public popoverController: PopoverController
   ) {
     this.chartOptions = {
         chart: {
@@ -144,10 +154,9 @@ export class DashboardPage implements OnInit {
                 opacity: 0.1
             },
         },
-        colors: ['#28C76F'],
         plotOptions: {
             radialBar: {
-                size: 110,
+                // size: 110,
                 startAngle: -150,
                 endAngle: 150,
                 hollow: {
@@ -169,26 +178,26 @@ export class DashboardPage implements OnInit {
                 }
             }
         },
-        fill: {
-            type: 'gradient',
-            gradient: {
-                shade: 'dark',
-                type: 'horizontal',
-                shadeIntensity: 0.5,
-                gradientToColors: ['#00b5b5'],
-                inverseColors: true,
-                opacityFrom: 1,
-                opacityTo: 1,
-                stops: [0, 100]
-            },
-        },
+        // fill: {
+        //     type: 'gradient',
+        //     gradient: {
+        //         shade: 'dark',
+        //         type: 'horizontal',
+        //         shadeIntensity: 0.5,
+        //         gradientToColors: ['#00b5b5'],
+        //         inverseColors: true,
+        //         opacityFrom: 1,
+        //         opacityTo: 1,
+        //         stops: [0, 100]
+        //     },
+        // },
         series: [83],
         stroke: {
             lineCap: 'round'
         },
     };
 
-        const dataSource = {
+    const dataSource = {
           chart: {
             caption: 'Revenue Generated',
             subCaption: 'Last month',
@@ -309,19 +318,29 @@ export class DashboardPage implements OnInit {
       return series;
     }
 
-ngOnInit() {
+    ngOnInit() {
         this.folder = this.activatedRoute.snapshot.paramMap.get('id');
-      }
+    }
 
-ionViewWillEnter() {
+    ionViewWillEnter() {
         this.authService.disableMenu = false;
-      }
+    }
 
-ionViewWillLeave() {
+    ionViewWillLeave() {
         this.authService.disableMenu = true;
-      }
+    }
 
-logScrolling(e) {
+    logScrolling(e) {
         this.borderLimit = (e.detail.scrollTop > 20);
+    }
+
+    async presentPopover(ev: any) {
+        const popover = await this.popoverController.create({
+            component: PopoverComponent,
+            cssClass: 'my-custom-class',
+            event: ev,
+            translucent: true
+        });
+        return await popover.present();
     }
 }
