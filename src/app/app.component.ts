@@ -17,7 +17,9 @@ export class AppComponent implements OnInit {
     {
       title: 'Dashboard',
       url: '/dashboard',
-      icon: 'rocket'
+      icon: 'rocket',
+      badge: '20',
+      color : 'orange',
     },
     {
       title: 'Settings',
@@ -28,6 +30,14 @@ export class AppComponent implements OnInit {
       title: 'عربي',
       url: '/dashboard',
       icon: 'globe'
+    },
+    {
+      title: 'Users',
+      url: '/dashboard',
+      icon: 'people',
+      badge: '10',
+      color : 'green',
+      user : 'admin'
     },
     {
       title: 'Logout',

@@ -11,6 +11,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderModule } from './components/header/header.module';
 import { AssetsInfoModule } from './components/assets-info/assets-info.module';
 
+import { FusionChartsModule } from 'angular-fusioncharts';
+
+// Import FusionCharts library and chart modules
+import * as FusionCharts from 'fusioncharts';
+import * as charts from 'fusioncharts/fusioncharts.charts';
+import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import {NgApexchartsModule} from 'ng-apexcharts';
+
+// Pass the fusioncharts library and chart modules
+FusionChartsModule.fcRoot(FusionCharts, charts, FusionTheme);
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -18,8 +29,10 @@ import { AssetsInfoModule } from './components/assets-info/assets-info.module';
     AssetsInfoModule,
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
-  ],
+    AppRoutingModule,
+    FusionChartsModule,
+    NgApexchartsModule
+],
   exports: [
     AssetsInfoModule
   ],
