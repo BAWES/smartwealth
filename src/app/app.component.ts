@@ -17,23 +17,34 @@ export class AppComponent implements OnInit {
     {
       title: 'Dashboard',
       url: '/dashboard',
-      icon: 'rocket'
+      icon: 'rocket',
+      badge: '20',
+      color : 'orange',
     },
     {
-      title: 'Settings',
+      title: 'Users',
       url: '/dashboard',
-      icon: 'settings'
+      icon: 'people',
+      badge: '10',
+      color : 'green',
+      user : 'admin'
     },
-    {
-      title: 'عربي',
-      url: '/dashboard',
-      icon: 'globe'
-    },
-    {
-      title: 'Logout',
-      url: '/start',
-      icon: 'power'
-    }
+    // {
+    //   title: 'Settings',
+    //   url: '/dashboard',
+    //   icon: 'settings'
+    // },
+    // {
+    //   title: 'عربي',
+    //   url: '/dashboard',
+    //   icon: 'globe'
+    // },
+
+    // {
+    //   title: 'Logout',
+    //   url: '/start',
+    //   icon: 'power'
+    // }
   ];
   public labels = ['Portfolio', 'Accounts', 'Investments'];
 

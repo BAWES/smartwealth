@@ -16,24 +16,47 @@
               <ion-button class="login-btn" [routerLink]="['/login']" >Login</ion-button>
             </div>
 
-          <ion-card routerLink="/register">
-            <ion-card-header>
-              <ion-card-title>Open a KAMCO portfolio account</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              <ion-item detail lines="none">Get started as a KAMCO client within minutes.</ion-item>
-            </ion-card-content>
+          <ion-card routerLink="/admin-dashboard">
+            <ion-item lines="none">
+              <ion-label class="ion-card-title">
+                 KAMCO ADMIN
+              </ion-label>
+              <img slot="start" src="assets/icon/user.png">
+            </ion-item>
             <ion-icon slot="end" name="star"></ion-icon>
           </ion-card>
 
-          <ion-card routerLink="/question-view/1">
-            <ion-card-header>
-              <ion-card-title>Build my financial plan now</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              <ion-item detail lines="none">Within minutes we will build your personalized investment plan.</ion-item>
-            </ion-card-content>
+          <ion-card routerLink="/register">
+<!--          <ion-card routerLink="/question-view/1">-->
+            <ion-item lines="none">
+              <ion-label class="ion-card-title">
+                KAMCO CLIENT
+              </ion-label>
+              <img slot="start" src="assets/icon/home.png">
+            </ion-item>
+            <ion-icon slot="end" name="star"></ion-icon>
           </ion-card>
+
+          <div class="hide">
+            <ion-card routerLink="/register">
+              <ion-card-header>
+                <ion-card-title>Open a Kamco Capital SmartWealth account</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-item detail lines="none">Get started with smarter investing habits today and open an account within minutes.</ion-item>
+              </ion-card-content>
+              <ion-icon slot="end" name="star"></ion-icon>
+            </ion-card>
+
+            <ion-card routerLink="/question-view/1">
+              <ion-card-header>
+                <ion-card-title>Build my financial plan in under 5 minutes</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-item detail lines="none">Get started with smarter investing habits today and open an account within minutes.</ion-item>
+              </ion-card-content>
+            </ion-card>
+          </div>
         </div>
       </ion-col>
     </ion-row>

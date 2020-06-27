@@ -133,7 +133,10 @@ const routes: Routes = [
       disableMenu: true
     }
   },
-
+  {
+    path: 'admin-dashboard',
+    loadChildren: () => import('./pages/logged-in/admin/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
   {
     path: 'no-internet',
     loadChildren: () => import('./pages/errors/no-internet/no-internet.module').then(m => m.NoInternetPageModule),
@@ -159,7 +162,7 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'page-not-found',
     pathMatch: 'full'
-  },
+  }
 ];
 
 @NgModule({
